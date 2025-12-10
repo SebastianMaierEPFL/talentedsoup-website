@@ -1,6 +1,6 @@
 ---
-title: Post with Header Image
-tags: TeXt
+title: Header Page
+tags: 
 article_header:
   type: cover
   image:
