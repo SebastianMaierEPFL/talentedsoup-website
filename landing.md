@@ -6,11 +6,11 @@ excerpt: >
 permalink: /
 
 article_header:
-  height: 100vh          # full-viewport hero
+  height: 60vh
   theme: default
   background_color: "#2c6d8bff"
   background_image:
-    gradient: "linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6))"
+    gradient: "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))"
     src: /assets/images/commander.svg
   actions:
     - text: Data Analysis
