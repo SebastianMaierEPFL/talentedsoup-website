@@ -35,59 +35,23 @@ Here are some data observation for further social analysis of assets :
 ![Stock and ETF Personality Maps](social1.png)
 *Figure 1 : Side-by-side scatter plots of stocks and ETFs in the normalized personality space defined by volatility and jump frequency.*
 
-<table style="width:100%; border-collapse: collapse;">
-  <tr>
+**Most Extroverted ETFs**
 
-    <!-- LEFT COLUMN -->
-    <td style="vertical-align: top; width:50%; padding: 8px;">
+| Asset | EI score<sub>z</sub> | Volatility | Jump frequency | Turnover |
+|------:|---------------------:|-----------:|---------------:|---------:|
+| PLC  | 13.39 | 35.88 | 0.062 | 1.36e+08 |
+| RTL  | 12.77 | 31.87 | 0.105 | 8.05e+04 |
+| SPY  | 8.25  | 0.19  | 0.048 | 1.10e+10 |
+| QUS  | 6.54  | 17.36 | 0.061 | 8.99e+05 |
+| NJAN | 6.06  | 12.25 | 0.124 | 2.24e+05 |
 
-      <strong style="color:#d63384;">Most Extroverted Stocks</strong>
+**Most Introverted ETFs**
 
-      <table style="border-collapse: collapse; width:100%; background-color:#fde6ef;">
-        <thead>
-          <tr style="background-color:#f8cadd;">
-            <th>Asset</th>
-            <th>EI score</th>
-            <th>Volatility</th>
-            <th>Jump frequency</th>
-            <th>Turnover</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>DTP</td><td>16.70</td><td>66.89</td><td>0.163</td><td>4.73e+05</td></tr>
-          <tr><td>MEC</td><td>14.17</td><td>60.60</td><td>0.108</td><td>8.39e+06</td></tr>
-          <tr><td>HMI</td><td>10.82</td><td>42.43</td><td>0.132</td><td>6.65e+05</td></tr>
-          <tr><td>PBC</td><td>9.89</td><td>48.82</td><td>0.025</td><td>2.83e+07</td></tr>
-          <tr><td>EIC</td><td>8.80</td><td>35.29</td><td>0.109</td><td>2.16e+06</td></tr>
-        </tbody>
-      </table>
-
-    </td>
-
-    <!-- RIGHT COLUMN -->
-    <td style="vertical-align: top; width:50%; padding: 8px;">
-
-      <strong style="color:#c2255c;">Most Introverted Stocks</strong>
-
-      <table style="border-collapse: collapse; width:100%; background-color:#fde6ef;">
-        <thead>
-          <tr style="background-color:#f8cadd;">
-            <th>Asset</th>
-            <th>EI score</th>
-            <th>Volatility</th>
-            <th>Jump frequency</th>
-            <th>Turnover</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>AAN</td><td>-15.21</td><td>0.413</td><td>0.052</td><td>-2.82e+25</td></tr>
-          <tr><td>EVSTC</td><td>-0.99</td><td>0.343</td><td>0.001</td><td>2.00e+05</td></tr>
-          <tr><td>EVLMC</td><td>-0.99</td><td>0.347</td><td>0.001</td><td>1.92e+05</td></tr>
-        </tbody>
-      </table>
-
-    </td>
-
-  </tr>
-</table>
+| Asset | EI score<sub>z</sub> | Volatility | Jump frequency | Turnover |
+|------:|---------------------:|-----------:|---------------:|---------:|
+| TFLO | -0.96 | 0.028 | 0.0045 | 1.82e+06 |
+| GSY  | -0.96 | 0.052 | 0.0043 | 7.25e+06 |
+| NEAR | -0.89 | 0.029 | 0.0067 | 3.05e+07 |
+| FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
+| FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
 
