@@ -13,11 +13,10 @@ The **turnover proxy** is computed as average daily dollar volume and serves as 
 
 To enable cross-sectional comparison, all three components are standardized across assets using z-score normalization. The standardized Emotional Index is then defined as a weighted linear combination of the normalized components:
 
-$$
-EI_z = 0.5 \cdot volatility_z
-+ 0.3 \cdot jump\_frequency_z
-+ 0.2 \cdot turnover_z
-$$
+EI_z = 0.5 × volatility_z  
+     + 0.3 × jump_frequency_z  
+     + 0.2 × turnover_z
+
 
 
 This formulation assigns greater importance to price variability and discontinuities while retaining liquidity as a complementary signal. The resulting EI score quantifies the relative behavioral activity of an asset with respect to the market as a whole.
