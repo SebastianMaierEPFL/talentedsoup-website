@@ -41,7 +41,7 @@ Here are some data observation for further social analysis of assets :
   <thead>
     <tr>
       <th>Asset</th>
-      <th>EI score_z</th>
+      <th>EI score</th>
       <th>Volatility</th>
       <th>Jump frequency</th>
       <th>Turnover</th>
