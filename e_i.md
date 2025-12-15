@@ -55,3 +55,25 @@ Here are some data observation for further social analysis of assets :
 | FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
 | FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
 
+**Most Introverted Stocks**
+
+| Asset | EI score<sub>z</sub> | Volatility | Jump frequency | Turnover |
+|------:|---------------------:|-----------:|---------------:|---------:|
+| AAN   | -15.21 | 0.413 | 0.052 | -2.82e+25 |
+| EVSTC | -0.99  | 0.343 | 0.001 | 2.00e+05 |
+| EVLMC | -0.99  | 0.347 | 0.001 | 1.92e+05 |
+| EVGBC | -0.99  | 0.347 | 0.001 | 1.77e+05 |
+| CARR# | -0.92  | 0.575 | 0.002 | 2.24e+04 |
+
+**Most Extroverted Stocks**
+
+| Asset | EI score<sub>z</sub> | Volatility | Jump frequency | Turnover |
+|------:|---------------------:|-----------:|---------------:|---------:|
+| DTP | 16.70 | 66.89 | 0.163 | 4.73e+05 |
+| MEC | 14.17 | 60.60 | 0.108 | 8.39e+06 |
+| HMI | 10.82 | 42.43 | 0.132 | 6.65e+05 |
+| PBC | 9.89 | 48.82 | 0.025 | 2.83e+07 |
+| EIC | 8.80 | 35.29 | 0.109 | 2.16e+06 |
+
+
+
