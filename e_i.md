@@ -31,6 +31,11 @@ From a conceptual standpoint, **extroverted assets** are characterized by higher
 To ensure robustness, assets are required to satisfy minimum data availability constraints. In particular, at least **30 return observations** are necessary for reliable estimation of volatility and jump frequency. Assets with insufficient data or missing component values are excluded from scoring. Only assets with valid measurements for all three components are assigned an EI score and personality label.
 
 Here are some data observation for further social analysis of assets :
+![Stock and ETF Personality Maps](social1.png)
+
+*Figure — Side-by-side scatter plots of stocks and ETFs in the normalized personality space defined by volatility and jump frequency.*
+
+
 
 The figure shows side-by-side scatter plots of stocks and ETFs in a normalized personality space defined by volatility and jump frequency.
 
