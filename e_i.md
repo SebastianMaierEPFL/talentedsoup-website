@@ -35,89 +35,68 @@ Here are some data observation for further social analysis of assets :
 ![Stock and ETF Personality Maps](social1.png)
 *Figure 1 : Side-by-side scatter plots of stocks and ETFs in the normalized personality space defined by volatility and jump frequency.*
 
-<strong>Most Extroverted Stocks</strong>
+<table style="width:100%; border-collapse: collapse;">
+  <tr>
+    <!-- LEFT TABLE -->
+    <td style="vertical-align: top; width:50%; padding: 8px;">
 
-<table>
-  <thead>
-    <tr>
-      <th>Asset</th>
-      <th>EI score</th>
-      <th>Volatility</th>
-      <th>Jump frequency</th>
-      <th>Turnover</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>DTP</td>
-      <td>16.70</td>
-      <td>66.89</td>
-      <td>0.163</td>
-      <td>4.73e+05</td>
-    </tr>
-    <tr>
-      <td>MEC</td>
-      <td>14.17</td>
-      <td>60.60</td>
-      <td>0.108</td>
-      <td>8.39e+06</td>
-    </tr>
-    <tr>
-      <td>HMI</td>
-      <td>10.82</td>
-      <td>42.43</td>
-      <td>0.132</td>
-      <td>6.65e+05</td>
-    </tr>
-    <tr>
-      <td>PBC</td>
-      <td>9.89</td>
-      <td>48.82</td>
-      <td>0.025</td>
-      <td>2.83e+07</td>
-    </tr>
-    <tr>
-      <td>EIC</td>
-      <td>8.80</td>
-      <td>35.29</td>
-      <td>0.109</td>
-      <td>2.16e+06</td>
-    </tr>
-    <tr>
-      <td>SAF</td>
-      <td>8.72</td>
-      <td>36.85</td>
-      <td>0.090</td>
-      <td>4.20e+07</td>
-    </tr>
-    <tr>
-      <td>CCX</td>
-      <td>8.21</td>
-      <td>27.13</td>
-      <td>0.163</td>
-      <td>2.82e+05</td>
-    </tr>
-    <tr>
-      <td>PAE</td>
-      <td>7.73</td>
-      <td>28.82</td>
-      <td>0.123</td>
-      <td>2.09e+07</td>
-    </tr>
-    <tr>
-      <td>LBC</td>
-      <td>7.39</td>
-      <td>28.20</td>
-      <td>0.114</td>
-      <td>2.56e+05</td>
-    </tr>
-    <tr>
-      <td>DTW</td>
-      <td>7.05</td>
-      <td>29.93</td>
-      <td>0.081</td>
-      <td>3.23e+05</td>
-    </tr>
-  </tbody>
+      <strong style="color:#d63384;">Most Extroverted Stocks</strong>
+
+      <table style="border-collapse: collapse; width:100%; background-color:#fde6ef;">
+        <thead>
+          <tr style="background-color:#f8cadd;">
+            <th>Asset</th>
+            <th>EI score</th>
+            <th>Volatility</th>
+            <th>Jump frequency</th>
+            <th>Turnover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>DTP</td><td>16.70</td><td>66.89</td><td>0.163</td><td>4.73e+05</td></tr>
+          <tr><td>MEC</td><td>14.17</td><td>60.60</td><td>0.108</td><td>8.39e+06</td></tr>
+          <tr><td>HMI</td><td>10.82</td><td>42.43</td><td>0.132</td><td>6.65e+05</td></tr>
+          <tr><td>PBC</td><td>9.89</td><td>48.82</td><td>0.025</td><td>2.83e+07</td></tr>
+          <tr><td>EIC</td><td>8.80</td><td>35.29</td><td>0.109</td><td>2.16e+06</td></tr>
+          <tr><td>SAF</td><td>8.72</td><td>36.85</td><td>0.090</td><td>4.20e+07</td></tr>
+          <tr><td>CCX</td><td>8.21</td><td>27.13</td><td>0.163</td><td>2.82e+05</td></tr>
+          <tr><td>PAE</td><td>7.73</td><td>28.82</td><td>0.123</td><td>2.09e+07</td></tr>
+          <tr><td>LBC</td><td>7.39</td><td>28.20</td><td>0.114</td><td>2.56e+05</td></tr>
+          <tr><td>DTW</td><td>7.05</td><td>29.93</td><td>0.081</td><td>3.23e+05</td></tr>
+        </tbody>
+      </table>
+
+    </td>
+
+    <!-- RIGHT TABLE -->
+    <td style="vertical-align: top; width:50%; padding: 8px;">
+
+      <strong style="color:#c2255c;">Most Introverted Stocks</strong>
+
+      <table style="border-collapse: collapse; width:100%; background-color:#fde6ef;">
+        <thead>
+          <tr style="background-color:#f8cadd;">
+            <th>Asset</th>
+            <th>EI score</th>
+            <th>Volatility</th>
+            <th>Jump frequency</th>
+            <th>Turnover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AAN</td><td>-15.21</td><td>0.413</td><td>0.052</td><td>-2.82e+25</td></tr>
+          <tr><td>EVSTC</td><td>-0.99</td><td>0.343</td><td>0.001</td><td>2.00e+05</td></tr>
+          <tr><td>EVLMC</td><td>-0.99</td><td>0.347</td><td>0.001</td><td>1.92e+05</td></tr>
+          <tr><td>EVGBC</td><td>-0.99</td><td>0.347</td><td>0.001</td><td>1.77e+05</td></tr>
+          <tr><td>CARR#</td><td>-0.92</td><td>0.575</td><td>0.002</td><td>2.24e+04</td></tr>
+          <tr><td>COW</td><td>-0.91</td><td>0.277</td><td>0.005</td><td>1.22e+06</td></tr>
+          <tr><td>ARGD</td><td>-0.90</td><td>0.271</td><td>0.006</td><td>2.66e+05</td></tr>
+          <tr><td>MFO</td><td>-0.87</td><td>0.575</td><td>0.004</td><td>1.91e+05</td></tr>
+          <tr><td>JHY</td><td>-0.87</td><td>0.810</td><td>0.002</td><td>2.62e+05</td></tr>
+          <tr><td>THGA</td><td>-0.87</td><td>0.261</td><td>0.007</td><td>3.36e+05</td></tr>
+        </tbody>
+      </table>
+
+    </td>
+  </tr>
 </table>
-
