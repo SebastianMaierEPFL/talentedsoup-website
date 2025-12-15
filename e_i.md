@@ -79,8 +79,10 @@ Here are some data observation for further social analysis of assets :
 *Figure 2 : Asset behavior across three metrics . Higher peaks indicate more reactive assets, while lower values reflect more stable behavior, illustrating how the EI score relates to underlying market dynamics. Graph includes only 30 assets for illustration purposes*
 
 
-<div class="flourish-embed flourish-network" data-src="visualisation/26824006"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26824006/thumbnail" width="100%" alt="network visualization" /></noscript></div>
+<div class="flourish-embed flourish-network" data-src="visualisation/26824006">
+</script><noscript><img src="https://public.flourish.studio/visualisation/26824006/thumbnail" width="100%" alt="network visualization" /></noscript></div>
 *Figure 3 : Friendship network illustration for some stocks, constructed from log-returns computed from adjusted closing prices. For each pair of assets, the Pearson correlation of returns is calculated; if the absolute correlation exceeds 0.5, the two assets are considered a connected *
 
-<div class="flourish-embed flourish-network" data-src="visualisation/26824327"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26824327/thumbnail" width="100%" alt="network visualization" /></noscript></div>
+<div class="flourish-embed flourish-network" data-src="visualisation/26824327">
+</script><noscript><img src="https://public.flourish.studio/visualisation/26824327/thumbnail" width="100%" alt="network visualization" /></noscript></div>
 *Figure 4 : Friendship network illustration for some ETFs, constructed from log-returns computed from adjusted closing prices. For each pair of assets, the Pearson correlation of returns is calculated; if the absolute correlation exceeds 0.5, the two assets are considered a connected *
