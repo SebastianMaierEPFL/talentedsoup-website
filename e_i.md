@@ -32,10 +32,4 @@ To ensure robustness, assets are required to satisfy minimum data availability c
 
 Here are some data observation for further social analysis of assets :
 ![Stock and ETF Personality Maps](social1.png)
-
 *Figure — Side-by-side scatter plots of stocks and ETFs in the normalized personality space defined by volatility and jump frequency.*
-
-
-
-The figure shows side-by-side scatter plots of stocks and ETFs in a normalized personality space defined by volatility and jump frequency.
-
