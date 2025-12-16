@@ -13,7 +13,7 @@ To characterize the behavioral profile of financial assets, we construct an **Em
 **Jump frequency** measures the proportion of trading days on which absolute daily returns exceed a fixed multiple of the asset’s own return volatility, capturing abrupt and event-driven price movements.  
 The **turnover proxy** is computed as average daily dollar volume and serves as a measure of liquidity and trading intensity.
 
-To enable cross-sectional comparison, all three components are standardized across assets using z-score normalization. The standardized Emotional Index is then defined as a weighted linear combination of the normalized components: EI_score = timeVolatility* 0.5 + jumpFrequency*0.3 + turnOver*0.3 (normalized measures are taken )
+To enable cross-sectional comparison, all three components are standardized across assets using z-score normalization. The standardized Emotional Index is then defined as a weighted linear combination of the normalized components: EI_score = (timeVolatility x 0.5) + (jumpFrequency x 0.2) + (turnOver x 0.3) (normalized measures are taken )
 
 This formulation assigns greater importance to price variability and discontinuities while retaining liquidity as a complementary signal. The resulting EI score quantifies the relative behavioral activity of an asset with respect to the market as a whole.
 
