@@ -5,6 +5,8 @@ permalink: /e_i/
 ---
 ## Emotional Index (EI): Definition and Asset Personality Classification
 
+![Emotional Index visualization](social2.png)
+
 To characterize the behavioral profile of financial assets, we construct an **Emotional Index (EI)** based on observable market dynamics. For each asset (stock or ETF), three complementary components are computed from historical price and volume data: **volatility**, **jump frequency**, and a **turnover proxy**. Each component captures a distinct aspect of market behavior and is computed independently for each asset.
 
 **Volatility** is defined as the annualized standard deviation of daily log-returns and reflects the magnitude of price fluctuations.  
