@@ -39,10 +39,12 @@ Assets are classified according to the sign of their standardized EI score: for 
 
 **Hypotheses Study :**
 
-H1 — Extroversion.
+H1 : Extroversion
+
 Extroverted assets exhibit  expressive behaviour in market shocks and in regime changements, amplified behaviour during market shocks. 
 
-H2 — Introversion.
+H2 : Introversion
+
 Introverted assets display below-average expressiveness, smoother price dynamics and muted reactions to new information. 
 
 Here are some data observation for further social analysis of assets :
