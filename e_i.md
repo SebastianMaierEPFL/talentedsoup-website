@@ -8,10 +8,8 @@ permalink: /e_i/
 ![Emotional Index visualization](social2.png)
 
 **Overview :** 
-To characterize the social side of financial assets, we introduce an Emotional Index (EI) derived exclusively from observable market dynamics. The EI Index is designed to capture market-level expressiveness how strongly and visibly an asset’s price responds to information rather than corporate fundamentals or latent investor sentiment.
-Each asset’s societal aspect  is described by three components : volatility, jump frequency, and a turnover proxy, computed from historical price and volume data, representing the intensity, discontinuity, and liquidity of market reactions respectively .
-
-**Construction of the Emotional Index :**
+To characterize the social dimension of financial assets, we introduce an Emotional Index (EI) constructed exclusively from observable market dynamics. The EI is designed to capture market level expressiveness, defined as the extent to which an asset’s price responds visibly and intensely to incoming information, rather than to firm-specific fundamentals or latent investor sentiment.
+Each asset’s social profile is described through three complementary components volatility, jump frequency, and a turnover proxy—computed from historical price and volume data. Together, these components capture the intensity, discontinuity, and liquidity of market reactions, respectively.
 Volatility is defined as the annualized standard deviation of daily log-returns and reflects the magnitude of price fluctuations . 
 Jump frequency measures the proportion of trading days on which absolute returns exceed a fixed multiple of the asset’s own volatility, capturing abrupt and event-driven price movements.
 Turnover is computed as average daily dollar volume and serves as a proxy for trading intensity and liquidity.
@@ -20,15 +18,54 @@ EI score = 0.5 x Normalised Volatility +0.2 x Normalised Jump Frequency +0.3 x N
 This formulation emphasizes price variability and discontinuities while retaining liquidity as a complementary signal. The EI score therefore measures an asset’s relative behavioral activity with respect to the market as a whole.
 
 **Personality Classification Rule :**
-Asset’s social aspect is derived via a binary classification rule applied to the standardized EI score:
-Assets with Normalized EI score bigger than 0 are labeled Extroverted
-Assets with Normalized EI score lower than 0  are labeled Introverted
-Hypotheses
-Hypothesis 1 on Extroversion
-Asset extroversion captures the degree to which an asset serves as a market-level conduit for information aggregation and transmission, reacting rapidly and visibly to news, regime shifts, and investor repositioning.
-HYPOTHESIS 2 on Introversion
-Asset introversion captures below-average market expressiveness, with stable price dynamics and muted reactions to information, reflecting smooth absorption rather than amplification of market shocks.
+Volatility is defined as the annualized standard deviation of daily log-returns and reflects the overall magnitude of price fluctuations.
+Jump frequency measures the proportion of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, capturing abrupt and event-driven price movements.
+Turnover is computed as average daily dollar volume and serves as a proxy for trading intensity and market participation.
+To enable cross-sectional comparability, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted linear combination:
+EI score =
+0.5
+×
+Volatility
+z
++
+0.2
+×
+Jump Frequency
+z
++
+0.3
+×
+Turnover
+z
+EI score=0.5×Volatility 
+z
+​	
+ +0.2×Jump Frequency 
+z
+​	
+ +0.3×Turnover 
+z
+​	
+ 
+This specification places greater emphasis on price variability and discontinuities, while retaining liquidity as a complementary signal of market engagement. The resulting EI score measures an asset’s relative behavioral activity with respect to the broader market.
 
+**Personality Classification Rule**
+An asset’s social orientation is determined via a binary classification applied to the standardized EI score:
+Assets with a positive EI score are labeled Extroverted
+Assets with a negative EI score are labeled Introverted
+This classification reflects relative, rather than absolute, behavioral positioning within the asset universe.
+
+**Hypotheses :**
+
+1) Hypothesis 1 
+
+
+  Asset extroversion reflects the extent to which an asset functions as a conduit for market-level information aggregation and transmission. Extroverted assets exhibit rapid and pronounced price responses to news, regime shifts, and changes in investor positioning.
+
+
+2) Hypothesis 2
+   
+  Asset introversion is characterized by below-average market expressiveness, with comparatively stable price dynamics and muted responses to information. Such assets tend to absorb market signals smoothly rather than amplifying short-term shocks.
 Here are some data observation for further social analysis of assets :
 
 ![Stock and ETF Personality Maps](social1.png)
