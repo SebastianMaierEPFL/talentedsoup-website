@@ -10,8 +10,8 @@ permalink: /e_i/
 Financial assets differ not only in their fundamentals, but also in how visibly they react to market information. To capture this behavioral dimension, we introduce the index representing social aspect of the assets called "EI index" that measures an asset’s degree of market expressiveness using following per asset measures; volatility, turnover proxy and jump frequency computed from historical price time series.
 Together, these measures reflect the intensity, discontinuity, and participation level of price responses observed in the market.
 
-Volatility is computed as the annualized standard deviation of daily log-returns,  captures the overall magnitude of price fluctuations. Assets with higher volatility experience larger and more frequent price movements.
-Jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, symbolizing event-driven side of markets. 
+Volatility measure is defined as the annualized standard deviation of daily log-returns, captures the overall magnitude of price fluctuations. Higher volatility represents larger and more frequent price movements.
+Jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, symbolizing event-driven side per asset. 
 Turnover is defined as the average daily dollar volume traded, indicating the extent to which an asset is actively used by market participants.
 To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
 EI= 0.5⋅Volatility
