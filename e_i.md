@@ -108,3 +108,11 @@ Here are some data observation for further social analysis of assets :
 
 *Figure 8. Friendship network illustration for selected ETFs, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
 
+**Network Perspective**
+Correlation-based “friendship” networks for stocks and ETFs (Figures 6–7) reveal that extroverted assets tend to occupy structurally influential positions, often acting as hubs during market-wide movements. Introverted assets, by contrast, appear more peripheral, reinforcing their role as market stabilizers rather than shock propagators.
+
+**Conclusion**
+This study demonstrates that asset personality can be meaningfully defined using market observables alone. The Emotional Index captures a persistent dimension of market behavior—expressiveness versus restraint—that is orthogonal to corporate fundamentals and investor sentiment.
+Extroverted assets amplify information, propagate shocks, and dominate price discovery.
+Introverted assets absorb information smoothly, contributing to market stability.
+These findings support the hypothesis that asset behavior reflects how markets process information.  The EI framework provides a unified, interpretable lens for analyzing behavioral heterogeneity across stocks and ETFs, with direct implications for portfolio construction, risk management, and network-based market analysis.
