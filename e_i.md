@@ -8,64 +8,56 @@ permalink: /e_i/
 ![Emotional Index visualization](social2.png)
 
 **Overview :** 
-To characterize the social dimension of financial assets, we introduce an Emotional Index (EI) constructed exclusively from observable market dynamics. The EI is designed to capture market level expressiveness, defined as the extent to which an asset’s price responds visibly and intensely to incoming information, rather than to firm-specific fundamentals or latent investor sentiment.
-Each asset’s social profile is described through three complementary components volatility, jump frequency, and a turnover proxy—computed from historical price and volume data. Together, these components capture the intensity, discontinuity, and liquidity of market reactions, respectively.
-Volatility is defined as the annualized standard deviation of daily log-returns and reflects the magnitude of price fluctuations . 
-Jump frequency measures the proportion of trading days on which absolute returns exceed a fixed multiple of the asset’s own volatility, capturing abrupt and event-driven price movements.
-Turnover is computed as average daily dollar volume and serves as a proxy for trading intensity and liquidity.
-To enable cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted linear combination:
-EI score = 0.5 x Normalised Volatility +0.2 x Normalised Jump Frequency +0.3 x Normalized Turnover
-This formulation emphasizes price variability and discontinuities while retaining liquidity as a complementary signal. The EI score therefore measures an asset’s relative behavioral activity with respect to the market as a whole.
+Financial assets differ not only in their fundamentals, but also in how visibly they react to market information. To capture this behavioral dimension, we introduce an Emotional Index (EI) that measures an asset’s degree of market expressiveness using price- and volume-based observables only.
+Rather than relying on corporate characteristics or inferred investor sentiment, the EI is constructed from historical price dynamics and trading activity. The goal is to quantify how strongly an asset participates in the market’s information-processing mechanism—whether it tends to amplify new information through sharp, visible movements, or instead adjusts gradually and quietly.
+Each asset’s social profile is described using three components: volatility, jump frequency, and a turnover proxy. Together, these measures reflect the intensity, discontinuity, and participation level of price responses observed in the market.
 
-**Personality Classification Rule :**
-Volatility is defined as the annualized standard deviation of daily log-returns and reflects the overall magnitude of price fluctuations.
-Jump frequency measures the proportion of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, capturing abrupt and event-driven price movements.
-Turnover is computed as average daily dollar volume and serves as a proxy for trading intensity and market participation.
-To enable cross-sectional comparability, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted linear combination:
-EI score =
+**Construction of the EI Index :** 
+Volatility is computed as the annualized standard deviation of daily log-returns and captures the overall magnitude of price fluctuations. Assets with higher volatility experience larger and more frequent price movements.
+Jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility. This metric isolates abrupt, event-driven movements that are not well explained by continuous price variation alone.
+Turnover is defined as the average daily dollar volume traded and serves as a proxy for trading intensity and liquidity, indicating the extent to which an asset is actively used by market participants.
+To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
+EI
+=
 0.5
-×
+⋅
 Volatility
 z
 +
 0.2
-×
+⋅
 Jump Frequency
 z
 +
 0.3
-×
+⋅
 Turnover
 z
-EI score=0.5×Volatility 
+EI=0.5⋅Volatility 
 z
 ​	
- +0.2×Jump Frequency 
+ +0.2⋅Jump Frequency 
 z
 ​	
- +0.3×Turnover 
+ +0.3⋅Turnover 
 z
 ​	
  
-This specification places greater emphasis on price variability and discontinuities, while retaining liquidity as a complementary signal of market engagement. The resulting EI score measures an asset’s relative behavioral activity with respect to the broader market.
+The weighting places primary emphasis on price variability and discontinuous movements, while liquidity is included as a complementary signal of market engagement. The resulting EI score measures an asset’s relative behavioral activity within the market.
 
-**Personality Classification Rule**
-An asset’s social orientation is determined via a binary classification applied to the standardized EI score:
-Assets with a positive EI score are labeled Extroverted
-Assets with a negative EI score are labeled Introverted
-This classification reflects relative, rather than absolute, behavioral positioning within the asset universe.
+**Personality Classification Rule :** 
+
+Assets are classified according to the sign of their standardized EI score:
+Assets that carry EI  score larger than zero are labeled Extroverted
+Assets that carry EI  score smaller than zero are labeled Introverted 
 
 **Hypotheses :**
 
-1) Hypothesis 1 
+H1 — Extroversion.
+Extroverted assets exhibit  expressive behaviour in market shocks and in regime changements, amplified behaviour during market shocks. 
 
-
-  Asset extroversion reflects the extent to which an asset functions as a conduit for market-level information aggregation and transmission. Extroverted assets exhibit rapid and pronounced price responses to news, regime shifts, and changes in investor positioning.
-
-
-2) Hypothesis 2
-   
-  Asset introversion is characterized by below-average market expressiveness, with comparatively stable price dynamics and muted responses to information. Such assets tend to absorb market signals smoothly rather than amplifying short-term shocks.
+H2 — Introversion.
+Introverted assets display below-average expressiveness, smoother price dynamics and muted reactions to new information. 
 Here are some data observation for further social analysis of assets :
 
 ![Stock and ETF Personality Maps](social1.png)
@@ -143,13 +135,4 @@ Here are some data observation for further social analysis of assets :
        width="100%" alt="network visualization" />
 </noscript>
 
-*Figure 8. Friendship network illustration for selected ETFs, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
-
-**Network Perspective**
-Correlation-based “friendship” networks for stocks and ETFs (Figures 6–7) reveal that extroverted assets tend to occupy structurally influential positions, often acting as hubs during market-wide movements. Introverted assets, by contrast, appear more peripheral, reinforcing their role as market stabilizers rather than shock propagators.
-
-**Conclusion**
-This study demonstrates that asset personality can be meaningfully defined using market observables alone. The Emotional Index captures a persistent dimension of market behavior—expressiveness versus restraint—that is orthogonal to corporate fundamentals and investor sentiment.
-Extroverted assets amplify information, propagate shocks, and dominate price discovery.
-Introverted assets absorb information smoothly, contributing to market stability.
-These findings support the hypothesis that asset behavior reflects how markets process information.  The EI framework provides a unified, interpretable lens for analyzing behavioral heterogeneity across stocks and ETFs, with direct implications for portfolio construction, risk management, and network-based market analysis.
+*Figure 8. Friendship network illustration for selected ETFs, constructed from log-returns, if the absolute Pearson correlation exceeds 0.5, the assets are considered connected.*
