@@ -66,15 +66,20 @@ Here are some data observation for further social analysis of assets :
 | PBC | 9.89 | 48.82 | 0.025 | 2.83e+07 |
 | EIC | 8.80 | 35.29 | 0.109 | 2.16e+06 |
 
-*Most Introverted ETFs*
+*Figure 4 : DTP, MEC, and HMI exhibit extreme volatility and frequent jump events, indicating strong sensitivity to firm-specific news and changes in investor expectations, often associated with idiosyncratic risk and narrow business exposure. PBC and EIC combine elevated volatility with high turnover, reflecting both strong price responsiveness and active trading participation during periods of uncertainty or regime shifts. Overall, these stocks act as market-level information amplifiers, transmitting shocks rapidly through large and discontinuous price movements.*
+
+*Most Introverted Stocks*
 
 | Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
 |------:|--------------:|----:|-----:|---------:|
-| TFLO | -0.96 | 0.028 | 0.0045 | 1.82e+06 |
-| GSY | -0.96 | 0.052 | 0.0043 | 7.25e+06 |
-| NEAR | -0.89 | 0.029 | 0.0067 | 3.05e+07 |
-| FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
-| FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
+| AAN   | -15.21 | 0.413 | 0.052 | -2.82e+25 |
+| EVSTC | -0.99  | 0.343 | 0.001 | 2.00e+05 |
+| EVLMC | -0.99  | 0.347 | 0.001 | 1.92e+05 |
+| EVGBC | -0.99  | 0.347 | 0.001 | 1.77e+05 |
+| CARR# | -0.92  | 0.575 | 0.002 | 2.24e+04 |
+
+*Figure 5 : These stocks are classified as introverted due to consistently low Emotional Index scores, reflecting weak behavioral expressiveness in financial markets. EVSTC, EVLMC, and EVGBC exhibit very low jump activity and limited trading intensity, indicating muted reactions to new information and stable, low-engagement price dynamics. CARR# shows similarly subdued behavior, with limited turnover and infrequent discontinuities, while the extreme EI value observed for AAN likely reflects data sparsity or structural trading constraints rather than genuine market expressiveness. Overall, these stocks act as market absorbers, responding slowly and quietly to information rather than amplifying shocks.* 
+
 
 
 
