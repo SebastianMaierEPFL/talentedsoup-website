@@ -7,16 +7,12 @@ permalink: /e_i/
 
 ![Emotional Index visualization](social2.png)
 
-**Overview :** 
-Financial assets differ not only in their fundamentals, but also in how visibly they react to market information. To capture this behavioral dimension, we introduce an Emotional Index (EI) that measures an asset’s degree of market expressiveness using price- and volume-based observables only.
-Rather than relying on corporate characteristics or inferred investor sentiment, the EI is constructed from historical price dynamics and trading activity. The goal is to quantify how strongly an asset participates in the market’s information-processing mechanism—whether it tends to amplify new information through sharp, visible movements, or instead adjusts gradually and quietly.
-Each asset’s social profile is described using three components: volatility, jump frequency, and a turnover proxy. Together, these measures reflect the intensity, discontinuity, and participation level of price responses observed in the market.
+Financial assets differ not only in their fundamentals, but also in how visibly they react to market information. To capture this behavioral dimension, we introduce the index representing social aspect of the assets called "EI index" that measures an asset’s degree of market expressiveness using following per asset measures; volatility, turnover proxy and jump frequency computed from historical price time series.
+Together, these measures reflect the intensity, discontinuity, and participation level of price responses observed in the market.
 
-**Construction of the EI Index :** 
-
-Volatility is computed as the annualized standard deviation of daily log-returns and captures the overall magnitude of price fluctuations. Assets with higher volatility experience larger and more frequent price movements.
-Jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility. This metric isolates abrupt, event-driven movements that are not well explained by continuous price variation alone.
-Turnover is defined as the average daily dollar volume traded and serves as a proxy for trading intensity and liquidity, indicating the extent to which an asset is actively used by market participants.
+Volatility is computed as the annualized standard deviation of daily log-returns,  captures the overall magnitude of price fluctuations. Assets with higher volatility experience larger and more frequent price movements.
+Jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, symbolizing event-driven side of markets. 
+Turnover is defined as the average daily dollar volume traded, indicating the extent to which an asset is actively used by market participants.
 To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
 EI= 0.5⋅Volatility
 z
@@ -42,13 +38,9 @@ z
  
 The weighting places primary emphasis on price variability and discontinuous movements, while liquidity is included as a complementary signal of market engagement. The resulting EI score measures an asset’s relative behavioral activity within the market.
 
-**Personality Classification Rule :** 
+Assets are classified according to the sign of their standardized EI score: for assets that have non-zero normalized EI scores, it is labeled as "Extroverted" else Introverted.
 
-Assets are classified according to the sign of their standardized EI score:
-Assets that carry EI  score larger than zero are labeled Extroverted
-Assets that carry EI  score smaller than zero are labeled Introverted 
-
-**Hypotheses :**
+**Hypotheses Study :**
 
 H1 — Extroversion.
 Extroverted assets exhibit  expressive behaviour in market shocks and in regime changements, amplified behaviour during market shocks. 
