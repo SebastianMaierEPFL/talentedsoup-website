@@ -89,7 +89,7 @@ Here are some data observation for further social analysis of assets :
        width="100%" alt="chart visualization" />
 </noscript>
 
-*Figure 2. Asset behavior across three market metrics. Higher values indicate more reactive assets, while lower values reflect more stable behavior, illustrating how the Emotional Index (EI) relates to underlying market dynamics. The figure shows a subset of 30 assets for clarity.*
+*Figure 6. Asset behavior across three market metrics. Higher values indicate more reactive assets, while lower values reflect more stable behavior, illustrating how the Emotional Index (EI) relates to underlying market dynamics. The figure shows a subset of 30 assets for clarity.*
 
 <div class="flourish-embed flourish-network" data-src="visualisation/26824006"></div>
 <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -98,7 +98,7 @@ Here are some data observation for further social analysis of assets :
        width="100%" alt="network visualization" />
 </noscript>
 
-*Figure 3. Friendship network illustration for selected stocks, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
+*Figure 7. Friendship network illustration for selected stocks, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
 <div class="flourish-embed flourish-network" data-src="visualisation/26824327"></div>
 <script src="https://public.flourish.studio/resources/embed.js"></script>
 <noscript>
@@ -106,5 +106,5 @@ Here are some data observation for further social analysis of assets :
        width="100%" alt="network visualization" />
 </noscript>
 
-*Figure 4. Friendship network illustration for selected ETFs, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
+*Figure 8. Friendship network illustration for selected ETFs, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
 
