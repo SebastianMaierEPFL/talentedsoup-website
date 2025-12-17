@@ -47,6 +47,7 @@ Extroverted assets exhibit  expressive behaviour in market shocks and in regime 
 
 H2 — Introversion.
 Introverted assets display below-average expressiveness, smoother price dynamics and muted reactions to new information. 
+
 Here are some data observation for further social analysis of assets :
 
 ![Stock and ETF Personality Maps](social1.png)
