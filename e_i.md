@@ -13,15 +13,12 @@ Rather than relying on corporate characteristics or inferred investor sentiment,
 Each asset’s social profile is described using three components: volatility, jump frequency, and a turnover proxy. Together, these measures reflect the intensity, discontinuity, and participation level of price responses observed in the market.
 
 **Construction of the EI Index :** 
+
 Volatility is computed as the annualized standard deviation of daily log-returns and captures the overall magnitude of price fluctuations. Assets with higher volatility experience larger and more frequent price movements.
 Jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility. This metric isolates abrupt, event-driven movements that are not well explained by continuous price variation alone.
 Turnover is defined as the average daily dollar volume traded and serves as a proxy for trading intensity and liquidity, indicating the extent to which an asset is actively used by market participants.
 To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
-EI
-=
-0.5
-⋅
-Volatility
+EI= 0.5⋅Volatility
 z
 +
 0.2
