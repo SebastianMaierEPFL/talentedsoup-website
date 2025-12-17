@@ -34,10 +34,7 @@ z
 ​	
  +0.3⋅Turnover 
 z
-​	
- 
-The weighting places primary emphasis on price variability and discontinuous movements, while liquidity is included as a complementary signal of market engagement. The resulting EI score measures an asset’s relative behavioral activity within the market.
-
+​
 Assets are classified according to the sign of their standardized EI score: for assets that have non-zero normalized EI scores, it is labeled as "Extroverted" else Introverted.
 
 **Hypotheses Study :**
