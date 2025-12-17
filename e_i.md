@@ -34,13 +34,15 @@ Here are some data observation for further social analysis of assets :
 
 *Most Extroverted ETFs*
 
-| Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
+| Asset | EI<sub>z</sub> | Vol | Jump | Turnover |  
 |------:|--------------:|----:|-----:|---------:|
 | PLC | 13.39 | 35.88 | 0.062 | 1.36e+08 |
 | RTL | 12.77 | 31.87 | 0.105 | 8.05e+04 |
 | SPY | 8.25 | 0.19 | 0.048 | 1.10e+10 |
 | QUS  | 6.54  | 17.36 | 0.061 | 8.99e+05 |
 | NJAN | 6.06  | 12.25 | 0.124 | 2.24e+05 |
+
+*Figure 2: These assets exhibit above-average behavioral expressiveness in financial markets. PLC and RTL react strongly to announcements and regime shifts due to concentrated exposures, SPY reflects continuous market interaction as a central trading and risk-management vehicle, while QUS and NJAN display context-dependent extroversion, becoming active primarily during factor rotations or calendar-driven reallocations.*
 
 *Most Introverted ETFs*
 
