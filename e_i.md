@@ -32,7 +32,48 @@ Here are some data observation for further social analysis of assets :
 ![Stock and ETF Personality Maps](social1.png)
 *Figure 1 : Side-by-side scatter plots of stocks and ETFs in the normalized personality space defined by volatility and jump frequency.*
 
-{% include ei_tables.html %}
+*Most Extroverted ETFs*
+
+| Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
+|------:|--------------:|----:|-----:|---------:|
+| PLC | 13.39 | 35.88 | 0.062 | 1.36e+08 |
+| RTL | 12.77 | 31.87 | 0.105 | 8.05e+04 |
+| SPY | 8.25 | 0.19 | 0.048 | 1.10e+10 |
+| QUS  | 6.54  | 17.36 | 0.061 | 8.99e+05 |
+| NJAN | 6.06  | 12.25 | 0.124 | 2.24e+05 |
+
+*Most Introverted ETFs*
+
+| Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
+|------:|--------------:|----:|-----:|---------:|
+| TFLO | -0.96 | 0.028 | 0.0045 | 1.82e+06 |
+| GSY | -0.96 | 0.052 | 0.0043 | 7.25e+06 |
+| NEAR | -0.89 | 0.029 | 0.0067 | 3.05e+07 |
+| FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
+| FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
+
+*Most Extroverted Stocks*
+
+| Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
+|------:|--------------:|----:|-----:|---------:|
+| DTP | 16.70 | 66.89 | 0.163 | 4.73e+05 |
+| MEC | 14.17 | 60.60 | 0.108 | 8.39e+06 |
+| HMI | 10.82 | 42.43 | 0.132 | 6.65e+05 |
+| PBC | 9.89 | 48.82 | 0.025 | 2.83e+07 |
+| EIC | 8.80 | 35.29 | 0.109 | 2.16e+06 |
+
+*Most Introverted ETFs*
+
+| Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
+|------:|--------------:|----:|-----:|---------:|
+| TFLO | -0.96 | 0.028 | 0.0045 | 1.82e+06 |
+| GSY | -0.96 | 0.052 | 0.0043 | 7.25e+06 |
+| NEAR | -0.89 | 0.029 | 0.0067 | 3.05e+07 |
+| FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
+| FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
+
+
+
 
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/26818399"></div>
