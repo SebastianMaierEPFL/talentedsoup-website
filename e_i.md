@@ -54,6 +54,8 @@ Here are some data observation for further social analysis of assets :
 | FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
 | FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
 
+*Figure 3: These ETFs exhibit muted behavioral expressiveness, acting as market absorbers that respond to new information in a stable and routine manner. TFLO, GSY, and NEAR are ultra-conservative fixed-income ETFs primarily used for capital preservation, liquidity management, and yield stability, rather than for expressing market views. FLOT and FFIU display structural stability, with price dynamics driven by coupon accrual and gradual rebalancing rather than abrupt information shocks; even when turnover is high, as in FLOT, trading activity does not translate into pronounced price movements, reinforcing their introverted classification.*
+
 *Most Extroverted Stocks*
 
 | Asset | EI<sub>z</sub> | Vol | Jump | Turnover |
