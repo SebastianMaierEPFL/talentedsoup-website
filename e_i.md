@@ -7,25 +7,27 @@ permalink: /e_i/
 
 ![Emotional Index visualization](social2.png)
 
-To characterize the behavioral profile of financial assets, we construct an **Emotional Index (EI)** based on observable market dynamics. For each asset (stock or ETF), three complementary components are computed from historical price and volume data: **volatility**, **jump frequency**, and a **turnover proxy**. Each component captures a distinct aspect of market behavior and is computed independently for each asset.
+**Overview :** 
+To characterize the social side of financial assets, we introduce an Emotional Index (EI) derived exclusively from observable market dynamics. The EI Index is designed to capture market-level expressiveness how strongly and visibly an asset’s price responds to information rather than corporate fundamentals or latent investor sentiment.
+Each asset’s societal aspect  is described by three components : volatility, jump frequency, and a turnover proxy, computed from historical price and volume data, representing the intensity, discontinuity, and liquidity of market reactions respectively .
 
-**Volatility** is defined as the annualized standard deviation of daily log-returns and reflects the magnitude of price fluctuations.  
-**Jump frequency** measures the proportion of trading days on which absolute daily returns exceed a fixed multiple of the asset’s own return volatility, capturing abrupt and event-driven price movements.  
-The **turnover proxy** is computed as average daily dollar volume and serves as a measure of liquidity and trading intensity.
+**Construction of the Emotional Index :**
+Volatility is defined as the annualized standard deviation of daily log-returns and reflects the magnitude of price fluctuations . 
+Jump frequency measures the proportion of trading days on which absolute returns exceed a fixed multiple of the asset’s own volatility, capturing abrupt and event-driven price movements.
+Turnover is computed as average daily dollar volume and serves as a proxy for trading intensity and liquidity.
+To enable cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted linear combination:
+EI score = 0.5 x Normalised Volatility +0.2 x Normalised Jump Frequency +0.3 x Normalized Turnover
+This formulation emphasizes price variability and discontinuities while retaining liquidity as a complementary signal. The EI score therefore measures an asset’s relative behavioral activity with respect to the market as a whole.
 
-To enable cross-sectional comparison, all three components are standardized across assets using z-score normalization. The standardized Emotional Index is then defined as a weighted linear combination of the normalized components: EI_score = (timeVolatility x 0.5) + (jumpFrequency x 0.2) + (turnOver x 0.3) (normalized measures are taken )
-
-This formulation assigns greater importance to price variability and discontinuities while retaining liquidity as a complementary signal. The resulting EI score quantifies the relative behavioral activity of an asset with respect to the market as a whole.
-
-Asset personality is derived through a binary classification rule applied to the standardized EI score. Assets with  
-normalized EI score bigger than zero 
- are labeled **extroverted**, indicating above-average behavioral intensity, while assets with  
-normalized EI score smaller than zero 
- are labeled **introverted**, corresponding to below-average market activity. No additional thresholds or nonlinear transformations are introduced; the classification boundary coincides with the cross-sectional mean.
-
-From a conceptual standpoint, **extroverted assets** are characterized by higher volatility, more frequent jump events, and elevated trading activity, leading to stronger and more visible reactions to market information. In contrast, **introverted assets** exhibit more stable price dynamics, fewer abrupt movements, and lower trading intensity. The EI score therefore provides a single behavioral axis that positions assets relative to their peers based on consistent and observable market signals.
-
-To ensure robustness, assets are required to satisfy minimum data availability constraints. In particular, at least **30 return observations** are necessary for reliable estimation of volatility and jump frequency. Assets with insufficient data or missing component values are excluded from scoring. Only assets with valid measurements for all three components are assigned an EI score and personality label.
+**Personality Classification Rule :**
+Asset’s social aspect is derived via a binary classification rule applied to the standardized EI score:
+Assets with Normalized EI score bigger than 0 are labeled Extroverted
+Assets with Normalized EI score lower than 0  are labeled Introverted
+Hypotheses
+Hypothesis 1 on Extroversion
+Asset extroversion captures the degree to which an asset serves as a market-level conduit for information aggregation and transmission, reacting rapidly and visibly to news, regime shifts, and investor repositioning.
+HYPOTHESIS 2 on Introversion
+Asset introversion captures below-average market expressiveness, with stable price dynamics and muted reactions to information, reflecting smooth absorption rather than amplification of market shocks.
 
 Here are some data observation for further social analysis of assets :
 
@@ -42,7 +44,7 @@ Here are some data observation for further social analysis of assets :
 | QUS  | 6.54  | 17.36 | 0.061 | 8.99e+05 |
 | NJAN | 6.06  | 12.25 | 0.124 | 2.24e+05 |
 
-*Figure 2: These assets exhibit above-average behavioral expressiveness in financial markets. PLC and RTL react strongly to announcements and regime shifts due to concentrated exposures, SPY reflects continuous market interaction as a central trading and risk-management vehicle, while QUS and NJAN display context-dependent extroversion, becoming active primarily during factor rotations or calendar-driven reallocations.*
+*Figure 2: Highly extroverted ETFs (e.g., PLC, RTL, SPY) exhibit pronounced volatility and frequent jump activity, consistent with elevated market expressiveness. PLC and RTL display strong, discontinuous reactions around announcements and regime shifts, reflecting episodes in which market participants concentrate information flow and repositioning through these assets. SPY exhibits sustained extroversion as a central vehicle for trading, hedging, and price discovery, continuously transmitting market-wide information. QUS and NJAN show conditional extroversion, becoming expressive primarily during factor rotations or calendar-driven reallocations. Overall, these patterns are consistent with H1, confirming that extroversion corresponds to heightened market-level information processing and transmission.*
 
 *Most Introverted ETFs*
 
@@ -54,7 +56,7 @@ Here are some data observation for further social analysis of assets :
 | FFIU | -0.87 | 0.467 | 0.0015 | 1.38e+05 |
 | FLOT | -0.87 | 0.044 | 0.0072 | 4.17e+07 |
 
-*Figure 3: These ETFs exhibit muted behavioral expressiveness, acting as market absorbers that respond to new information in a stable and routine manner. TFLO, GSY, and NEAR are ultra-conservative fixed-income ETFs primarily used for capital preservation, liquidity management, and yield stability, rather than for expressing market views. FLOT and FFIU display structural stability, with price dynamics driven by coupon accrual and gradual rebalancing rather than abrupt information shocks; even when turnover is high, as in FLOT, trading activity does not translate into pronounced price movements, reinforcing their introverted classification.*
+*Figure 3: Introverted ETFs exhibit muted price dynamics and rare discontinuities, consistent with below-average market expressiveness. Even in the presence of non-trivial trading activity, price adjustments remain smooth and stable, indicating subdued reactions to new information. This behavior reflects a market-level form of restraint: these assets tend to absorb information quietly and remain comparatively insulated from short-term market fluctuations, rather than amplifying shocks. Overall, the observed patterns support H2, confirming that introversion captures restrained market expressiveness rather than illiquidity, neglect, or mechanical price rigidity.*
 
 *Most Extroverted Stocks*
 
@@ -66,7 +68,7 @@ Here are some data observation for further social analysis of assets :
 | PBC | 9.89 | 48.82 | 0.025 | 2.83e+07 |
 | EIC | 8.80 | 35.29 | 0.109 | 2.16e+06 |
 
-*Figure 4 : DTP, MEC, and HMI exhibit extreme volatility and frequent jump events, indicating strong sensitivity to firm-specific news and changes in investor expectations, often associated with idiosyncratic risk and narrow business exposure. PBC and EIC combine elevated volatility with high turnover, reflecting both strong price responsiveness and active trading participation during periods of uncertainty or regime shifts. Overall, these stocks act as market-level information amplifiers, transmitting shocks rapidly through large and discontinuous price movements.*
+*Figure 4 : Extroverted stocks such as DTP, MEC, and HMI exhibit extreme volatility and frequent jump activity, indicating high market expressiveness. Rather than reflecting intrinsic firm characteristics, this behavior captures episodes in which market participants concentrate information processing and repositioning through these assets. As a result, they function as conduits for idiosyncratic information flow, transmitting shocks rapidly via large and discontinuous price movements.*
 
 *Most Introverted Stocks*
 
@@ -78,12 +80,7 @@ Here are some data observation for further social analysis of assets :
 | EVGBC | -0.99  | 0.347 | 0.001 | 1.77e+05 |
 | CARR# | -0.92  | 0.575 | 0.002 | 2.24e+04 |
 
-*Figure 5 : These stocks are classified as introverted due to consistently low Emotional Index scores, reflecting weak behavioral expressiveness in financial markets. EVSTC, EVLMC, and EVGBC exhibit very low jump activity and limited trading intensity, indicating muted reactions to new information and stable, low-engagement price dynamics. CARR# shows similarly subdued behavior, with limited turnover and infrequent discontinuities, while the extreme EI value observed for AAN likely reflects data sparsity or structural trading constraints rather than genuine market expressiveness. Overall, these stocks act as market absorbers, responding slowly and quietly to information rather than amplifying shocks.* 
-
-
-
-
-
+*Figure 5 : Introverted stocks exhibit persistently low Emotional Index (EI) scores, reflecting below-average market expressiveness. Their price dynamics are comparatively stable, with few abrupt movements and muted reactions to new information, even when trading activity is non-trivial. This behavior is consistent with a market-level form of restraint, whereby information is absorbed smoothly rather than transmitted through sharp price adjustments. In isolated cases (e.g., AAN), extreme EI values arise from data sparsity or structural trading constraints rather than genuine behavioral intensity, and are therefore interpreted as measurement artifacts rather than deviations from the underlying pattern.* 
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/26818399"></div>
 <script src="https://public.flourish.studio/resources/embed.js"></script>
