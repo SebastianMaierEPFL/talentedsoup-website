@@ -1,10 +1,10 @@
 ---
 layout: article
 title: Confidence vs Restraint
-permalink: /confidence/
+permalink: /f_t/
 ---
 
-## Intrinsic Confidence Axis: Definition and Asset Personality Classification
+## Intrinsic Confidence: Definition and Asset Personality Classification
 
 ![Confidence axis overview](confidence_overview.png)
 
@@ -67,11 +67,10 @@ Each day is labeled into one of four regimes based on the sign of \(P'(t)\) and 
 | **Descent** | \(P'(t)<0\) and \(P''(t)<0\) | falling and accelerating downward (“downward spiral”) |
 | **Tenacity** | \(P'(t)<0\) and \(P''(t)>0\) | still falling but resisting (“trying to recover”) |
 
-Two visualizations are commonly used:
+Gummyworm-like Plot:
 
 ![Price colored by regimes](confidence_price_regimes.png)
 
-![Phase space: P' vs P''](confidence_phase_space.png)
 
 ---
 
@@ -82,6 +81,7 @@ Instead of extracting a large feature vector, we intentionally keep it minimal a
 For each symbol we compute:
 
 ### A) Time spent in regimes (days)
+
 Let \(N\) be the number of valid days.  
 Let \(D_{\text{conf}}, D_{\text{disc}}, D_{\text{desc}}, D_{\text{tena}}\) be the number of days in each regime.
 
@@ -98,6 +98,7 @@ We define:
 \]
 
 ### B) Assertiveness score (single scalar)
+
 \[
 \text{Assertiveness} = \text{ActionRate} - \text{StabilityRate}
 \]
@@ -108,54 +109,64 @@ We define:
 
 ---
 
-## Bell Curve Split: Assertive vs Restrained (No Forced Clustering)
+## Distribution Analyses and Final Separation (Stocks + ETFs)
 
-Because the assertiveness distribution typically forms a **bell curve** (like many human traits),
-we do **not** expect two clean clusters.
+At this point, every asset (stock or ETF) has a single scalar score: **Assertiveness**.  
+We now study its distribution and convert it into a **binary letter**:
 
-Instead, we separate the population by splitting at the **peak (mode)** of the distribution:
+- **A (Assertive)**: more “push” behavior (confidence + descent dominates)
+- **R (Restrained)**: more “control” behavior (discipline + tenacity dominates)
 
-- Values **right of the peak** → **A (Assertive)**
-- Values **left of the peak** → **R (Restrained)**
-
-![Assertiveness distribution split](confidence_assertiveness_kde_split.png)
-![Assertiveness distribution](confidence_assertiveness_distribution.png)
-
-
-This produces an interpretable binary label **without pretending the population is naturally clustered**.
+We run the same pipeline **twice**: once for **stocks**, once for **ETFs**.
 
 ---
 
-## Outputs
+### Analysis 1: KDE “Bell Curve” + Peak Split (Mode)
 
-The pipeline generates:
-1) A feature table:
-- `confidence_minimal_features_stocks.csv` (or `_etfs.csv`)
+When we plot assertiveness across all assets, we typically see a **single-peaked, bell-shaped distribution** (approximately unimodal).  
+That’s exactly what many human-like traits look like at population scale: **most are moderate**, with **fewer extremes**.
 
-2) A label file with exactly two columns:
-- `symbol`
-- `AR` where `AR ∈ {A, R}`
+So instead of forcing two “natural clusters,” we use a **mode split**:
 
-Example schema:
+- Compute a smooth density estimate (KDE)
+- Find the **peak** of the density (the **mode**)
+- Split by that peak:
+  - Assertiveness **> mode** → **A**
+  - Assertiveness **< mode** → **R**
 
-| symbol | AR |
-|---|---|
-| AAPL | A |
-| MSFT | R |
+This is a “human-style” classification: a continuous trait → a binary letter around the most typical behavior.
+
+![Assertiveness density split — Stocks](confidence_assertiveness_kde_split_stocks.png)
+
+**Stocks — resulting proportions**
+- **A (Assertive):** `52%`
+- **R (Restrained):** `48%`
+
+![Assertiveness density split — ETFs](confidence_assertiveness_kde_split_etfs.png)
+
+**ETFs — resulting proportions**
+- **A (Assertive):** `54%`
+- **R (Restrained):** `46%`
+
+> The exact percentages are printed by the notebook after the split.
 
 ---
 
-## Example Observations (Optional)
-
-![Action vs stability scatter](confidence_action_stability_scatter.png)
-
-Assets in the **upper-right** region spend more time in “high-motion” regimes overall.  
-Assets closer to the diagonal show balanced behavior between “action” and “control”.
 
 ---
 
-## Notes / Limitations
+## Interpretation: Why the Bell Curve Matters
 
-- This axis does **not** measure value or fundamentals.
-- The result depends on smoothing choices (`EMA_SPAN`, `ROLL_WIN`) because derivatives are noise-sensitive.
-- Regimes are intrinsic: they reflect internal dynamics, not the cause (news/events/etc).
+A clean two-cluster split would suggest the market naturally separates into two distinct “species.”  
+But what we observe is closer to a **continuum**: a spectrum of assertiveness with a common center.
+
+That’s not a failure, it’s the point.
+
+This bell-curve behavior mirrors how many **human traits** appear at population scale:
+- most are moderate,
+- extremes exist but are rarer,
+- and binary letters (A/R) are *compressions of a continuous trait* rather than evidence of true “two types.”
+
+So the final outcome of this axis is simple and usable:
+
+> **Every stock/ETF gets a letter: A (Assertive) or R (Restrained).**
