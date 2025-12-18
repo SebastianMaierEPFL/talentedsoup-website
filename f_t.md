@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Confidence vs Restraint
+title: Assertiveness vs Restraint
 permalink: /f_t/
 ---
 
