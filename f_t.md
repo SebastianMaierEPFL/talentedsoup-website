@@ -18,7 +18,6 @@ The key idea is to “humanize” market behavior by extracting **tendencies fro
 
 No external datasets are used. This analysis can be run on **any dataset with the same structure** (daily Date + Close/Adj Close).
 
-
 ## 1) Preprocessing: Smoothing the Price (Intrinsic Only)
 
 Raw close prices are noisy, and derivatives amplify noise.  
@@ -32,7 +31,6 @@ P(t) = \text{RollMean}(\text{EMA}(\text{Close}(t)))
 $$
 
 **Interpretation:** we are not “changing” the trend — we’re filtering micro-noise so that the slope and curvature reflect real movement.
-
 
 ## 2) Derivatives: Momentum and Acceleration
 
@@ -56,7 +54,6 @@ $$
 
 In code, this is implemented using `np.gradient` with $dt = 1$ day.
 
-
 ## 3) Four Regimes (Quadrants of $P'$ vs $P''$)
 
 Each day is labeled into one of four regimes based on the sign of $P'(t)$ and $P''(t)$:
@@ -71,7 +68,6 @@ Each day is labeled into one of four regimes based on the sign of $P'(t)$ and $P
 Gummyworm-like Plot:
 
 ![Price colored by regimes](confidence_price_regimes.png)
-
 
 ## 4) Minimal Feature Extraction (Behavior, Not Performance)
 
@@ -108,7 +104,6 @@ $$
 - High assertiveness → spends more time in “push” regimes (confidence + descent)
 - Low assertiveness → spends more time in “control” regimes (discipline + tenacity)
 
-
 ## Distribution Analyses and Final Separation (Stocks + ETFs)
 
 At this point, every asset has a single scalar score: **Assertiveness**.
@@ -139,7 +134,6 @@ Instead of forcing artificial clusters, we split at the **density peak (mode)**:
 **ETFs**
 - **A (Assertive):** 54%
 - **R (Restrained):** 46%
-
 
 ## Interpretation: Why the Bell Curve Matters
 
