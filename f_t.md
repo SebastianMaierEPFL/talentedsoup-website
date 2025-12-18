@@ -124,12 +124,14 @@ Instead of forcing artificial clusters, we split at the **density peak (mode)**:
 - Assertiveness **< mode** → **R**
 
 ![Assertiveness density split — Stocks](confidence_assertiveness_kde_split_stocks.png)
+![Assertiveness distribution — Stocks](confidence_assertiveness_distribution_stocks.png)
 
 **Stocks**
 - **A (Assertive):** 52%
 - **R (Restrained):** 48%
 
 ![Assertiveness density split — ETFs](confidence_assertiveness_kde_split_etfs.png)
+![Assertiveness distribution — ETFs](confidence_assertiveness_distribution_etfs.png)
 
 **ETFs**
 - **A (Assertive):** 54%
