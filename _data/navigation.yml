@@ -30,16 +30,19 @@ header:
     url: /e_i/
 
   - title:
-      S/N
+      P/F
     url: /s_n/
 
   - title:
-      F/T
+      A/R
     url: /f_t/
 
   - title:
-      P/J
+      O/C
     url: /p_j/
+  - title:
+      S/R
+    url: /a_t/
 
   # - titles:
   #     # @start locale config
