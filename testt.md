@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Stock Personality Test
+title: 
 permalink: /testt/
 ---
 
