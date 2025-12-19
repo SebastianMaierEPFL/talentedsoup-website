@@ -36,7 +36,7 @@ data:
 
 </div>
 
-<div style="max-width: 720px; margin: 0 auto; padding: 0 1.5rem; text-align: left;">
+<!-- <div style="max-width: 720px; margin: 0 auto; padding: 0 1.5rem; text-align: left;">
 
   <h1>Put buttons at the end to direct to the start of the analysis</h1>
   <p>
@@ -54,4 +54,4 @@ data:
     description of what TalentedSoup is about here. Would the rest of the text be put in the bottom? 
   </p>
 
-</div>
+</div> -->
