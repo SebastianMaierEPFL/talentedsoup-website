@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Getting the Pulse of the Market"
+title: "Getting the Pulse of the Market <br>Organized (O) vs Chaotic (C"
 permalink: /p_j/
 ---
-<p class="page-subtitle">Organized (O) vs Chaotic (C)</p>
+
 
 Can Fourier analysis reveal whether sector returns pulse like a heart under different market stresses?
 
@@ -79,9 +79,9 @@ Health Care behaves like a defensive **metronome**: it rarely hits extremes, and
 
 #### Consumer Discretionary (XLY)
 
-![png](heartbeat_files/output_19_1.png)
+![png](output_19_1.png)
     
-![png](heartbeat_files/output_19_2.png)
+![png](output_19_2.png)
     
 Consumer Discretionary shows a more **uneven and reactive rhythm** than Health Care, with its ETF (red, XLY) often **pulsing ahead of or behind its members**, reflecting the sector’s sensitivity to economic mood swings. The correlation heatmap supports this view: ETF–stock Pearson $r$ values remain **consistently positive** across windows, ranging roughly from **0.21 to 0.94**, with **most $p$-values $\approx 0.000$**, except AMZN in the dot-com pre window ($r \approx 0.21$, $p = 0.119$), showing weak or insignificant coupling at that time.
 
@@ -96,9 +96,9 @@ Consumer Discretionary shows a more **uneven and reactive rhythm** than Health C
 
 #### Financials (XLF)
   
-![png](heartbeat_files/output_21_1.png)
+![png](output_21_1.png)
     
-![png](heartbeat_files/output_21_2.png)
+![png](output_21_2.png)
 
     
 Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the middle of the pack**, but single names (especially GS and MS) throw off strong “extra beats” around major shocks. Statistically, ETF–stock Pearson $r$ is **high in almost every window**, mostly between **$0.71$ and $0.98$**, with only a brief dip to about **$0.42$–$0.47$** around the Brexit vote; **all reported $p$-values are $\approx 0.000$**, and the single missing cell (GS in dot-com pre) simply reflects data availability rather than weak linkage.
@@ -116,9 +116,9 @@ Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the
 #### Technology (XLK)
 
  
-![png](heartbeat_files/output_23_1.png)
+![png](output_23_1.png)
      
-![png](heartbeat_files/output_23_2.png)
+![png](output_23_2.png)
 
     
 Technology appears to have a **regime-switching heartbeat**: it spends a lot of time at fast tempos, with XLK usually **following the big platforms** but sometimes missing the more extreme pulses in names like NVDA or ADBE.
@@ -141,24 +141,24 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 #### Consumer Discretionary (XLY) vs stocks
 
  
-![png](heartbeat_files/output_26_2.png)
+![png](output_26_2.png)
 
 
 #### Financials (XLF) vs stocks
 
 
-![png](heartbeat_files/output_26_5.png)
+![png](output_26_5.png)
     
 
 #### Health Care (XLV) vs stocks
 
 
-![png](heartbeat_files/output_26_8.png)
+![png](output_26_8.png)
     
 
 #### Technology (XLK) vs stocks
   
-![png](heartbeat_files/output_26_11.png)
+![png](output_26_11.png)
     
 
 
@@ -201,7 +201,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_28_2.png)
+![png](output_28_2.png)
     
 
 
@@ -210,7 +210,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_28_5.png)
+![png](output_28_5.png)
 
 
 
@@ -219,7 +219,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_28_8.png)
+![png](output_28_8.png)
 
 
 
@@ -228,7 +228,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_28_11.png)
+![png](output_28_11.png)
     
 
 
@@ -268,7 +268,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_30_2.png)
+![png](output_30_2.png)
 
 
 
@@ -277,7 +277,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_30_5.png)
+![png](output_30_5.png)
 
 
 
@@ -286,7 +286,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_30_8.png)
+![png](output_30_8.png)
 
 
 
@@ -296,7 +296,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_30_11.png)
+![png](output_30_11.png)
     
 
 
@@ -336,7 +336,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_32_2.png)
+![png](output_32_2.png)
     
 
 
@@ -346,7 +346,7 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_32_5.png)
+![png](output_32_5.png)
 
 
 
@@ -355,14 +355,14 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 
     
-![png](heartbeat_files/output_32_8.png)
+![png](output_32_8.png)
 
 
 
 #### Technology (XLK) vs stocks
 
     
-![png](heartbeat_files/output_32_11.png)
+![png](output_32_11.png)
     
 
 
@@ -444,7 +444,7 @@ $$
 **Analogy:** Is the heartbeat a strong *“LUB-DUB”* (high concentration) or a faint flutter (low concentration)?
 
     
-![png](heartbeat_files/output_36_1.png)
+![png](output_36_1.png)
 
 
 
@@ -455,7 +455,7 @@ In `clean_data(df)` we apply a set of quality filters before clustering, so only
 - Finally, we **filter out very low–entropy assets**: $H < 0.90.$ Very low entropy usually means the price barely moves (illiquid, inactive, or near-constant). These series don’t really have a “heartbeat”, so we drop them and focus on assets with enough variation to say something meaningful about their rhythm.
 
     
-![png](heartbeat_files/output_38_0.png)
+![png](output_38_0.png)
     
 
 
