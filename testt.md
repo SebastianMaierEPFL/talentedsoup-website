@@ -89,7 +89,7 @@ permalink: /testt/
 }
 
 #avatarImg{
-  width:96px; height:96px;
+  width:400px; height:600px;
   border-radius:16px;
   border:1px solid rgba(0,0,0,0.15);
   background:white;
