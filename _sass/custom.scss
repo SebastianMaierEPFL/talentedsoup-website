@@ -20,3 +20,28 @@ body {
   min-height: 300px !important;      /* reduce the hero height (override inline 400px) */
 }
 /* end custom scss snippet */
+
+// .article__header--overlay .hero {
+//   /* show the entire 9:16 image, no cropping */
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center top;
+
+//   /* height adjusted to image ratio: 9:16 (height/width = 16/9) */
+//   min-height: calc(100vw * 16 / 9);
+// }
+
+// .article__header--overlay .hero {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center top;
+//   min-height: calc(100vw * 16 / 9);
+//   position: relative;               /* allow absolute positioning inside */
+// }
+
+// .article__header--overlay .hero .hero__content {
+//   position: absolute;
+//   top: 45%;                          /* vertical position of the text */
+//   left: 50%;                         /* horizontal center */
+//   transform: translate(-50%, -50%);  /* center the block at that point */
+// }
