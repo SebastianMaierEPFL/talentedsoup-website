@@ -134,35 +134,14 @@ The correlation heatmap shows ETF–stock Pearson $r$ **almost always positive**
 
 We now step through each crisis and compare ETF returns (top row) with multiple stocks alongside their spectra, shown in right columns. Vertical dashed lines shown in the time domain separate pre-crisis, crisis, and recovery, while those in the frequency domain mark reference tempos: roughly 5 cycles/year for quarterly rhythms, 12 for monthly pulses, and 52 for weekly beats, useful baselines for spotting whether crisis spectra race ahead or slow down relative to the market’s usual cadence.
 
-
-
-#### Consumer Discretionary (XLY) vs stocks
-
- 
-![png](output_26_2.png)
-
-
-#### Financials (XLF) vs stocks
-
-
-![png](output_26_5.png)
-    
-
-#### Health Care (XLV) vs stocks
-
-
-![png](output_26_8.png)
-    
-
-#### Technology (XLK) vs stocks
-  
-![png](output_26_11.png)
-    
-
-
 ### Dotcom
 
+![png](dotcom.jpeg)
+
 ### Consumer Discretionary – XLY vs AMZN, HD
+
+
+![png](output_26_2.png)
 
 * **XLY:** In the **pre** window, power is scattered with only modest bumps near the **monthly (~12 c/yr)** and **weekly (~52 c/yr)** guides. At the **peak**, those regions fill in: you see **stronger clusters between ~40–60 c/yr**, right around the weekly band, matching the visibly higher volatility. **Recovery** softens those peaks but doesn’t erase them—mid/high frequencies remain active.
 * **AMZN:** Already has **large spikes near ~10–15 c/yr and 45–60 c/yr** in the **pre** period; at the **peak** these get much taller, especially around the **weekly band**, showing a much faster “heartbeat” than the ETF. **Recovery** tones this down but still keeps more power near those guides than XLY.
@@ -172,6 +151,9 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Financials – XLF vs JPM, BAC
 
+
+![png](output_26_5.png)
+
 * **XLF:** Pre-crisis, peaks are modest and mostly below **~40 c/yr**. At the **peak**, the spectrum fills in with many stems **from ~15 up to 60 c/yr**, including activity around the **52 c/yr weekly line**—the ETF clearly speeds up. Recovery leaves **residual bumps in the 20–40 c/yr band**, so it doesn’t go back to very slow cycles.
 * **JPM / BAC:** Both show **pronounced peaks near ~10–15 c/yr and 45–60 c/yr** in the **peak** window, much stronger than pre. Recovery scales them down but still keeps **noticeable power near the monthly region**, consistent with an elevated but cooling heartbeat.
 
@@ -179,61 +161,36 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Health Care – XLV vs JNJ, UNH
 
+
+![png](output_26_8.png)
+
 * **XLV:** Pre and peak spectra show **moderate peaks near ~10–20 c/yr**, with only small structures close to the weekly line; the move from pre → peak is **a gentle lift, not an explosion**. In **recovery**, power redistributes but stays mostly in **low–mid bands (<40 c/yr)**.
 * **JNJ:** Has a rising slope of power into **20–40 c/yr**, plus some spikes near **~50–60 c/yr** at the **peak**, but none dominate.
 * **UNH:** Richer spectrum with **frequent peaks between ~15 and 50 c/yr**, yet the change across phases is gradual—supporting the **“defensive metronome”** view: tempos nudge up around the bubble but stay within a midrange.
 
 ---
+    
 
 ### Technology – XLK vs AAPL, MSFT
-
+  
+![png](output_26_11.png)
+    
 * **XLK:** Pre-dotcom, a few lines around **10–20 c/yr** and one near **~50 c/yr**. At the **peak**, the entire **20–60 c/yr region lights up**, with several large spikes close to the **weekly guide**, reflecting a sharp acceleration. **Recovery** lowers the amplitudes but still leaves **mid-band (~20–40 c/yr)** structure.
 * **AAPL:** Already has strong peaks near **~25–30 c/yr and around 50–60 c/yr** in the **pre** panel; at the **peak**, those get taller and more numerous, especially near the weekly band—**very fast heartbeat**. Recovery cuts the heights roughly back toward pre levels, but **still richer than XLK**.
 * **MSFT:** Similar story: **clear peaks near the monthly (~12 c/yr) and weekly (~52 c/yr) guides** grow at the **peak**, then shrink but remain in **recovery**—Tech stocks stay more rhythmic than the ETF.
 
-
-
-
-#### Consumer Discretionary (XLY) vs stocks
-
-
-
-    
-![png](output_28_2.png)
-    
-
-
-#### Financials (XLF) vs stocks
-
-
-
-    
-![png](output_28_5.png)
-
-
-
-#### Health Care (XLV) vs stocks
-
-
-
-    
-![png](output_28_8.png)
-
-
-
-#### Technology (XLK) vs stocks
-
-
-
-    
-![png](output_28_11.png)
-    
-
+---
 
 ### Global Financial Crisis
 
+![Big short gif](the-big-short-gif.gif)
+
+
 ### Consumer Discretionary – XLY vs AMZN, HD
 
+
+![png](output_28_2.png)
+    
 * **XLY:** From **pre → peak**, the spectrum thickens, with many stems between **~10–40 c/yr** and a visible ridge around the **monthly band (~12 c/yr)**. A few peaks reach into the **40–60 c/yr** zone near the weekly line, matching the sharp volatility spike in 2008–2009. **Recovery** keeps some power around **10–20 c/yr**, but the high-frequency energy above **40 c/yr** is clearly lower.
 * **AMZN:** Already busy pre-crisis; at the **peak**, you get taller spikes near both **~10–15 c/yr** and **around 50–60 c/yr**, so AMZN is strongly engaged with both the monthly and weekly tempos. In **recovery**, the weekly-region peak is still there but with smaller amplitude, indicating a slower, but still fast, rhythm.
 * **HD:** Shows a milder version: a noticeable lift in **10–30 c/yr** power at the **peak**, but less emphasis right on 52 c/yr. Recovery moderates those mid-band peaks, so HD behaves more like a mid-tempo retailer.
@@ -242,12 +199,18 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Financials – XLF vs JPM, BAC
 
+ 
+![png](output_28_5.png)
+
 * **XLF:** Pre-GFC, it shows numerous small stems < **40 c/yr**, with occasional bumps near **12 c/yr**. At the **peak**, the spectrum explodes: tall peaks from **~10 to 60 c/yr**, plus clear energy near the **weekly tempo (~52 c/yr)**. **Recovery** still has a dense forest of stems in **10–40 c/yr**, plus some residual weekly-region power—Financials never fully slow back to pre rhythms.
 * **JPM / BAC:** Both banks display strong amplification at the **peak**: prominent peaks **around 10–15 c/yr (monthly to bi-monthly)** and a lot of structure **between 40–60 c/yr**, often with one or two spikes right on or just beside the 52-c/yr line. In **recovery**, peak heights drop but these bands stay active, showing that Financials keep cycling faster than before the crisis.
 
 ---
 
 ### Health Care – XLV vs JNJ, UNH
+
+
+![png](output_28_8.png)
 
 * **XLV:** Pre-GFC, power is spread modestly across **~5–35 c/yr** with some emphasis around **10–15 c/yr**; the weekly zone is lightly touched. At the **peak**, amplitudes increase a bit—especially in **10–30 c/yr**—but the pattern stays diffuse rather than dominated by a single crisis frequency. **Recovery** actually shows a slightly fuller mid-band, yet still mostly < **40 c/yr**.
 * **JNJ / UNH:** Both see their power lift at the **peak**, with JNJ having clearer peaks near **~10–15 c/yr** and UNH showing many moderate stems from **~10–50 c/yr**. Spikes at exactly **52 c/yr** are present but not huge. In **recovery**, mid-band power remains but without further escalation. Health Care again looks like a **mid-tempo, resilient metronome** rather than a crisis amplifier.
@@ -256,51 +219,21 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Technology – XLK vs AAPL, MSFT
 
+
+![png](output_28_11.png)
+    
 * **XLK:** Pre-GFC, you already see stems up to **60 c/yr**, but with moderate heights. At the **peak**, the band from **~15 to 50 c/yr** becomes much more energetic, and there are clear spikes near **~50–55 c/yr**, right on top of the weekly guide. **Recovery** shifts power downward—lots of stems **<40 c/yr**, fewer large weekly peaks—so Tech cools but remains quicker than defensives.
 * **AAPL:** Pre-crisis, AAPL has strong peaks around **20–40 c/yr** and a notable one at **~52 c/yr**. At the **peak**, those regions intensify, with multi-unit peaks near the weekly line. In **recovery**, amplitudes stay elevated but lower than at the peak, especially around **10–30 c/yr**—still a fast ticker.
 * **MSFT:** Shows a similar pattern but with smaller absolute power: more energy near **10–20 c/yr** and **40–60 c/yr** at the **peak**, then a clearer drop in the weekly zone during **recovery**.
 
-
-#### Consumer Discretionary (XLY) vs stocks
-
-
-
-    
-![png](output_30_2.png)
-
-
-
-#### Financials (XLF) vs stocks
-
-
-
-    
-![png](output_30_5.png)
-
-
-
-#### Health Care (XLV) vs stocks
-
-
-
-    
-![png](output_30_8.png)
-
-
-
-
-#### Technology (XLK) vs stocks
-
-
-
-    
-![png](output_30_11.png)
-    
-
-
 ### Brexit
 
+![png](brexit.jpeg)
+
 ### Consumer Discretionary – XLY vs AMZN, HD
+
+  
+![png](output_30_2.png)
 
 * **XLY:** Pre-vote, the spectrum is fairly busy from **~10–40 c/yr**, plus some spikes near **50–60 c/yr**. In the **vote** window, power *drops* almost everywhere – the whole spectrum flattens, with only tiny stems near the guides. **Post-vote**, activity returns, mainly in **10–30 c/yr**, but without huge weekly peaks.
 * **AMZN:** Pre-vote, lots of power in **10–40 c/yr** and some stems around **50–60 c/yr**. The **vote** window looks very muted (short, low bars), then **post-vote** AMZN goes back to stronger peaks near **~10–20 c/yr** and occasional spikes near the **weekly line**.
@@ -310,6 +243,9 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Financials – XLF vs JPM, BAC
 
+ 
+![png](output_30_5.png)
+
 * **XLF:** Pre-Brexit, many stems **10–40 c/yr**, plus some activity near **50–60 c/yr**. In the **vote** window, power is much weaker and more concentrated below **30 c/yr**. **Post-vote**, the mid band repopulates and you again see occasional spikes near the weekly line, but nothing like the GFC.
 * **JPM / BAC:** Both banks show this **temporary power vacuum** around the vote: pre-vote, they have clear peaks around **10–20 c/yr** and scattered ones near **50–60 c/yr**; the vote spectra are faint; post-vote, mid-frequency power (**10–40 c/yr**) and some weekly-adjacent spikes return.
 
@@ -317,63 +253,43 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Health Care – XLV vs JNJ, UNH
 
+
+![png](output_30_8.png)
+
 * **XLV:** Pre-vote, a moderate ridge from **~5–30 c/yr**, light touches near **52 c/yr**. The **vote** spectrum is very low-amplitude; **post-vote**, XLV returns to a similar low–mid-band profile with slightly more power but no dramatic new peaks.
 * **JNJ / UNH:** Both are classic defensives here: pre-vote peaks mainly **<30 c/yr**, a very quiet **vote** window, and **post-vote** spectra that look like slightly noisier versions of pre, with only a few stems near the reference tempos.
 
 ---
 
-### Technology – XLK vs AAPL, MSFT
 
+### Technology – XLK vs AAPL, MSFT
+    
+![png](output_30_11.png)
+    
 * **XLK:** Pre-vote, Tech has a healthy spread **10–50 c/yr**, with a few stems close to the **weekly guide**. The **vote** spectrum is strikingly flat – hardly any power above noise. **Post-vote**, power returns across **~10–40 c/yr**, with some peaks near **50–60 c/yr**, but magnitudes are modest.
 * **AAPL / MSFT:** Both stocks echo that pattern: pre-vote, clear peaks near **10–20 c/yr** and some around **50–60 c/yr**; very quiet **vote** windows; **post-vote**, mid-band power comes back (especially AAPL, which shows stronger **15–30 c/yr** peaks) with a few weekly-ish spikes.
 
+---
 
+### COVID 
 
-#### Consumer Discretionary (XLY) vs stocks
-
-
-
-    
-![png](output_32_2.png)
-    
-
-
-
-#### Financials (XLF) vs stocks
-
-
-
-    
-![png](output_32_5.png)
-
-
-
-#### Health Care (XLV) vs stocks
-
-
-
-    
-![png](output_32_8.png)
-
-
-
-#### Technology (XLK) vs stocks
-
-    
-![png](output_32_11.png)
-    
-
-
-### COVID
 
 ### Consumer Discretionary (XLY, AMZN, HD)
 
+ 
+![png](output_32_2.png)
+    
 * **Pre-Covid**: XLY and AMZN have a spread of mid-band power between roughly **20–80 cycles/yr**, with a few bumps near the **monthly band (~10–15 c/yr)** and some energy around **50–60 c/yr**, i.e. near the weekly guide. HD is quieter but still shows scattered power across that midrange.
 * **Crisis**: spectra collapse into a few strong spikes, mostly at **very high frequencies (>90 c/yr)**, well **above the weekly 52 c/yr guide**. There’s little persistent power near 5 or 12 c/yr – it looks like a short burst of rapid day-to-day moves rather than a new “tempo”.
 
 ---
 
+
 ### Financials (XLF, JPM, BAC)
+
+
+![png](output_32_5.png)
+
 
 * **Pre-Covid**: XLF has a cluster of peaks between **20–70 c/yr**, with a couple close to **10–15 c/yr** and **50–60 c/yr** (monthly and weekly regions). JPM and BAC also show mid-band concentration, with some distinct spikes near the weekly guide.
 * **Crisis**: crisis spectra are dominated by a few tall spikes in the **80–110 c/yr** range, while energy near **5 and 12 c/yr** is almost absent. There are occasional peaks near **50–60 c/yr**, but overall Financials look like they jump to **“hyper-fast” rhythms** during the crash, consistent with intense intraday churn over a very short window.
@@ -382,12 +298,18 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 ### Health Care (XLV, JNJ, UNH)
 
+![png](output_32_8.png)
+
 * **Pre-Covid**: XLV spreads power across **20–80 c/yr**, with some structure around **10–15 c/yr** and **50–60 c/yr**. JNJ and UNH show similar, though slightly noisier, mid-band profiles, with several peaks near the **weekly band**.
 * **Crisis**: spectra thin out severely; XLV has a few peaks near **40–70 c/yr** and some very high-frequency spikes beyond **90 c/yr**, but not much else. JNJ and UNH show the same pattern: **isolated high-frequency spikes** and relatively little power near the lower reference tempos.
 
 ---
 
 ### Technology (XLK, AAPL, MSFT)
+
+    
+![png](output_32_11.png)
+    
 
 * **Pre-Covid**: tech shows relatively strong mid-band structure: repeated peaks between **30–80 c/yr**, including some close to **52 c/yr** and weaker bumps near **10–15 c/yr**. AAPL’s and MSFT’s pre spectra have several peaks of comparable height in that region, suggesting a richer mix of tempos.
 * **Crisis**: crisis spectra again thin out, leaving a few tall spikes **near or above 90–110 c/yr** and some power around the **weekly band (~50–60 c/yr)**. Tech’s rhythms thus **speed up sharply**, but we can’t say much about persistent cycles because the crisis window is so short.
@@ -446,7 +368,7 @@ $$
 
 
 
-In `clean_data(df)` we apply a set of quality filters before clustering, so only instruments with a meaningful “heartbeat” are kept:
+We apply a set of quality filters before clustering, so only instruments with a meaningful “heartbeat” are kept:
 
 - First, we replace any `±∞` values with `NaN` and **drop rows where `Entropy` or `Concentration` is `NaN`**. This removes tickers whose Fourier spectrum could not be computed reliably (e.g. prices too flat, bad data, numerical issues).
 - Next, we **only keep instruments with more than 500 trading days**. Short histories do not produce a stable Fourier spectrum, so those tickers are excluded from the personality map: $\text{Total\_Days} > 500.$
