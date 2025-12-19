@@ -43,7 +43,9 @@ with an equivalent period $T_k = 1 / f_k$ that we also express in trading days a
 ## Dominant Cycles Across Crises - Where the Market Beats Fastest
 
 The heatmap highlights the highest-power frequency (dominant frequency - cycles/year) for each sector and crisis window. Darker shades mark faster heartbeats.
- 
+
+<div class="flourish-embed flourish-heatmap" data-src="visualisation/26906506"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26906506/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
+
 ![png](output_13_1.png)
     
 
@@ -61,7 +63,7 @@ Do flagship stocks track the same heartbeat as their sector ETF?
 
 #### Health Care (XLV)
 
-![png](output_17_1.png){: style="width:100%; max-width:1500px; display:block; margin: 0 auto;" }
+![png](output_17_1.png)
  
 ![png](output_17_2.png)
     
