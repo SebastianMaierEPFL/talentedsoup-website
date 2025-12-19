@@ -1,11 +1,10 @@
 ---
 layout: article
-title: Perceiving vs Judging
+title: Getting the Pulse of the Market: Organized (O) vs Chaotic (C)
 permalink: /p_j/
 ---
----
 
-## Getting the Pulse of the Market
+## 
 
 Can Fourier analysis reveal whether sector returns pulse like a heart under different market stresses?
 
