@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Sensing vs iNtuition (Persistent vs Fluid)
+title: Persistent vs Fluid
 permalink: /s_n/
 ---
 
@@ -45,3 +45,34 @@ For each ETF (SPY, QQQ, XLY, GLD):
 1. We feed the feature matrix (5 features per day) into an HMM with 4 hidden states.
 2. Each state emits observations from a multivariate Gaussian distribution with its own mean and covariance.
 3. The hidden state process follows a Markov chain with a transition matrix describing how likely the system is to stay in or switch between regimes from day to day.
+
+Intuitively:
+- Each state corresponds to a characteristic pattern of return, volatility, and volume (e.g. low volatility & positive momentum vs. high volatility & negative returns).
+- The transition matrix tells us how these regimes evolve over time (e.g. calm periods occasionally jump into stressed regimes, but stressed regimes are short‑lived).
+
+# Making the Regimes Concrete
+
+### Visualizing the Regimes on Price Charts
+
+To see that the inferred regimes are meaningful, we overlay the decoded states onthe price series for each ETF.
+
+#### SPY:
+![SPY regimes](/assets/images/SPY_colors.png)
+#### QQQ:
+![QQQ regimes](/assets/images/QQQ_colors.png)
+#### XLY:
+![XLY regimes](/assets/images/XLY_colors.png)
+#### GLD:
+![GLD regimes](/assets/images/GLD_colors.png)
+
+We can see that a high-volatility, negative-return regime often aligns with crisis periods and sharp drawdowns. A low-volatility, positive-return tracks steady bull markets. For GLD, some regimes that are "defensive" (e.g. strong when equities are weak) tend to appear when SPY/QQQ are in stressed or correction-type states.
+
+This qualitative alignment is the first sanity check that HMM states are economically interpretable. 
+
+# Are These "Moods" Statistically Distinct?
+
+We test whether the regimes are not just cosmetic labels by comparing their return distributions. For each ETF, and for each pair of states ( i, j ), we perform Kolmogorov–Smirnov (KS) tests on daily log returns:
+
+- Null hypothesis ( H_0 ): returns in regime ( i ) and regime ( j ) come from the same distribution.
+- We typically observe small p‑values (e.g. ( p < 0.01 )) for most state pairs, especially those that visually look different (bull vs. bear, calm vs. crisis).
+

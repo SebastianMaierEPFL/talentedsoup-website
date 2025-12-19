@@ -15,10 +15,10 @@ article_header:
   actions:
     - text: Data Analysis
       type: error
-      url: /home/
+      url: /e_i/
     - text: Test Stock
       type: outline-theme-default
-      url: /archive.html
+      url: /testt/
 
 
 data:
