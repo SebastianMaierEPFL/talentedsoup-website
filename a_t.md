@@ -1,13 +1,13 @@
 ---
 layout: article
-title: Assertive vs Turbulent
-permalink: /a_t/
+title: Stability vs Reactivity
+permalink: /s_r/
 ---
 
-## Motivation: Why Assertive vs Turbulent?
+## Motivation: Why Stability vs Reactivity?
 
 <p align="center">
-  <img src="a_t_front.gif" alt="Frontpage" width="60%">
+  <img src="a_t_frontpage.jpg" alt="Frontpage" width="60%">
 </p>
 
 Financial markets do not react to external shocks in a uniform way. Even when faced with the same macroeconomic event, different assets, and sometimes the market as a whole, can exhibit fundamentally different *reaction dynamics*.
@@ -24,8 +24,8 @@ The collection of events we analyze are all negative market shocks that result i
 
 Given these two behaviours, we target two categories to put the stocks/etfs subject to their behaviours:
 
-- **Assertive behaviour** corresponds to assets that absorb shocks quickly, limit amplification, and recover efficiently.
-- **Turbulent behaviour** corresponds to assets that amplify stress, react violently, and exhibit slow or incomplete recovery.
+- **Stability: Assertive behaviour** corresponds to assets that absorb shocks quickly, limit amplification, and recover efficiently.
+- **Reactivity: Turbulent behaviour** corresponds to assets that amplify stress, react violently, and exhibit slow or incomplete recovery.
 
 Importantly, this is **not a psychological label**, but a **structural one**: it describes *how an asset processes information and stress*, not investor sentiment.
 
@@ -152,7 +152,10 @@ From the CAV trajectory, we extract the following structural stress metrics:
 
 Here we include a visualisation to better illustrate the behaviours we are monitoring:
 
-![Event Shock Reaction](event_shock_visual.png)
+<!-- ![Event Shock Reaction](event_shock_visual.png) -->
+<p align="center">
+  <img src="event_shock_visual.png" alt="Event Shock Reaction" width="100%">
+</p>
 
 ---
 
@@ -162,7 +165,10 @@ Before stepping into the detailed analysis, we first need to ensure market react
 
 To do so, we would need to exmaine the immediate reaction and how similar they are in response to each of the negative shocks. We do so by examine the similarity between the Culmulative Abnormal Returns immediately after the shock. It can be seen from the correlation table between events, the reaction shape exhibits similarity. 
 
-![CAR Shape Correlations](car_correlation.png)
+<!-- ![CAR Shape Correlations](car_correlation.png) -->
+<p align="center">
+  <img src="car_correlation.png" alt="CAR Shape Correlations" width="100%">
+</p>
 
 To make sure such correlation is significant, we ran two statistical tests.
 
@@ -170,7 +176,10 @@ To make sure such correlation is significant, we ran two statistical tests.
 
 If the market truly remembers the past crisises, then the correlations between event CAR shapes should be much higher than the random non-event windows.
 
-![Significance Test](significance_test.png)
+<!-- ![Significance Test](significance_test.png) -->
+<p align="center">
+  <img src="significance_test.png" alt="Significance Test" width="100%">
+</p>
 
 2. **Label Shuffle Test**: 
 
@@ -178,7 +187,10 @@ We want to test if the correlation matrix we got depends on specific event align
 
 In order to test that we will shuffle the events and give them the time series of other events, compute the correlation again. If the correlation remains the same, it means the similarity we found is due to generic smoothness or autocorrelation common to all windows. If the correlation is now significantly lower, then it means the specific pairing of CAR curves by real event identity matters, the pattern isn’t random.
 
-![Label Shuffle Test](label_shuffle_test.png)
+<!-- ![Label Shuffle Test](label_shuffle_test.png) -->
+<p align="center">
+  <img src="label_shuffle_test.png" alt="Label Shuffle Test" width="100%">
+</p>
 
 
 With 2 extremely small p-values and the plotted correlation, it's easy to observe that the correlation means are way beyond the normal range and it's not coincidental are not due to generic characteristic of time series
@@ -230,11 +242,17 @@ For ETFs, the Assertive/Turbulent labels reflect:
 
 Here we present the result of clustering to stocks:
 
-![Stock A/T Result](stock_res.png)
+<!-- ![Stock A/T Result](stock_res.png) -->
+<p align="center">
+  <img src="stock_res.png" alt="Stock A/T Result" width="100%">
+</p>
 
 Surprisingly, we have a clear separation for Assertive and Turbulent stocks based on our metrics, let's take a closer look at the implications of this result.
 
-![Stock A/T Result Details](stock_res_detailed.png)
+<!-- ![Stock A/T Result Details](stock_res_detailed.png) -->
+<p align="center">
+  <img src="stock_res_detailed.png" alt="Stock A/T Result Details" width="100%">
+</p>
 
 
 ### 1. Drawdown Severity Is the Primary Source of Separation
@@ -299,13 +317,19 @@ This joint structure supports interpreting the labels as **distinct response reg
 
 With ETFs, it's a whole new story, the data points before clustering looks like this following:
 
-![ETFs A/T Result](etf_res.png)
+<!-- ![ETFs A/T Result](etf_res.png) -->
+<p align="center">
+  <img src="etf_res.png" alt="ETFs A/T Result" width="100%">
+</p>
 
 A clearly clustered plot with some outliers, we might not have a well separated samples as we had in stocks.
 
 Further examine the distribution based on the contribution score, which is computed by combining all the metrics we set for ETFs, the distribution is:
 
-![ETFs A/T Result Details](etf_res_detailed.png)
+<!-- ![ETFs A/T Result Details](etf_res_detailed.png) -->
+<p align="center">
+  <img src="etf_res_detailed.png" alt="ETFs A/T Result Details" width="100%">
+</p>
 
 What we have on hand is an extremely asymmetrical distribution, hence the clustering may not be an ideal way to split the ETFs, and the final predictions we obtained are indeed heavily skewed towards Turbulent, with handful instances of Assertive ETFs.
 
