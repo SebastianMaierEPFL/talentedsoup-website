@@ -1,0 +1,87 @@
+{
+  "IPAO": {
+    "name": "Quiet Compounder",
+    "short": "Internally driven, structurally coherent assets with long-lived regimes—slow to start, strong once moving.",
+    "long": "Profile: Introverted · Persistent · Assertive · Organized\n\nCore identity:\nInternally driven assets with strong structural coherence and long-lived regimes.\n\nHow it moves:\nSlow trend initiation followed by confident, sustained movement with low noise.\n\nStrengths:\nPredictability, stability, long-horizon consistency.\n\nWeaknesses:\nSlow reaction to sudden regime shifts.\n\nPerforms well when:\nMarkets reward patience and structure.\n\nStruggles when:\nFast sentiment-driven rotations dominate."
+  },
+  "IPAC": {
+    "name": "Lone Breakout",
+    "short": "Independent and conviction-led—quiet for long stretches, then decisive, irregular surges that are hard to time.",
+    "long": "Profile: Introverted · Persistent · Assertive · Chaotic\n\nCore identity:\nIndependent, conviction-led assets that can remain quiet for long periods and then move decisively without warning.\n\nHow it moves:\nExtended low-activity phases punctuated by sharp, irregular surges. Breakouts tend to be strong but poorly timed from a purely structural viewpoint.\n\nStrengths:\nAsymmetric upside, strong directional conviction once activated.\n\nWeaknesses:\nDifficult to time, prone to overshoot and sharp post-peak reversals.\n\nPerforms well when:\nIdiosyncratic narratives and single-name catalysts dominate.\n\nStruggles when:\nMarkets favor smooth trends and stable participation."
+  },
+  "IPRO": {
+    "name": "Silent Stabilizer",
+    "short": "Preservation-first and controlled—stable, low-expression behavior with long regimes and limited directional aggression.",
+    "long": "Profile: Introverted · Persistent · Restrained · Organized\n\nCore identity:\nPreservation-first assets that prioritize stability over expression.\n\nHow it moves:\nSlow, controlled evolution with long stable regimes and limited directional aggression.\n\nStrengths:\nLow volatility, reliable behavior, strong downside protection.\n\nWeaknesses:\nLimited upside capture, can feel “stuck” in strong bull phases.\n\nPerforms well when:\nRisk aversion dominates and defensive positioning is rewarded.\n\nStruggles when:\nHigh-beta growth and speculative leadership drive returns."
+  },
+  "IPRC": {
+    "name": "Dormant Wildcard",
+    "short": "Low participation, weak structure—dormant for long periods, then abrupt, uncoordinated moves with poor follow-through.",
+    "long": "Profile: Introverted · Persistent · Restrained · Chaotic\n\nCore identity:\nLow-participation assets with weak structure that can remain dormant and then shift abruptly in an uncoordinated way.\n\nHow it moves:\nLong stagnation phases interrupted by disorderly moves that lack follow-through.\n\nStrengths:\nOccasional surprise moves; can diversify behaviorally when mixed with structured assets.\n\nWeaknesses:\nLow predictability, weak trend persistence, unreliable recovery patterns.\n\nPerforms well when:\nSudden catalysts appear in otherwise quiet markets.\n\nStruggles when:\nConsistency and structural reliability are required."
+  },
+  "IFAO": {
+    "name": "Adaptive Strategist",
+    "short": "Flexible but disciplined—changes regimes often while keeping coherence and readable direction.",
+    "long": "Profile: Introverted · Fluid · Assertive · Organized\n\nCore identity:\nFlexible assets that shift behavior often, but do so with internal discipline rather than noise.\n\nHow it moves:\nFrequent regime changes while maintaining a readable direction; adapts without fully losing coherence.\n\nStrengths:\nAdaptability with structure, strong performance in transitional market phases.\n\nWeaknesses:\nMay fail to fully exploit long uninterrupted trends.\n\nPerforms well when:\nMarkets rotate gradually and leadership changes are frequent but not chaotic.\n\nStruggles when:\nSingle persistent trends dominate for long periods."
+  },
+  "IFAC": {
+    "name": "Rogue Momentum",
+    "short": "Aggressive and internally driven—conviction expressed through volatility, rapid switching, and sharp bursts.",
+    "long": "Profile: Introverted · Fluid · Assertive · Chaotic\n\nCore identity:\nAggressive and internally driven assets that express conviction through volatility rather than structure.\n\nHow it moves:\nRapid regime switching, sharp bursts, and directional swings that appear and vanish quickly.\n\nStrengths:\nHigh short-term opportunity, strong momentum in brief windows.\n\nWeaknesses:\nHigh drawdown risk, weak long-term coherence, difficult risk management.\n\nPerforms well when:\nSpeculation, momentum chasing, and rapid sentiment cycles dominate.\n\nStruggles when:\nMarkets reward patience, structure, and low-noise trends."
+  },
+  "IFRO": {
+    "name": "Cautious Adapter",
+    "short": "Adaptive yet conservative—frequent shifts, bounded moves, and restraint under uncertainty.",
+    "long": "Profile: Introverted · Fluid · Restrained · Organized\n\nCore identity:\nAdaptive but conservative assets that change behavior often while limiting extremes.\n\nHow it moves:\nFrequent shifts in regimes, yet movements remain bounded and relatively controlled.\n\nStrengths:\nRisk-aware adaptability, resilience in uncertain markets.\n\nWeaknesses:\nLimited upside in strong bull phases, may lag when conviction is rewarded.\n\nPerforms well when:\nMarkets are choppy but not explosive; uncertainty is persistent.\n\nStruggles when:\nClear, high-momentum leadership emerges."
+  },
+  "IFRC": {
+    "name": "Fragmented Drifter",
+    "short": "Hesitant and weakly structured—constant switching without follow-through or durable identity.",
+    "long": "Profile: Introverted · Fluid · Restrained · Chaotic\n\nCore identity:\nHesitant assets with weak structure that react frequently without committing to a durable behavioral identity.\n\nHow it moves:\nConstant regime changes with low directional follow-through and low rhythmic organization.\n\nStrengths:\nAvoids overcommitment; can remain neutral when markets whipsaw.\n\nWeaknesses:\nLow signal quality, hard to model, little persistence to exploit.\n\nPerforms well when:\nMarkets are directionless and dominated by noise.\n\nStruggles when:\nTrends and structured cycles dominate."
+  },
+  "EPAO": {
+    "name": "Market Leader",
+    "short": "Systemic, cycle-aligned leadership—durable trends with readable structure and strong influence.",
+    "long": "Profile: Extroverted · Persistent · Assertive · Organized\n\nCore identity:\nSystemic leaders that shape and reflect broader market behavior with durable, structured direction.\n\nHow it moves:\nSustained trends aligned with dominant cycles; strong persistence and readable structure.\n\nStrengths:\nHigh influence, strong trend reliability, clear macro alignment.\n\nWeaknesses:\nExposed to systemic shocks; can underperform when leadership rotates away.\n\nPerforms well when:\nMarkets trend coherently and leadership is rewarded.\n\nStruggles when:\nAbrupt rotations break persistence and correlation structure."
+  },
+  "EPAC": {
+    "name": "Crowd Breaker",
+    "short": "Market-coupled until it snaps—tracks the crowd, then diverges violently with spikes and sentiment bursts.",
+    "long": "Profile: Extroverted · Persistent · Assertive · Chaotic\n\nCore identity:\nMarket-coupled assets that often ride the crowd, but occasionally break away violently and unpredictably.\n\nHow it moves:\nTracks broader movement for long periods, then exhibits sharp divergence, spikes, and sentiment-driven bursts.\n\nStrengths:\nStrong upside during hype phases, powerful crowd momentum.\n\nWeaknesses:\nProne to overshoot, fragile under reversal, volatility clustering.\n\nPerforms well when:\nSentiment dominates and narratives create synchronized crowd behavior.\n\nStruggles when:\nStructure and mean reversion reassert themselves."
+  },
+  "EPRO": {
+    "name": "Market Anchor",
+    "short": "Conservative market follower—dampens extremes and provides stability rather than leading.",
+    "long": "Profile: Extroverted · Persistent · Restrained · Organized\n\nCore identity:\nStability providers that follow market structure conservatively, acting as behavioral anchors rather than leaders.\n\nHow it moves:\nMoves with the broader market but dampens extremes; long stable regimes and controlled adjustments.\n\nStrengths:\nPredictability, defensive behavior, strong stability contribution.\n\nWeaknesses:\nLimited upside capture, can lag in speculative expansions.\n\nPerforms well when:\nDefensive positioning is rewarded and volatility is penalized.\n\nStruggles when:\nAggressive risk-on phases dominate returns."
+  },
+  "EPRC": {
+    "name": "Systemic Drag",
+    "short": "Market-coupled but structurally weak—prolonged instability, stress amplification, and fragile recovery.",
+    "long": "Profile: Extroverted · Persistent · Restrained · Chaotic\n\nCore identity:\nMarket-coupled assets that persist in behavior, but with weak structure that tends to amplify stress rather than absorb it.\n\nHow it moves:\nCorrelated participation with prolonged instability; downturns can persist and recovery can be structurally weak.\n\nStrengths:\nCan capture broad downside (useful as a stress indicator).\n\nWeaknesses:\nAmplifies market stress, weak resilience, low structural reliability.\n\nPerforms well when:\nRarely in constructive conditions; may appear strong in prolonged risk-off regimes.\n\nStruggles when:\nMarkets are volatile and leadership changes rapidly."
+  },
+  "EFAO": {
+    "name": "Tactical Leader",
+    "short": "Transition leader—fast adaptation with structure; thrives when leadership rotates.",
+    "long": "Profile: Extroverted · Fluid · Assertive · Organized\n\nCore identity:\nTransition leaders that thrive in rotating markets by adapting quickly while preserving structure.\n\nHow it moves:\nFrequent regime changes with clear directional intent; participates broadly but remains coherent.\n\nStrengths:\nRotation leadership, tactical adaptability, good responsiveness without pure chaos.\n\nWeaknesses:\nCan lose edge in stable markets; may churn when trends are too smooth.\n\nPerforms well when:\nMarkets rotate and leadership shifts frequently.\n\nStruggles when:\nMarkets stagnate or exhibit a single dominant trend."
+  },
+  "EFAC": {
+    "name": "Volatility Engine",
+    "short": "High-impact instability amplifier—abrupt reversals, spikes, and high-entropy behavior under shifting sentiment.",
+    "long": "Profile: Extroverted · Fluid · Assertive · Chaotic\n\nCore identity:\nHigh-impact assets that intensify market instability, reacting quickly and forcefully to changes in sentiment.\n\nHow it moves:\nVery frequent regime shifts, abrupt trend reversals, spikes, and high-entropy behavior.\n\nStrengths:\nCaptures volatility, performs strongly during instability bursts.\n\nWeaknesses:\nLong-term decay risk, hard to hold, unstable structural identity.\n\nPerforms well when:\nVolatility spikes, macro uncertainty rises, sentiment flips rapidly.\n\nStruggles when:\nMarkets calm down and persistence dominates."
+  },
+  "EFRO": {
+    "name": "Defensive Chameleon",
+    "short": "Adaptive defense—changes behavior to reduce risk exposure while staying controlled and coherent.",
+    "long": "Profile: Extroverted · Fluid · Restrained · Organized\n\nCore identity:\nAdaptive defensive assets that change behavior often but remain controlled and risk-aware.\n\nHow it moves:\nBroad participation with bounded swings; shifts regimes to reduce risk exposure rather than to chase momentum.\n\nStrengths:\nDownside control, adaptability in uncertainty, stable behavior map.\n\nWeaknesses:\nWeak upside capture in strong bull runs; may underperform in momentum markets.\n\nPerforms well when:\nUncertainty dominates and defensive rotations occur.\n\nStruggles when:\nClear, strong risk-on trends dominate."
+  },
+  "EFRC": {
+    "name": "Market Noise",
+    "short": "Pure reactivity—fast, noisy switching driven by headlines and flows, with minimal persistence or long-term identity.",
+    "long": "Profile: Extroverted · Fluid · Restrained · Chaotic\n\nCore identity:\nPurely reactive assets dominated by short-term sentiment, with minimal structural persistence.\n\nHow it moves:\nRapid, noisy regime switching; movement is often responsive rather than directive.\n\nStrengths:\nHigh responsiveness; reflects immediate sentiment shifts.\n\nWeaknesses:\nLow predictability, weak long-term identity, difficult to model reliably.\n\nPerforms well when:\nMarkets are dominated by noise, headlines, and short-term flows.\n\nStruggles when:\nStructure, cycles, and persistence drive returns."
+  },
+  "SR": {
+    "name": "Stress Response Modifier (Stable vs Reactive)",
+    "short": "Event-based resilience: how fast price/returns revert after shocks—bounce back quickly (Stable) vs stay down longer (Reactive).",
+    "long": "Beyond the four core behavioral axes, each asset is additionally characterized by how it responds to external market shocks. This modifier is derived from an event-based analysis that examines price and return dynamics following significant market disturbances.\n\nRather than describing baseline behavior, this dimension captures how quickly and reliably an asset recovers after being stressed.\n\nIn essence, it answers:\nWhen something goes wrong, does the asset bounce back — or does it stay down?\n\nStable (S):\nStable assets demonstrate a strong ability to revert toward their pre-event state after a market shock. Following disruptive events, both price levels and returns tend to recover rapidly toward their original values, or at least toward a well-defined fraction of that baseline. Deviations decay quickly, and the asset re-enters a familiar behavioral regime without prolonged instability.\n\nReactive (R):\nReactive assets exhibit a slower or incomplete recovery following market shocks. After disruptive events, prices and returns often remain depressed for extended periods, fail to return to their original baseline, or settle into a materially different regime. The effects persist and continue to influence behavior long after the initial event."
+  }
+}
