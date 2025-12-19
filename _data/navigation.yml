@@ -24,7 +24,10 @@ header:
   #     tr      : &TR       Hakkında
   #     # @end locale config
   #   url: /home/
-
+  - title:
+      Take_the_Test
+    url: /test/
+    
   - title:
       E/I
     url: /e_i/
