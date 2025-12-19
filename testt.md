@@ -232,7 +232,7 @@ const descriptions = {{ site.data.personality_descriptions | jsonify }};
  */
 const AXES = [
   { key: "EI", label: "Introvert ↔ Extrovert", left: "I", right: "E" },
-  { key: "PF", label: "Persistent ↔ Fluid",     left: "P", right: "F" },
+  { key: "PF", label: "Fluid ↔ Persistent",     left: "P", right: "F" },
   { key: "AR", label: "Restrained ↔ Assertive", left: "R", right: "A" },
   { key: "OC", label: "Organized ↔ Chaotic",    left: "C", right: "O" },
   { key: "SR", label: "Reactive ↔ Stable",      left: "R", right: "S" }
