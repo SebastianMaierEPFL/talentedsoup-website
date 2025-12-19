@@ -1,26 +1,19 @@
 ---
 layout: article
-title: Perceiving vs Judging
+title: "Getting the Pulse of the Market"
 permalink: /p_j/
 ---
----
-
-## Getting the Pulse of the Market
+<p class="page-subtitle">Organized (O) vs Chaotic (C)</p>
 
 Can Fourier analysis reveal whether sector returns pulse like a heart under different market stresses?
+
+![Wolf of Wall Street gif](wolf.gif)
 
 
 ## Heartbeat Analogy
 
 We can think of market returns like a heartbeat: Fourier spectra trace the pulse, while sector–ETF correlations show how synchronized the organs are. 
 In resting (pre-crisis) periods, we would expect stable, low-variance rhythms; under stress (crisis), frequencies intensify and coordination spikes or fractures; during recovery (post-crisis), we can test whether dominant cycles re-emerge and sectors resynchronize—or settle into a new baseline.
-
-
-## Research Questions
-
-- Do sector and industry returns hide recurring cycles?
-- Which rhythms persist, fade, or spike during crises?
-- Can ETF benchmarks and flagship stocks stay in sync when the market is under stress?
 
 
 ## Fourier Analysis Foundations

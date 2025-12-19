@@ -227,7 +227,7 @@ permalink: /testt/
     <div class="input-block">
       <label>&nbsp;</label>
       <button id="takeTestBtn">Take test</button>
-      <div class="hint">No recomputation — lookup only.</div>
+      <div class="hint">Pen and paper is provided.</div>
     </div>
 
   </div>

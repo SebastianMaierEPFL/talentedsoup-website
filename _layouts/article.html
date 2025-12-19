@@ -2,6 +2,14 @@
 layout: page
 type: article
 ---
+<style>
+  .article__content p > img:only-child,
+  .article__content > img {
+    display: block;
+    margin: 1.5rem auto; 
+    max-width: 100%;   
+  }
+</style>
 
 {%- include snippets/assign.html
   target = site.data.variables.default.page.sharing
