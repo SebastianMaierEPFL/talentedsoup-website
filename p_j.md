@@ -62,8 +62,7 @@ Do flagship stocks track the same heartbeat as their sector ETF?
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/26906986"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26906986/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
 
-![png](output_17_2.png)
-    
+<div class="flourish-embed flourish-heatmap" data-src="visualisation/26908356"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26908356/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
 
 Health Care behaves like a defensive **metronome**: it rarely hits extremes, and XLV (red) usually sits near the middle of its stocks, so the ETF really does track the “central beat” of the family. The correlation heatmap backs this up: ETF–stock Pearson $r$ stays **positive in every window**, ranging from about **0.23 to 0.92**, with **all p-values $\approx 0.000$** except the weakest link (UNH in dot-com pre: $r \approx 0.34$, $p = 0.011$).
 
@@ -80,7 +79,7 @@ Health Care behaves like a defensive **metronome**: it rarely hits extremes, and
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/26907192"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26907192/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
     
-![png](output_19_2.png)
+<div class="flourish-embed flourish-heatmap" data-src="visualisation/26906506"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26906506/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
     
 Consumer Discretionary shows a more **uneven and reactive rhythm** than Health Care, with its ETF (red, XLY) often **pulsing ahead of or behind its members**, reflecting the sector’s sensitivity to economic mood swings. The correlation heatmap supports this view: ETF–stock Pearson $r$ values remain **consistently positive** across windows, ranging roughly from **0.21 to 0.94**, with **most $p$-values $\approx 0.000$**, except AMZN in the dot-com pre window ($r \approx 0.21$, $p = 0.119$), showing weak or insignificant coupling at that time.
 
@@ -97,7 +96,7 @@ Consumer Discretionary shows a more **uneven and reactive rhythm** than Health C
   
 <div class="flourish-embed flourish-chart" data-src="visualisation/26907296"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26907296/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
     
-![png](output_21_2.png)
+<div class="flourish-embed flourish-heatmap" data-src="visualisation/26908440"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26908440/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
 
     
 Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the middle of the pack**, but single names (especially GS and MS) throw off strong “extra beats” around major shocks. Statistically, ETF–stock Pearson $r$ is **high in almost every window**, mostly between **$0.71$ and $0.98$**, with only a brief dip to about **$0.42$–$0.47$** around the Brexit vote; **all reported $p$-values are $\approx 0.000$**, and the single missing cell (GS in dot-com pre) simply reflects data availability rather than weak linkage.
@@ -117,7 +116,7 @@ Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the
  
 <div class="flourish-embed flourish-chart" data-src="visualisation/26907335"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26907335/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
      
-![png](output_23_2.png)
+<div class="flourish-embed flourish-heatmap" data-src="visualisation/26908481"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26908481/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
 
     
 Technology appears to have a **regime-switching heartbeat**: it spends a lot of time at fast tempos, with XLK usually **following the big platforms** but sometimes missing the more extreme pulses in names like NVDA or ADBE.
