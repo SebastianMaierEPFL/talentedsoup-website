@@ -226,7 +226,7 @@ permalink: /testt/
     <div class="spinner"></div>
     <div style="font-weight:800;">Analyzing intrinsic behavior…</div>
     <div style="opacity:0.75; margin-top:0.25rem;">
-      (Lookup + UI rendering)
+      (The test may be hard for unsure stocks, some may be tested by the ring...)
     </div>
   </div>
 </div>
