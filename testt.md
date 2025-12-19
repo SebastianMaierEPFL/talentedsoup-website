@@ -12,73 +12,64 @@ permalink: /testt/
 .test-hero { margin: 1.2rem 0 1rem; }
 .test-hero h1 { margin-bottom: 0.3rem; }
 
-.test-controls {
-  display: grid;
+.test-controls{
+  display:grid;
   grid-template-columns: 1fr 180px 160px;
-  gap: 0.75rem;
-  align-items: end;
-  margin: 1rem 0 1.25rem;
+  gap:0.75rem;
+  align-items:end;
+  margin:1rem 0 1.25rem;
 }
-@media (max-width: 820px) { .test-controls { grid-template-columns: 1fr; } }
+@media (max-width: 820px){ .test-controls{ grid-template-columns: 1fr; } }
 
-.input-block label { display:block; font-weight:600; margin-bottom:0.35rem; }
-.input-block input, .input-block select, .test-controls button {
-  width: 100%;
-  padding: 0.65rem 0.75rem;
-  border: 1px solid rgba(0,0,0,0.18);
-  border-radius: 10px;
-  font-size: 1rem;
+.input-block label{ display:block; font-weight:600; margin-bottom:0.35rem; }
+.input-block input, .input-block select, .test-controls button{
+  width:100%;
+  padding:0.65rem 0.75rem;
+  border:1px solid rgba(0,0,0,0.18);
+  border-radius:10px;
+  font-size:1rem;
 }
-.test-controls button { cursor:pointer; font-weight:700; }
-.hint { font-size:0.92rem; opacity:0.8; margin-top:0.35rem; }
+.test-controls button{ cursor:pointer; font-weight:700; }
+.hint{ font-size:0.92rem; opacity:0.8; margin-top:0.35rem; }
 
 /* =========================
    LOADING OVERLAY
    ========================= */
-#loadingOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.86);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+#loadingOverlay{
+  position:fixed; inset:0;
+  background:rgba(255,255,255,0.86);
+  display:flex; justify-content:center; align-items:center;
+  z-index:999;
 }
-.hidden { display: none !important; }
-
+.hidden{ display:none !important; }
 .loading-card{
-  width: min(520px, 92vw);
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 14px;
-  padding: 1.2rem;
-  background: white;
-  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  width:min(520px, 92vw);
+  border:1px solid rgba(0,0,0,0.15);
+  border-radius:14px;
+  padding:1.2rem;
+  background:white;
+  box-shadow:0 12px 36px rgba(0,0,0,0.08);
 }
 .spinner{
-  width: 28px; height: 28px;
-  border-radius: 999px;
-  border: 3px solid rgba(0,0,0,0.15);
-  border-top-color: rgba(0,0,0,0.55);
-  animation: spin 0.9s linear infinite;
-  margin-bottom: 0.7rem;
+  width:28px; height:28px;
+  border-radius:999px;
+  border:3px solid rgba(0,0,0,0.15);
+  border-top-color:rgba(0,0,0,0.55);
+  animation:spin 0.9s linear infinite;
+  margin-bottom:0.7rem;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin{ to{ transform:rotate(360deg);} }
 
 /* =========================
    RESULT PANEL
    ========================= */
 #resultPanel{
-  border: 1px solid rgba(0,0,0,0.14);
-  border-radius: 14px;
-  padding: 1.2rem;
-  background: rgba(0,0,0,0.02);
+  border:1px solid rgba(0,0,0,0.14);
+  border-radius:14px;
+  padding:1.2rem;
+  background:rgba(0,0,0,0.02);
 }
-.result-top{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:0.35rem;
-  margin-bottom:1rem;
-}
+.result-top{ display:grid; grid-template-columns:1fr; gap:0.35rem; margin-bottom:1rem; }
 .badge{
   display:inline-block;
   font-weight:800;
@@ -98,22 +89,18 @@ permalink: /testt/
   border-radius:12px;
   padding:0.9rem 0.95rem;
 }
-.desc-box details summary{
-  cursor:pointer;
-  font-weight:700;
-  margin-top:0.55rem;
-}
+.desc-box details summary{ cursor:pointer; font-weight:700; margin-top:0.55rem; }
 
 /* =========================
    SLIDERS
    ========================= */
 .sliders{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:0.9rem 1.2rem;
   margin-top:1.1rem;
 }
-@media (max-width: 820px) { .sliders { grid-template-columns: 1fr; } }
+@media (max-width: 820px){ .sliders{ grid-template-columns:1fr; } }
 
 .slider-row label{
   display:flex;
@@ -123,7 +110,6 @@ permalink: /testt/
   margin-bottom:0.25rem;
 }
 .slider-row input[type="range"]{ width:100%; }
-
 .small-note{ font-size:0.92rem; opacity:0.8; margin-top:0.9rem; }
 
 /* =========================
@@ -131,7 +117,7 @@ permalink: /testt/
    ========================= */
 #errorBox{
   border:1px solid rgba(200,0,0,0.25);
-  background: rgba(200,0,0,0.06);
+  background:rgba(200,0,0,0.06);
   padding:0.85rem 0.9rem;
   border-radius:12px;
   margin:0.8rem 0;
@@ -156,7 +142,7 @@ permalink: /testt/
       <label for="symbolInput">Symbol</label>
       <input id="symbolInput" list="symbolsList" placeholder="e.g., AAPL, SPY, TSLA" autocomplete="off" />
       <datalist id="symbolsList">
-        {%- for kv in site.data.personality_data -%}
+        {%- for kv in site.data.personality_data.assets -%}
           <option value="{{ kv[0] }}"></option>
         {%- endfor -%}
       </datalist>
@@ -167,8 +153,8 @@ permalink: /testt/
       <label for="kindSelect">Universe</label>
       <select id="kindSelect">
         <option value="all" selected>All</option>
-        <option value="stocks">Stocks</option>
-        <option value="etfs">ETFs</option>
+        <option value="stock">Stocks</option>
+        <option value="etf">ETFs</option>
       </select>
       <div class="hint">Filters results by dataset type.</div>
     </div>
@@ -204,9 +190,7 @@ permalink: /testt/
       </details>
     </div>
 
-    <div class="sliders" id="slidersGrid">
-      <!-- JS will populate slider rows -->
-    </div>
+    <div class="sliders" id="slidersGrid"></div>
 
     <div class="small-note">
       Percentiles are shown as 0–100 positions on each axis (relative to the dataset used to compute them).
@@ -234,19 +218,17 @@ permalink: /testt/
  * ===========================================
  * DATA INJECTION FROM JEKYLL (build-time)
  * ===========================================
- * personalityData: per-symbol numeric + letters
- * descriptions: per-type textual descriptions
- *
- * Option B: put these files in /_data/
- *   - _data/personality_data.json
- *   - _data/personality_descriptions.json
+ * We keep your JSON "as-is":
+ * - personality_data.json has metadata + an `assets` object
+ * - personality_descriptions.json is keyed by 4-letter types (e.g., "IPAO")
  */
-const personalityData = {{ site.data.personality_data | jsonify }};
+const personalityRoot = {{ site.data.personality_data | jsonify }};
+const personalityData = personalityRoot.assets || {}; // <-- IMPORTANT
 const descriptions = {{ site.data.personality_descriptions | jsonify }};
 
 /**
  * Axes order / labels
- * Keys must match percentile keys in personality_data.json
+ * These keys must match asset.axes.<KEY>.pct and asset.axes.<KEY>.letter
  */
 const AXES = [
   { key: "EI", label: "Introvert ↔ Extrovert", left: "I", right: "E" },
@@ -259,8 +241,10 @@ const AXES = [
 const elInput   = document.getElementById("symbolInput");
 const elKind    = document.getElementById("kindSelect");
 const elBtn     = document.getElementById("takeTestBtn");
+
 const elOverlay = document.getElementById("loadingOverlay");
 const elError   = document.getElementById("errorBox");
+
 const elPanel   = document.getElementById("resultPanel");
 const elType    = document.getElementById("typeBadge");
 const elSymbol  = document.getElementById("symbolLine");
@@ -269,35 +253,46 @@ const elShort   = document.getElementById("descShort");
 const elLong    = document.getElementById("descLong");
 const elSliders = document.getElementById("slidersGrid");
 
-function showLoading(on) {
-  elOverlay.classList.toggle("hidden", !on);
-}
+function showLoading(on){ elOverlay.classList.toggle("hidden", !on); }
 
-function showError(msg) {
+function showError(msg){
   elError.textContent = msg;
   elError.classList.remove("hidden");
 }
-
-function clearError() {
+function clearError(){
   elError.classList.add("hidden");
   elError.textContent = "";
 }
 
-function clamp01to100(x) {
+function clamp01to100(x){
   const v = Number(x);
   if (!Number.isFinite(v)) return null;
   return Math.max(0, Math.min(100, v));
 }
 
-function renderSliders(asset) {
+function normalizeSymbol(s){
+  return String(s || "").trim().toUpperCase();
+}
+
+function findAsset(symbol){
+  return personalityData[symbol] || null;
+}
+
+function kindMatches(assetKind, filterKind){
+  // assetKind is "stock" or "etf" in your JSON
+  if (filterKind === "all") return true;
+  return String(assetKind || "").toLowerCase() === filterKind;
+}
+
+function renderSliders(asset){
   elSliders.innerHTML = "";
 
-  const pct = asset.percentiles || {};
-  const letters = asset.letters || {};
+  // Your JSON: asset.axes = { EI:{letter,pct}, PF:{...}, ... }
+  const axes = asset.axes || {};
 
-  for (const ax of AXES) {
-    const v = clamp01to100(pct[ax.key]);
-    const letter = letters[ax.key] || "—";
+  for (const ax of AXES){
+    const pct = clamp01to100(axes?.[ax.key]?.pct);
+    const letter = axes?.[ax.key]?.letter || "—";
 
     const row = document.createElement("div");
     row.className = "slider-row";
@@ -307,7 +302,7 @@ function renderSliders(asset) {
     left.textContent = ax.label;
 
     const right = document.createElement("span");
-    right.textContent = (v === null) ? `(${letter})` : `${v.toFixed(0)}% (${letter})`;
+    right.textContent = (pct === null) ? `(${letter})` : `${pct.toFixed(0)}% (${letter})`;
 
     lab.appendChild(left);
     lab.appendChild(right);
@@ -316,86 +311,66 @@ function renderSliders(asset) {
     slider.type = "range";
     slider.min = 0;
     slider.max = 100;
-    slider.value = (v === null) ? 50 : v;
+    slider.value = (pct === null) ? 50 : pct;
     slider.disabled = true;
 
     row.appendChild(lab);
     row.appendChild(slider);
+
     elSliders.appendChild(row);
   }
 }
 
-function renderResult(symbol, asset) {
-  const kind = asset.kind ? String(asset.kind) : "—";
-  const type = asset.type || "—";
-  const descKey = asset.description_key || type.slice(0, 4);
+function renderResult(symbol, asset){
+  // Your JSON:
+  // asset.type = "stock"/"etf"
+  // asset.personality = "EPACT" (5 letters)
+  const kind = asset.type ? String(asset.type) : "—";
+  const personality5 = asset.personality || "—";
+  const personality4 = (typeof personality5 === "string" && personality5.length >= 4)
+    ? personality5.slice(0,4)
+    : personality5;
 
-  const desc = descriptions[descKey] || null;
+  const desc = descriptions[personality4] || null;
 
-  elType.textContent = type;
+  elType.textContent = personality5;
   elSymbol.textContent = `${symbol} · ${kind}`;
-  elName.textContent = desc ? `${descKey} — ${desc.name}` : `${descKey}`;
 
-  elShort.textContent = (desc && desc.short) ? desc.short : "No description found for this type yet.";
-  elLong.textContent  = (desc && desc.long)  ? desc.long  : "";
+  elName.textContent = desc ? `${personality4} — ${desc.name}` : `${personality4} — (description missing)`;
+  elShort.textContent = desc?.short || "No description found for this type yet.";
+  elLong.textContent  = desc?.long  || "";
 
   renderSliders(asset);
   elPanel.classList.remove("hidden");
 }
 
-function normalizeSymbol(s) {
-  return String(s || "").trim().toUpperCase();
-}
-
-function findAsset(symbol) {
-  return personalityData[symbol] || null;
-}
-
-/**
- * IMPORTANT FIX:
- * Your data might store kind as "stock"/"etf" (singular)
- * while your dropdown uses "stocks"/"etfs" (plural).
- * This makes the filter reject everything.
- */
-function kindMatches(assetKind, filterKind) {
-  if (filterKind === "all") return true;
-
-  const k = String(assetKind || "").toLowerCase();
-
-  if (filterKind === "stocks") return (k === "stocks" || k === "stock");
-  if (filterKind === "etfs")   return (k === "etfs"   || k === "etf");
-
-  return k === filterKind;
-}
-
-async function handleTakeTest() {
+async function handleTakeTest(){
   clearError();
 
   const symbol = normalizeSymbol(elInput.value);
   const filterKind = elKind.value;
 
-  if (!symbol) {
+  if (!symbol){
     showError("Please enter a symbol (e.g., AAPL, SPY).");
     elPanel.classList.add("hidden");
     return;
   }
 
   const asset = findAsset(symbol);
-  if (!asset) {
+  if (!asset){
     showError(`Symbol "${symbol}" not found in personality_data.json.`);
     elPanel.classList.add("hidden");
     return;
   }
 
-  if (!kindMatches(asset.kind, filterKind)) {
+  if (!kindMatches(asset.type, filterKind)){
     showError(`Symbol "${symbol}" exists, but is not in the selected universe ("${filterKind}").`);
     elPanel.classList.add("hidden");
     return;
   }
 
   showLoading(true);
-  await new Promise(r => setTimeout(r, 550));
-
+  await new Promise(r => setTimeout(r, 450));
   renderResult(symbol, asset);
   showLoading(false);
 }
