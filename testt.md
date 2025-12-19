@@ -234,7 +234,7 @@ const AXES = [
   { key: "EI", label: "Introvert ↔ Extrovert", left: "I", right: "E" },
   { key: "PF", label: "Persistent ↔ Fluid",     left: "P", right: "F" },
   { key: "AR", label: "Restrained ↔ Assertive", left: "R", right: "A" },
-  { key: "OC", label: "Chaotic ↔ Organized",    left: "C", right: "O" },
+  { key: "OC", label: "Organized ↔ Chaotic",    left: "C", right: "O" },
   { key: "SR", label: "Reactive ↔ Stable",      left: "R", right: "S" }
 ];
 
