@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Getting the Pulse of the Market - Organized (O) vs Chaotic (C)
-permalink: /o_c/
+permalink: /p_j/
 ---
 
 ## 
