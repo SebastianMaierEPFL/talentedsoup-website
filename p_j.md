@@ -4,10 +4,8 @@ title: Perceiving vs Judging
 permalink: /p_j/
 ---
 ---
-layout: article
-title: Getting the Pulse of the Market
-permalink: /heartbeat/
----
+
+## Getting the Pulse of the Market
 
 Can Fourier analysis reveal whether sector returns pulse like a heart under different market stresses?
 
@@ -49,141 +47,6 @@ $$
 with an equivalent period $T_k = 1 / f_k$ that we also express in trading days and months. The power spectrum $P_k = |\hat{R}_k|^2$ highlights which frequencies carry the strongest energy, allowing us to identify dominant market heartbeats. Filtering to the highest-power components yields the summary tables and plots used throughout the notebook.
 
 
-## Loading the Shared Toolkit
-
-```python
-import importlib.util
-import os
-import sys
-from pathlib import Path
-import tempfile
-from tqdm import tqdm
-
-from IPython.display import Image, Markdown, display
-import matplotlib.pyplot as plt
-import matplotlib.patheffects as pe
-import numpy as np
-import pandas as pd
-import seaborn as sns
-
-BASE_DIR = Path.cwd() # path to the directory containing this notebook
-
-if str(BASE_DIR) not in sys.path:
-    sys.path.insert(0, str(BASE_DIR))
-
-# import the shared modules
-import market_fourier
-import heartbeat_visuals as hv
-import features
-import clustering
-import plotting
-import save
-
-sns.set_theme(style="whitegrid") # setting a consistent style for plots
-
-WINDOW_ORDER = list(market_fourier.CRISIS_WINDOWS.keys())
-CRISIS_GROUPS = hv.CRISIS_GROUPS
-
-print("Crisis windows in order:")
-print(WINDOW_ORDER)
-print("\nSector ETF proxies:")
-for sector, ticker in market_fourier.SECTOR_ETFS.items():
-    print(f"- {sector}: {ticker}")
-print("\nStock mapping:")
-for sector, tickers in hv.DEFAULT_STOCKS.items():
-    print(f"- {sector}: {', '.join(tickers)}")
-```
-
-    Crisis windows in order:
-    ['dotcom_pre', 'dotcom_peak', 'dotcom_recovery', 'gfc_pre', 'gfc_peak', 'gfc_recovery', 'brexit_pre', 'brexit_vote', 'brexit_post', 'covid_pre', 'covid_crisis']
-    
-    Sector ETF proxies:
-    - Consumer Discretionary: XLY
-    - Financials: XLF
-    - Health Care: XLV
-    - Technology: XLK
-    
-    Stock mapping:
-    - Consumer Discretionary: AMZN, HD
-    - Financials: JPM, BAC
-    - Health Care: JNJ, UNH
-    - Technology: AAPL, MSFT
-
-
-## Checking the Pulse Inputs
-
-We start by pulling prices and returns with `market_fourier` to verify coverage and sampling.
-
-
-We will use the technology sector to verify prices and log returns before scaling the analysis to every sector and window.
-
-### Technology pulse diagnostic
-
-A quick look at XLK and AAPL to confirm the data are clean before we explore every sector-window combination.
-
-
-```python
-etf_prices = market_fourier.load_price_series("XLK", kind="etfs")
-etf_returns = market_fourier.get_returns("XLK", kind="etfs")
-stock_prices = market_fourier.load_price_series("AAPL", kind="stocks")
-stock_returns = market_fourier.get_returns("AAPL", kind="stocks")
-
-print("\n### XLK price history (head)")
-print(etf_prices.head())
-
-print("\n### AAPL price history (head)")
-print(stock_prices.head())
-
-print("\n### XLK log returns (summary)")
-print(etf_returns.describe())
-
-print("\n### AAPL log returns (summary)")
-print(stock_returns.describe())
-
-```
-
-    
-    ### XLK price history (head)
-    date
-    1998-12-22    25.008554
-    1998-12-23    25.606020
-    1998-12-24    25.508471
-    1998-12-28    25.581635
-    1998-12-29    25.654800
-    Name: XLK, dtype: float64
-    
-    ### AAPL price history (head)
-    date
-    1980-12-12    0.406782
-    1980-12-15    0.385558
-    1980-12-16    0.357260
-    1980-12-17    0.366103
-    1980-12-18    0.376715
-    Name: AAPL, dtype: float64
-    
-    ### XLK log returns (summary)
-    count    5551.000000
-    mean        0.000202
-    std         0.016150
-    min        -0.148662
-    25%        -0.006030
-    50%         0.000484
-    75%         0.007241
-    max         0.149296
-    Name: XLK, dtype: float64
-    
-    ### AAPL log returns (summary)
-    count    10253.000000
-    mean         0.000623
-    std          0.028693
-    min         -0.731247
-    25%         -0.012703
-    50%          0.000000
-    75%          0.014035
-    max          0.286891
-    Name: AAPL, dtype: float64
-
-
 ## Dominant Cycles Across Crises
 
 `heartbeat_visuals.build_sector_cycle_table` sweeps every sector/window pair and records the strongest FFT components: our stand-in for heartbeat spikes.
@@ -197,44 +60,12 @@ print(stock_returns.describe())
 `approx_months` — same period translated into months for intuition.  
 `power` — FFT power.
 
-```python
-sector_cycles = hv.build_sector_cycle_table(
-    market_fourier, top_n=3, window_order=WINDOW_ORDER
-)
-print(sector_cycles.head())
-print(f"Total records: {len(sector_cycles)}")
-```
-
-                       sector       window  cycles_per_year  period_days  \
-    0  Consumer Discretionary   dotcom_pre        18.000000    20.291667   
-    1  Consumer Discretionary   dotcom_pre        31.500000    11.595238   
-    2  Consumer Discretionary   dotcom_pre        36.000000    10.145833   
-    3  Consumer Discretionary  dotcom_peak        37.503212     9.739166   
-    4  Consumer Discretionary  dotcom_peak        40.740899     8.965192   
-    
-       approx_months     power  
-    0       0.666667  0.021220  
-    1       0.380952  0.020505  
-    2       0.333333  0.008299  
-    3       0.319973  1.560739  
-    4       0.294544  1.427863  
-    Total records: 132
 
 
 ### Where the Market Beats Fastest
 
 The heatmap highlights the highest-power frequency (dominant frequency - cycles/year) for each sector and crisis window. Darker shades mark faster heartbeats.
-
-```python
-hv.plot_sector_heatmap(sector_cycles, window_order=WINDOW_ORDER)
-display(Image(filename=str(hv.OUTPUT_DIR / "sector_frequency_heatmap.png")))
-```
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/sector_frequency_heatmap.png
-
-
-
-    
+ 
 ![png](heartbeat_files/output_13_1.png)
     
 
@@ -251,37 +82,6 @@ In the COVID window, many sectors settle into mid–low frequencies (~16–32). 
 
 Do flagship stocks track the same heartbeat as their sector ETF?
 
-```python
-corr_df = hv.compute_window_correlations(
-    market_fourier,
-    stocks_map=hv.FAMILY_STOCKS,  
-    windows=WINDOW_ORDER,
-    min_obs=30,
-)
-
-hv.plot_sector_family_panels(market_fourier, WINDOW_ORDER)
-hv.plot_correlation_heatmaps(corr_df, window_order=WINDOW_ORDER)
-```
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/sector_family_xly.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/sector_family_xlf.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/sector_family_xlv.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/sector_family_xlk.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/corr_xly.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/corr_xlf.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/corr_xlv.png
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/corr_xlk.png
-
-
-```python
-# Health Care (XLV)
-img_path = hv.OUTPUT_DIR / "sector_family_xlv.png"
-corr_path = hv.OUTPUT_DIR / "corr_xlv.png"
-
-display(Markdown("#### Health Care (XLV)"))
-display(Image(filename=str(img_path)))
-display(Image(filename=str(corr_path)))
-```
 
 
 #### Health Care (XLV)
@@ -308,16 +108,6 @@ Health Care behaves like a defensive **metronome**: it rarely hits extremes, and
 * **Brexit:** spectrally you get a **mixed pre-vote lineup**, then the vote triggers **short-lived spikes** in a couple of names while XLV barely moves. Correlations pre-vote are already strong (most **0.61–0.73**), dip slightly around the vote (UNH drops to $r \approx 0.44$, others in the **0.57–0.77** range), then recover into the **0.65–0.75** band post-vote. That matches the idea of a **brief shock with quick re-synchronization**.
 
 * **COVID:** before the shock, the spectra show the group is **noticeably up-tempo**, and ETF–stock $r$ is solid but not extreme (**0.53–0.66**). During the crisis, the panels show **all names, including XLV, shift down to mid–low frequencies together**, and the correlations spike: JNJ/MRK/PFE/TMO all sit around **0.83–0.89**, UNH peaks at **$r \approx 0.92$**, all with $p \approx 0.000$. So in COVID, Health Care not only slows its heartbeat, it does so **almost perfectly in sync with XLV**, reinforcing the “defensive metronome” story.
-
-```python
-# Consumer Discretionary (XLY)
-img_path = hv.OUTPUT_DIR / 'sector_family_xly.png'
-corr_path = hv.OUTPUT_DIR / "corr_xly.png"
-
-display(Markdown("#### Consumer Discretionary (XLY)"))
-display(Image(filename=str(img_path)))
-display(Image(filename=str(corr_path)))
-```
 
 
 #### Consumer Discretionary (XLY)
@@ -346,18 +136,6 @@ Consumer Discretionary shows a more **uneven and reactive rhythm** than Health C
 * **COVID:** before the pandemic, frequencies cluster in the **mid–high range**, forming a **brisk, confident beat** with solid correlations ($r \approx 0.52\text{–}0.81$, $p \approx 0.000$). During the crisis, **everything slows sharply and together**: XLY–stock correlations surge to **very high values** ($r \approx 0.78\text{–}0.94$, $p \approx 0.000$), as the sector’s heartbeat **drops into a synchronized low tempo**, signaling contraction under pressure.
 
 
-```python
-# Financials (XLF)
-img_path = hv.OUTPUT_DIR / 'sector_family_xlf.png'
-corr_path = hv.OUTPUT_DIR / "corr_xlf.png"
-
-display(Markdown("#### Financials (XLF)"))
-display(Image(filename=str(img_path)))
-display(Image(filename=str(corr_path)))
-
-```
-
-
 #### Financials (XLF)
 
 
@@ -383,16 +161,6 @@ Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the
 
 * **COVID:** before COVID, **GS again runs hot while the rest stay slow–mid**, so the family beat is skewed by one fast drummer, but ETF–stock $r$ stays very high (**$0.87$–$0.91$**). In the crisis window, **frequencies rise across almost all names and re-cluster in the mid–high band**, and the synchrony becomes extreme: BAC/JPM/MS all reach **$r \approx 0.96$–$0.98$**, C/GS about **$0.96$**, with $p \approx 0.000$. XLF thus **captures a near-perfect re-synchronization after the initial shock**, even as the time-domain panels remain choppy and crisis-sensitive.
 
-```python
-# Technology (XLK)
-img_path = hv.OUTPUT_DIR / 'sector_family_xlk.png'
-corr_path = hv.OUTPUT_DIR / "corr_xlk.png"
-
-display(Markdown("#### Technology (XLK)"))
-display(Image(filename=str(img_path)))
-display(Image(filename=str(corr_path)))
-
-```
 
 
 #### Technology (XLK)
@@ -425,31 +193,6 @@ The correlation heatmap shows ETF–stock Pearson $r$ **almost always positive**
 
 We now step through each crisis and compare ETF returns (top row) with multiple stocks alongside their spectra, shown in right columns. Vertical dashed lines shown in the time domain separate pre-crisis, crisis, and recovery, while those in the frequency domain mark reference tempos: roughly 5 cycles/year for quarterly rhythms, 12 for monthly pulses, and 52 for weekly beats, useful baselines for spotting whether crisis spectra race ahead or slow down relative to the market’s usual cadence.
 
-```python
-# Dot-com
-crisis = "dotcom"
-windows = CRISIS_GROUPS[crisis]
-for sector in market_fourier.SECTOR_ETFS:
-    sector_ticker = market_fourier.SECTOR_ETFS[sector]
-    stock_list = hv.DEFAULT_STOCKS.get(sector, [])
-    hv.plot_crisis_comparison(
-        market_fourier,
-        crisis,
-        windows,
-        sector,
-        sector_ticker,
-        stock_list,
-    )
-    fig_name = f"{crisis}_{sector_ticker.lower()}_comparison.png"
-    path = hv.OUTPUT_DIR / fig_name
-    if path.exists():
-        display(Markdown(f"#### {sector} ({sector_ticker}) vs stocks"))
-        display(Image(filename=str(path)))
-
-```
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/dotcom_xly_comparison.png
-
 
 
 #### Consumer Discretionary (XLY) vs stocks
@@ -458,10 +201,6 @@ for sector in market_fourier.SECTOR_ETFS:
 
     
 ![png](heartbeat_files/output_26_2.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/dotcom_xlf_comparison.png
 
 
 
@@ -474,8 +213,6 @@ for sector in market_fourier.SECTOR_ETFS:
     
 
 
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/dotcom_xlv_comparison.png
-
 
 
 #### Health Care (XLV) vs stocks
@@ -486,8 +223,6 @@ for sector in market_fourier.SECTOR_ETFS:
 ![png](heartbeat_files/output_26_8.png)
     
 
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/dotcom_xlk_comparison.png
 
 
 
@@ -531,29 +266,6 @@ for sector in market_fourier.SECTOR_ETFS:
 * **AAPL:** Already has strong peaks near **~25–30 c/yr and around 50–60 c/yr** in the **pre** panel; at the **peak**, those get taller and more numerous, especially near the weekly band—**very fast heartbeat**. Recovery cuts the heights roughly back toward pre levels, but **still richer than XLK**.
 * **MSFT:** Similar story: **clear peaks near the monthly (~12 c/yr) and weekly (~52 c/yr) guides** grow at the **peak**, then shrink but remain in **recovery**—Tech stocks stay more rhythmic than the ETF.
 
-```python
-crisis = "gfc"
-windows = CRISIS_GROUPS[crisis]
-for sector in market_fourier.SECTOR_ETFS:
-    sector_ticker = market_fourier.SECTOR_ETFS[sector]
-    stock_list = hv.DEFAULT_STOCKS.get(sector, [])
-    hv.plot_crisis_comparison(
-        market_fourier,
-        crisis,
-        windows,
-        sector,
-        sector_ticker,
-        stock_list,
-    )
-    fig_name = f"{crisis}_{sector_ticker.lower()}_comparison.png"
-    path = hv.OUTPUT_DIR / fig_name
-    if path.exists():
-        display(Markdown(f"#### {sector} ({sector_ticker}) vs stocks"))
-        display(Image(filename=str(path)))
-
-```
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/gfc_xly_comparison.png
 
 
 
@@ -566,20 +278,12 @@ for sector in market_fourier.SECTOR_ETFS:
     
 
 
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/gfc_xlf_comparison.png
-
-
-
 #### Financials (XLF) vs stocks
 
 
 
     
 ![png](heartbeat_files/output_28_5.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/gfc_xlv_comparison.png
 
 
 
@@ -589,10 +293,6 @@ for sector in market_fourier.SECTOR_ETFS:
 
     
 ![png](heartbeat_files/output_28_8.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/gfc_xlk_comparison.png
 
 
 
@@ -636,42 +336,12 @@ for sector in market_fourier.SECTOR_ETFS:
 * **MSFT:** Shows a similar pattern but with smaller absolute power: more energy near **10–20 c/yr** and **40–60 c/yr** at the **peak**, then a clearer drop in the weekly zone during **recovery**.
 
 
-```python
-crisis = "brexit"
-windows = CRISIS_GROUPS[crisis]
-for sector in market_fourier.SECTOR_ETFS:
-    sector_ticker = market_fourier.SECTOR_ETFS[sector]
-    stock_list = hv.DEFAULT_STOCKS.get(sector, [])
-    hv.plot_crisis_comparison(
-        market_fourier,
-        crisis,
-        windows,
-        sector,
-        sector_ticker,
-        stock_list,
-    )
-    fig_name = f"{crisis}_{sector_ticker.lower()}_comparison.png"
-    path = hv.OUTPUT_DIR / fig_name
-    if path.exists():
-        display(Markdown(f"#### {sector} ({sector_ticker}) vs stocks"))
-        display(Image(filename=str(path)))
-
-```
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/brexit_xly_comparison.png
-
-
-
 #### Consumer Discretionary (XLY) vs stocks
 
 
 
     
 ![png](heartbeat_files/output_30_2.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/brexit_xlf_comparison.png
 
 
 
@@ -681,10 +351,6 @@ for sector in market_fourier.SECTOR_ETFS:
 
     
 ![png](heartbeat_files/output_30_5.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/brexit_xlv_comparison.png
 
 
 
@@ -694,10 +360,7 @@ for sector in market_fourier.SECTOR_ETFS:
 
     
 ![png](heartbeat_files/output_30_8.png)
-    
 
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/brexit_xlk_comparison.png
 
 
 
@@ -740,31 +403,6 @@ for sector in market_fourier.SECTOR_ETFS:
 * **AAPL / MSFT:** Both stocks echo that pattern: pre-vote, clear peaks near **10–20 c/yr** and some around **50–60 c/yr**; very quiet **vote** windows; **post-vote**, mid-band power comes back (especially AAPL, which shows stronger **15–30 c/yr** peaks) with a few weekly-ish spikes.
 
 
-```python
-crisis = "covid"
-windows = CRISIS_GROUPS[crisis]
-for sector in market_fourier.SECTOR_ETFS:
-    sector_ticker = market_fourier.SECTOR_ETFS[sector]
-    stock_list = hv.DEFAULT_STOCKS.get(sector, [])
-    hv.plot_crisis_comparison(
-        market_fourier,
-        crisis,
-        windows,
-        sector,
-        sector_ticker,
-        stock_list,
-    )
-    fig_name = f"{crisis}_{sector_ticker.lower()}_comparison.png"
-    path = hv.OUTPUT_DIR / fig_name
-    if path.exists():
-        display(Markdown(f"#### {sector} ({sector_ticker}) vs stocks"))
-        display(Image(filename=str(path)))
-
-```
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/covid_xly_comparison.png
-
-
 
 #### Consumer Discretionary (XLY) vs stocks
 
@@ -775,9 +413,6 @@ for sector in market_fourier.SECTOR_ETFS:
     
 
 
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/covid_xlf_comparison.png
-
-
 
 #### Financials (XLF) vs stocks
 
@@ -785,10 +420,6 @@ for sector in market_fourier.SECTOR_ETFS:
 
     
 ![png](heartbeat_files/output_32_5.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/covid_xlv_comparison.png
 
 
 
@@ -798,16 +429,10 @@ for sector in market_fourier.SECTOR_ETFS:
 
     
 ![png](heartbeat_files/output_32_8.png)
-    
-
-
-    [saved] figure: /Users/magdaturcanu/Desktop/SV/ADA/outputs/covid_xlk_comparison.png
 
 
 
 #### Technology (XLK) vs stocks
-
-
 
     
 ![png](heartbeat_files/output_32_11.png)
@@ -891,86 +516,9 @@ $$
 
 **Analogy:** Is the heartbeat a strong *“LUB-DUB”* (high concentration) or a faint flutter (low concentration)?
 
-```python
-# Configuration
-OUTPUT_FILE = "market_personality_labels.csv"
-
-# Feature Extraction 
-df = None
-if os.path.exists(OUTPUT_FILE):
-    print(f"Found existing {OUTPUT_FILE}. Loading data...")
-    try:
-        df = pd.read_csv(OUTPUT_FILE)
-        # Ensure we have the right metrics
-        if "Entropy" not in df.columns or "Concentration" not in df.columns:
-            print("Missing metrics. Re-calculating...")
-            df = None
-    except:
-        df = None
-
-if df is None:
-    tickers = features.get_all_tickers()
-    if not tickers:
-        print("Error: No data found. Check your DATA_ROOT path.")
-    else:
-        results = []
-        print(f"Recording heartbeats for {len(tickers)} instruments...")
-        for ticker, kind in tqdm(tickers):
-            res = features.calculate_spectral_personality(ticker, kind)
-            if res:
-                results.append(res)
-        df = pd.DataFrame(results)
-        df.to_csv(OUTPUT_FILE, index=False)
-        print("Vitals recorded.")
-
-# Clustering
-if df is not None:
-    print("Diagnosing personality types...")
-    df = clustering.clean_data(df)
-    df = clustering.apply_mbti_clustering(df)
-    
-    # Save the diagnosis
-    df.to_csv(OUTPUT_FILE, index=False)
-    
-    # Print Summary
-    print("\n--- Diagnosis Summary ---")
-    print(df.groupby(["Kind", "Label"]).size())
-```
-
-    Found existing market_personality_labels.csv. Loading data...
-    Diagnosing personality types...
-    Separating Analysis for 7001 instruments...
-      -> Clustering 1763 ETFs...
-      -> Clustering 5238 Stocks...
-    
-    --- Diagnosis Summary ---
-    Kind    Label      
-    etfs    C (Chaos)       957
-            R (Regular)     806
-    stocks  C (Chaos)      2785
-            R (Regular)    2453
-    dtype: int64
-
-
-```python
-if df is not None:
-    plotting.plot_personality_map(df)
-
-save.final_results()
-```
-
-    Plot saved to market_personality_map.png
-
-
-
     
 ![png](heartbeat_files/output_36_1.png)
-    
 
-
-    --- Generating Final Lists for MBTI Analysis ---
-    1. Saved classified list to 'labels.csv' (7001 items)
-    2. Saved dropped list to 'dropped.csv' (1048 items)
 
 
 In `clean_data(df)` we apply a set of quality filters before clustering, so only instruments with a meaningful “heartbeat” are kept:
@@ -978,31 +526,6 @@ In `clean_data(df)` we apply a set of quality filters before clustering, so only
 - First, we replace any `±∞` values with `NaN` and **drop rows where `Entropy` or `Concentration` is `NaN`**. This removes tickers whose Fourier spectrum could not be computed reliably (e.g. prices too flat, bad data, numerical issues).
 - Next, we **only keep instruments with more than 500 trading days**. Short histories do not produce a stable Fourier spectrum, so those tickers are excluded from the personality map: $\text{Total\_Days} > 500.$
 - Finally, we **filter out very low–entropy assets**: $H < 0.90.$ Very low entropy usually means the price barely moves (illiquid, inactive, or near-constant). These series don’t really have a “heartbeat”, so we drop them and focus on assets with enough variation to say something meaningful about their rhythm.
-
-```python
-# Distribution
-if df is not None:
-    fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-    palette = {"O (Organized)": "#2ca02c", "C (Chaos)": "#d62728"}
-    
-    # Row 1: Entropy (Disorder)
-    sns.histplot(data=df[df['Kind']=='etfs'], x='Entropy', hue='Label', kde=True, ax=axes[0,0], palette=palette, bins=30)
-    axes[0,0].set_title("Spectral Entropy: ETFs")
-    
-    sns.histplot(data=df[df['Kind']=='stocks'], x='Entropy', hue='Label', kde=True, ax=axes[0,1], palette=palette, bins=30)
-    axes[0,1].set_title("Spectral Entropy: Stocks")
-    
-    # Row 2: Concentration (Rhythm)
-    sns.histplot(data=df[df['Kind']=='etfs'], x='Concentration', hue='Label', kde=True, ax=axes[1,0], palette=palette, bins=30)
-    axes[1,0].set_title("Energy Concentration: ETFs")
-    
-    sns.histplot(data=df[df['Kind']=='stocks'], x='Concentration', hue='Label', kde=True, ax=axes[1,1], palette=palette, bins=30)
-    axes[1,1].set_title("Energy Concentration: Stocks")
-    
-    plt.tight_layout()
-    plt.show()
-```
-
 
     
 ![png](heartbeat_files/output_38_0.png)
