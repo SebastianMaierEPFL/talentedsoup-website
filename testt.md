@@ -8,18 +8,9 @@ permalink: /testt/
 /* =========================
    BASIC LAYOUT STYLES
    ========================= */
-.test-wrap {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.test-hero {
-  margin: 1.2rem 0 1rem;
-}
-
-.test-hero h1 {
-  margin-bottom: 0.3rem;
-}
+.test-wrap { max-width: 980px; margin: 0 auto; }
+.test-hero { margin: 1.2rem 0 1rem; }
+.test-hero h1 { margin-bottom: 0.3rem; }
 
 .test-controls {
   display: grid;
@@ -28,39 +19,18 @@ permalink: /testt/
   align-items: end;
   margin: 1rem 0 1.25rem;
 }
+@media (max-width: 820px) { .test-controls { grid-template-columns: 1fr; } }
 
-@media (max-width: 820px) {
-  .test-controls {
-    grid-template-columns: 1fr;
-  }
-}
-
-.input-block label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-
-.input-block input,
-.input-block select,
-.test-controls button {
+.input-block label { display:block; font-weight:600; margin-bottom:0.35rem; }
+.input-block input, .input-block select, .test-controls button {
   width: 100%;
   padding: 0.65rem 0.75rem;
   border: 1px solid rgba(0,0,0,0.18);
   border-radius: 10px;
   font-size: 1rem;
 }
-
-.test-controls button {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.hint {
-  font-size: 0.92rem;
-  opacity: 0.8;
-  margin-top: 0.35rem;
-}
+.test-controls button { cursor:pointer; font-weight:700; }
+.hint { font-size:0.92rem; opacity:0.8; margin-top:0.35rem; }
 
 /* =========================
    LOADING OVERLAY
@@ -74,119 +44,98 @@ permalink: /testt/
   align-items: center;
   z-index: 999;
 }
-
 .hidden { display: none !important; }
 
-.loading-card {
+.loading-card{
   width: min(520px, 92vw);
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 14px;
-  padding: 1.2rem 1.2rem;
+  padding: 1.2rem;
   background: white;
   box-shadow: 0 12px 36px rgba(0,0,0,0.08);
 }
-
-.spinner {
-  width: 28px;
-  height: 28px;
+.spinner{
+  width: 28px; height: 28px;
   border-radius: 999px;
   border: 3px solid rgba(0,0,0,0.15);
   border-top-color: rgba(0,0,0,0.55);
   animation: spin 0.9s linear infinite;
   margin-bottom: 0.7rem;
 }
-
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* =========================
    RESULT PANEL
    ========================= */
-#resultPanel {
+#resultPanel{
   border: 1px solid rgba(0,0,0,0.14);
   border-radius: 14px;
-  padding: 1.2rem 1.2rem;
+  padding: 1.2rem;
   background: rgba(0,0,0,0.02);
 }
-
-.result-top {
-  display: grid;
+.result-top{
+  display:grid;
   grid-template-columns: 1fr;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
+  gap:0.35rem;
+  margin-bottom:1rem;
 }
-
-.badge {
-  display: inline-block;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  font-size: 1.2rem;
-  padding: 0.25rem 0.6rem;
-  border: 1px solid rgba(0,0,0,0.18);
-  border-radius: 999px;
-  background: white;
+.badge{
+  display:inline-block;
+  font-weight:800;
+  letter-spacing:0.02em;
+  font-size:1.2rem;
+  padding:0.25rem 0.6rem;
+  border:1px solid rgba(0,0,0,0.18);
+  border-radius:999px;
+  background:white;
 }
+.result-sub{ opacity:0.85; }
 
-.result-sub {
-  opacity: 0.85;
+.desc-box{
+  margin-top:0.65rem;
+  background:white;
+  border:1px solid rgba(0,0,0,0.12);
+  border-radius:12px;
+  padding:0.9rem 0.95rem;
 }
-
-.desc-box {
-  margin-top: 0.65rem;
-  background: white;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 12px;
-  padding: 0.9rem 0.95rem;
-}
-
-.desc-box details summary {
-  cursor: pointer;
-  font-weight: 700;
-  margin-top: 0.55rem;
+.desc-box details summary{
+  cursor:pointer;
+  font-weight:700;
+  margin-top:0.55rem;
 }
 
 /* =========================
    SLIDERS
    ========================= */
-.sliders {
-  display: grid;
+.sliders{
+  display:grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.9rem 1.2rem;
-  margin-top: 1.1rem;
+  gap:0.9rem 1.2rem;
+  margin-top:1.1rem;
 }
+@media (max-width: 820px) { .sliders { grid-template-columns: 1fr; } }
 
-@media (max-width: 820px) {
-  .sliders { grid-template-columns: 1fr; }
+.slider-row label{
+  display:flex;
+  justify-content:space-between;
+  gap:0.75rem;
+  font-weight:700;
+  margin-bottom:0.25rem;
 }
+.slider-row input[type="range"]{ width:100%; }
 
-.slider-row label {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.slider-row input[type="range"] {
-  width: 100%;
-}
-
-.small-note {
-  font-size: 0.92rem;
-  opacity: 0.8;
-  margin-top: 0.9rem;
-}
+.small-note{ font-size:0.92rem; opacity:0.8; margin-top:0.9rem; }
 
 /* =========================
    ERROR
    ========================= */
-#errorBox {
-  border: 1px solid rgba(200,0,0,0.25);
+#errorBox{
+  border:1px solid rgba(200,0,0,0.25);
   background: rgba(200,0,0,0.06);
-  padding: 0.85rem 0.9rem;
-  border-radius: 12px;
-  margin: 0.8rem 0;
+  padding:0.85rem 0.9rem;
+  border-radius:12px;
+  margin:0.8rem 0;
 }
-
 </style>
 
 <div class="test-wrap">
@@ -287,13 +236,17 @@ permalink: /testt/
  * ===========================================
  * personalityData: per-symbol numeric + letters
  * descriptions: per-type textual descriptions
+ *
+ * Option B: put these files in /_data/
+ *   - _data/personality_data.json
+ *   - _data/personality_descriptions.json
  */
 const personalityData = {{ site.data.personality_data | jsonify }};
 const descriptions = {{ site.data.personality_descriptions | jsonify }};
 
 /**
- * Axes order / labels (edit to match your final model)
- * Keys must match the JSON percentile keys.
+ * Axes order / labels
+ * Keys must match percentile keys in personality_data.json
  */
 const AXES = [
   { key: "EI", label: "Introvert ↔ Extrovert", left: "I", right: "E" },
@@ -303,13 +256,11 @@ const AXES = [
   { key: "SR", label: "Reactive ↔ Stable",      left: "R", right: "S" }
 ];
 
-const elInput = document.getElementById("symbolInput");
-const elKind  = document.getElementById("kindSelect");
-const elBtn   = document.getElementById("takeTestBtn");
-
+const elInput   = document.getElementById("symbolInput");
+const elKind    = document.getElementById("kindSelect");
+const elBtn     = document.getElementById("takeTestBtn");
 const elOverlay = document.getElementById("loadingOverlay");
 const elError   = document.getElementById("errorBox");
-
 const elPanel   = document.getElementById("resultPanel");
 const elType    = document.getElementById("typeBadge");
 const elSymbol  = document.getElementById("symbolLine");
@@ -353,7 +304,7 @@ function renderSliders(asset) {
 
     const lab = document.createElement("label");
     const left = document.createElement("span");
-    left.textContent = `${ax.label}`;
+    left.textContent = ax.label;
 
     const right = document.createElement("span");
     right.textContent = (v === null) ? `(${letter})` : `${v.toFixed(0)}% (${letter})`;
@@ -377,7 +328,7 @@ function renderSliders(asset) {
 function renderResult(symbol, asset) {
   const kind = asset.kind ? String(asset.kind) : "—";
   const type = asset.type || "—";
-  const descKey = asset.description_key || type.slice(0,4); // fallback
+  const descKey = asset.description_key || type.slice(0, 4);
 
   const desc = descriptions[descKey] || null;
 
@@ -385,11 +336,10 @@ function renderResult(symbol, asset) {
   elSymbol.textContent = `${symbol} · ${kind}`;
   elName.textContent = desc ? `${descKey} — ${desc.name}` : `${descKey}`;
 
-  elShort.textContent = desc?.short || "No description found for this type yet.";
-  elLong.textContent  = desc?.long  || "";
+  elShort.textContent = (desc && desc.short) ? desc.short : "No description found for this type yet.";
+  elLong.textContent  = (desc && desc.long)  ? desc.long  : "";
 
   renderSliders(asset);
-
   elPanel.classList.remove("hidden");
 }
 
@@ -398,13 +348,24 @@ function normalizeSymbol(s) {
 }
 
 function findAsset(symbol) {
-  // Direct lookup by key
   return personalityData[symbol] || null;
 }
 
+/**
+ * IMPORTANT FIX:
+ * Your data might store kind as "stock"/"etf" (singular)
+ * while your dropdown uses "stocks"/"etfs" (plural).
+ * This makes the filter reject everything.
+ */
 function kindMatches(assetKind, filterKind) {
   if (filterKind === "all") return true;
-  return String(assetKind || "").toLowerCase() === filterKind;
+
+  const k = String(assetKind || "").toLowerCase();
+
+  if (filterKind === "stocks") return (k === "stocks" || k === "stock");
+  if (filterKind === "etfs")   return (k === "etfs"   || k === "etf");
+
+  return k === filterKind;
 }
 
 async function handleTakeTest() {
@@ -432,7 +393,6 @@ async function handleTakeTest() {
     return;
   }
 
-  // Nice UX: small "thinking" pause (no heavy compute)
   showLoading(true);
   await new Promise(r => setTimeout(r, 550));
 
@@ -440,7 +400,6 @@ async function handleTakeTest() {
   showLoading(false);
 }
 
-// Click + Enter key
 elBtn.addEventListener("click", handleTakeTest);
 elInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") handleTakeTest();
