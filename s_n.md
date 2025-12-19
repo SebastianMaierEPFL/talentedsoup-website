@@ -76,3 +76,76 @@ We test whether the regimes are not just cosmetic labels by comparing their retu
 - Null hypothesis ( H_0 ): returns in regime ( i ) and regime ( j ) come from the same distribution.
 - We typically observe small p‑values (e.g. ( p < 0.01 )) for most state pairs, especially those that visually look different (bull vs. bear, calm vs. crisis).
 
+<table>
+  <tr>
+    <td align="center">
+      <strong>SPY</strong><br>
+      <img src="/assets/images/pval_spy.png" alt="SPY p-values">
+    </td>
+    <td align="center">
+      <strong>QQQ</strong><br>
+      <img src="/assets/images/pval_qqq.png" alt="QQQ p-values">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>XLY</strong><br>
+      <img src="/assets/images/pval_xly.png" alt="XLY p-values">
+    </td>
+    <td align="center">
+      <strong>GLD</strong><br>
+      <img src="/assets/images/pval_gld.png" alt="GLD p-values">
+    </td>
+  </tr>
+</table>
+
+Across SPY, QQQ, XLY, and GLD, KS tests on regime‑conditioned returns strongly reject the hypothesis that regimes share the same return distribution. This confirms that our “emotional states” are not arbitrary and that they correspond to statistically distinct patterns of market behavior.
+
+# How Regimes Transition: Persistence vs Fluidity
+
+To talk about persistence and fluidity, we move from “what regimes look like” to “how they evolve over time”.
+
+Each HMM yields a transition matrix ( $P$ ), where ( $P_{ij}$ ) is the probability of going from state ( $i$ ) today to state ( $j$ ) tomorrow. The diagonal entries ( $P_{ii}$ ) capture self‑transition probabilities.
+
+- High ( $P_{ij}$ ): once in the state ( $i$ ), the process tends to stay there (persistent).
+- Low ( $P_{ij}$ ): state ( $i$ ) is short-lived. The process quickly leaves it.
+
+We can visualize this matrix for each ETF.
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>SPY</strong><br>
+      <img src="/assets/images/transition_spy.png" alt="SPY transition">
+    </td>
+    <td align="center">
+      <strong>QQQ</strong><br>
+      <img src="/assets/images/transition_qqq.png" alt="QQQ transition">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>XLY</strong><br>
+      <img src="/assets/images/transition_xly.png" alt="XLY transition">
+    </td>
+    <td align="center">
+      <strong>GLD</strong><br>
+      <img src="/assets/images/transition_gld.png" alt="GLD transition">
+    </td>
+  </tr>
+</table>
+
+We cap the color map at a low number to be able to view the transition probabilities between different states.
+
+We can see that the transition heatmaps are similar between the three first stocks and that the GLD stock differs slighty. Implying that similar stocks do have similar state transition probabilities. We observe that there are higher probabilities of going from a state into a Bull or Bear regime with the Recovery and Correction states not transitioning between eachother. 
+
+# Sojourn Durations: How Long Do Regimes Last?
+
+Another way to characterize persistence is to look directly at sojourn durations: the number of consecutive days the process spends in a given state before switching.
+
+For each ETF and each state:
+
+1. Extract all contiguous runs in that state.
+2. Record their lengths in days.
+3. Summarize the distribution (e.g. mean, median, variability).
+
