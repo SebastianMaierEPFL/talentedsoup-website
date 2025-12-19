@@ -40,28 +40,12 @@ $$
 with an equivalent period $T_k = 1 / f_k$ that we also express in trading days and months. The power spectrum $P_k = |\hat{R}_k|^2$ highlights which frequencies carry the strongest energy, allowing us to identify dominant market heartbeats. Filtering to the highest-power components yields the summary tables and plots used throughout the notebook.
 
 
-## Dominant Cycles Across Crises
-
-`heartbeat_visuals.build_sector_cycle_table` sweeps every sector/window pair and records the strongest FFT components: our stand-in for heartbeat spikes.
-
-**Table columns**
-
-`sector` — ETF’s sector pulse.  
-`window` — crisis phase (pre, peak, recovery).  
-`cycles_per_year` — dominant rhythm (beats per year).  
-`period_days` — equivalent cycle length in trading days.  
-`approx_months` — same period translated into months for intuition.  
-`power` — FFT power.
-
-
-
-### Where the Market Beats Fastest
+## Dominant Cycles Across Crises - Where the Market Beats Fastest
 
 The heatmap highlights the highest-power frequency (dominant frequency - cycles/year) for each sector and crisis window. Darker shades mark faster heartbeats.
  
 ![png](heartbeat_files/output_13_1.png)
     
-
 
 Just by looking at this heatmap, we can sketch how markets move in the frequency domain—and it’s clear that crises don’t uniformly “speed up” markets.
 
