@@ -61,7 +61,7 @@ Do flagship stocks track the same heartbeat as their sector ETF?
 
 #### Health Care (XLV)
 
-![png](output_17_1.png){: style="width:100%; max-width:1100px; display:block; margin: 0 auto;" }
+![png](output_17_1.png){: style="width:100%; max-width:1500px; display:block; margin: 0 auto;" }
  
 ![png](output_17_2.png)
     
