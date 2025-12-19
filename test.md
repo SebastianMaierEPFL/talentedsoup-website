@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Stock Personality Test
-permalink: /test/
+permalink: /testt/
 ---
 
 <style>
