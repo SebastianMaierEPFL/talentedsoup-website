@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Getting the Pulse of the Market <br>Organized (O) vs Chaotic (C"
+title: "Getting the Pulse of the Market <br>Organized (O) vs Chaotic (C)"
 permalink: /p_j/
 ---
 
@@ -37,7 +37,7 @@ $$
 f_k = \frac{k}{N \Delta t}\; \text{cycles per year},
 $$
 
-with an equivalent period $T_k = 1 / f_k$ that we also express in trading days and months. The power spectrum $P_k = |\hat{R}_k|^2$ highlights which frequencies carry the strongest energy, allowing us to identify dominant market heartbeats. Filtering to the highest-power components yields the summary tables and plots used throughout the notebook.
+with an equivalent period $T_k = 1 / f_k$ that we also express in trading days and months. The power spectrum $P_k = \lvert \hat{R}_k \rvert^2$ highlights which frequencies carry the strongest energy, allowing us to identify dominant market heartbeats. Filtering to the highest-power components yields the summary tables and plots used throughout the notebook.
 
 
 ## Dominant Cycles Across Crises - Where the Market Beats Fastest
