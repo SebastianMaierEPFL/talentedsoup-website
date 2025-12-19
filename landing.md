@@ -31,7 +31,7 @@ data:
 
   <h1>Introduction</h1>
   <p>
-    Here we give the introduction to the project.
+    Does market have a personality? Are there hidden similarities between human and stocks? Is it possible to distinguish two different stocks since they may react differently in the grand market? Our project aims to do a detailed analysis of the stock characteristics, coming from 5 different angles, dive into different traits of a stock and MAYBE, stock does have a personality. 
   </p>
 
 </div>
