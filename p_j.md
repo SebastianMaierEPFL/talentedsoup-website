@@ -44,7 +44,7 @@ with an equivalent period $T_k = 1 / f_k$ that we also express in trading days a
 
 The heatmap highlights the highest-power frequency (dominant frequency - cycles/year) for each sector and crisis window. Darker shades mark faster heartbeats.
  
-![png](heartbeat_files/output_13_1.png)
+![png](output_13_1.png)
     
 
 Just by looking at this heatmap, we can sketch how markets move in the frequency domain—and it’s clear that crises don’t uniformly “speed up” markets.
@@ -59,22 +59,12 @@ In the COVID window, many sectors settle into mid–low frequencies (~16–32). 
 
 Do flagship stocks track the same heartbeat as their sector ETF?
 
-
-
 #### Health Care (XLV)
 
-
-
+![png](output_17_1.png)
+ 
+![png](output_17_2.png)
     
-![png](heartbeat_files/output_17_1.png)
-    
-
-
-
-    
-![png](heartbeat_files/output_17_2.png)
-    
-
 
 Health Care behaves like a defensive **metronome**: it rarely hits extremes, and XLV (red) usually sits near the middle of its stocks, so the ETF really does track the “central beat” of the family. The correlation heatmap backs this up: ETF–stock Pearson $r$ stays **positive in every window**, ranging from about **0.23 to 0.92**, with **all p-values $\approx 0.000$** except the weakest link (UNH in dot-com pre: $r \approx 0.34$, $p = 0.011$).
 
@@ -89,19 +79,10 @@ Health Care behaves like a defensive **metronome**: it rarely hits extremes, and
 
 #### Consumer Discretionary (XLY)
 
-
-
-    
 ![png](heartbeat_files/output_19_1.png)
-    
-
-
-
     
 ![png](heartbeat_files/output_19_2.png)
     
-
-
 Consumer Discretionary shows a more **uneven and reactive rhythm** than Health Care, with its ETF (red, XLY) often **pulsing ahead of or behind its members**, reflecting the sector’s sensitivity to economic mood swings. The correlation heatmap supports this view: ETF–stock Pearson $r$ values remain **consistently positive** across windows, ranging roughly from **0.21 to 0.94**, with **most $p$-values $\approx 0.000$**, except AMZN in the dot-com pre window ($r \approx 0.21$, $p = 0.119$), showing weak or insignificant coupling at that time.
 
 * **Dot-com:** pre-bubble, most names beat slowly while **a few pulse fast**, showing weak synchronization. Correlations span from **low for AMZN** ($r = 0.21$, $p = 0.119$) to **moderate for HD and MCD** ($r \approx 0.48\text{–}0.59$, $p \approx 0.000$). At the peak, **the whole family quickens**, and XLY captures that acceleration (HD $r = 0.75$, $p \approx 0.000$). In recovery, **tempos spread apart again**, with correlations returning to the **0.43–0.70** range, consistent with a fractured, uneven rebound.
@@ -114,20 +95,12 @@ Consumer Discretionary shows a more **uneven and reactive rhythm** than Health C
 
 
 #### Financials (XLF)
-
-
-
-    
+  
 ![png](heartbeat_files/output_21_1.png)
     
-
-
-
-    
 ![png](heartbeat_files/output_21_2.png)
+
     
-
-
 Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the middle of the pack**, but single names (especially GS and MS) throw off strong “extra beats” around major shocks. Statistically, ETF–stock Pearson $r$ is **high in almost every window**, mostly between **$0.71$ and $0.98$**, with only a brief dip to about **$0.42$–$0.47$** around the Brexit vote; **all reported $p$-values are $\approx 0.000$**, and the single missing cell (GS in dot-com pre) simply reflects data availability rather than weak linkage.
 
 * **Dot-com:** pre-bubble, **mid-tempo across the board** with XLF slightly above peers, and **strong synchrony** ($r \approx 0.71$–$0.82$, $p \approx 0.000$). At the peak, **everyone lifts into the high band together**, and correlations tighten further (C/GS/JPM/MS mostly **$0.73$–$0.84$**), so the whole cluster moves as a unit. In recovery, **all series remain very fast and tightly clustered**, and $r$ rises again (roughly **$0.76$–$0.88$**), consistent with a fully synchronized, high-frequency regime.
@@ -142,19 +115,12 @@ Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the
 
 #### Technology (XLK)
 
-
-
-    
+ 
 ![png](heartbeat_files/output_23_1.png)
-    
-
-
-
-    
+     
 ![png](heartbeat_files/output_23_2.png)
+
     
-
-
 Technology appears to have a **regime-switching heartbeat**: it spends a lot of time at fast tempos, with XLK usually **following the big platforms** but sometimes missing the more extreme pulses in names like NVDA or ADBE.
 The correlation heatmap shows ETF–stock Pearson $r$ **almost always positive**, typically in the **$0.4$–$0.9$** range with $p \approx 0.000$. Early on there are a couple of genuine decouplings — **NVDA in dot-com pre** ($r \approx 0.02$, $p = 0.922$) and **GOOGL in dot-com recovery** ($r \approx 0.04$, $p = 0.676$) — but by the COVID crisis **all names lock tightly to XLK** (AAPL/ADBE/GOOGL/NVDA around $r \approx 0.92$–$0.95$, MSFT at $r \approx 0.98$, all $p \approx 0.000$).
 
@@ -174,40 +140,24 @@ We now step through each crisis and compare ETF returns (top row) with multiple 
 
 #### Consumer Discretionary (XLY) vs stocks
 
-
-
-    
+ 
 ![png](heartbeat_files/output_26_2.png)
-
 
 
 #### Financials (XLF) vs stocks
 
 
-
-    
 ![png](heartbeat_files/output_26_5.png)
     
-
-
-
 
 #### Health Care (XLV) vs stocks
 
 
-
-    
 ![png](heartbeat_files/output_26_8.png)
     
 
-
-
-
 #### Technology (XLK) vs stocks
-
-
-
-    
+  
 ![png](heartbeat_files/output_26_11.png)
     
 
