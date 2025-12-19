@@ -46,9 +46,6 @@ The heatmap highlights the highest-power frequency (dominant frequency - cycles/
 
 <div class="flourish-embed flourish-heatmap" data-src="visualisation/26906506"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26906506/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
 
-![png](output_13_1.png)
-    
-
 Just by looking at this heatmap, we can sketch how markets move in the frequency domain—and it’s clear that crises don’t uniformly “speed up” markets.
 
 During the dot-com peak, most sectors jump into the high-frequency band (~37–47 cycles/year). Technology leads (~46.9), Financials also accelerate (~40.7), and Consumer Discretionary moves up strongly (~37.5). The pattern is broadly consistent with market-wide acceleration—though Health Care is slightly less aligned, easing down to ~33.5 instead of rising.
@@ -63,8 +60,8 @@ Do flagship stocks track the same heartbeat as their sector ETF?
 
 #### Health Care (XLV)
 
-![png](output_17_1.png)
- 
+<div class="flourish-embed flourish-chart" data-src="visualisation/26906986"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26906986/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+
 ![png](output_17_2.png)
     
 
