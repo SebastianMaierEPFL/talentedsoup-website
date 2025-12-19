@@ -78,7 +78,7 @@ Health Care behaves like a defensive **metronome**: it rarely hits extremes, and
 #### Consumer Discretionary (XLY)
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/26907192"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26907192/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-    
+
 <div class="flourish-embed flourish-heatmap" data-src="visualisation/26906506"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26906506/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
     
 Consumer Discretionary shows a more **uneven and reactive rhythm** than Health Care, with its ETF (red, XLY) often **pulsing ahead of or behind its members**, reflecting the sector’s sensitivity to economic mood swings. The correlation heatmap supports this view: ETF–stock Pearson $r$ values remain **consistently positive** across windows, ranging roughly from **0.21 to 0.94**, with **most $p$-values $\approx 0.000$**, except AMZN in the dot-com pre window ($r \approx 0.21$, $p = 0.119$), showing weak or insignificant coupling at that time.
