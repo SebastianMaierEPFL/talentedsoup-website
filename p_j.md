@@ -61,7 +61,7 @@ Do flagship stocks track the same heartbeat as their sector ETF?
 
 #### Health Care (XLV)
 
-![png](output_17_1.png)
+![png](output_17_1.png){: style="width:100%; max-width:1100px; display:block; margin: 0 auto;" }
  
 ![png](output_17_2.png)
     
@@ -79,7 +79,7 @@ Health Care behaves like a defensive **metronome**: it rarely hits extremes, and
 
 #### Consumer Discretionary (XLY)
 
-![png](output_19_1.png)
+![png](output_19_1.png){: style="width:100%; max-width:1100px; display:block; margin: 0 auto;" }
     
 ![png](output_19_2.png)
     
@@ -96,7 +96,7 @@ Consumer Discretionary shows a more **uneven and reactive rhythm** than Health C
 
 #### Financials (XLF)
   
-![png](output_21_1.png)
+![png](output_21_1.png){: style="width:100%; max-width:1100px; display:block; margin: 0 auto;" }
     
 ![png](output_21_2.png)
 
@@ -116,7 +116,7 @@ Financials show a **choppy, crisis-sensitive rhythm**. XLF often **sits near the
 #### Technology (XLK)
 
  
-![png](output_23_1.png)
+![png](output_23_1.png){: style="width:100%; max-width:1100px; display:block; margin: 0 auto;" }
      
 ![png](output_23_2.png)
 
