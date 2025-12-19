@@ -325,6 +325,8 @@ If the market has a heartbeat, then not all pulses are created equal.
 
 In our previous analysis, we looked for **dominant frequencies**—essentially asking, *“What is the heart rate?”* Now we ask a deeper question: *“How healthy is the rhythm?”*
 
+![png](Heartbeat-meme-2.jpg)
+
 In cardiology, a healthy heart beats with a distinct, orderly pattern (Normal Sinus Rhythm). It focuses its energy into specific frequencies. A stressed or failing heart, however, often descends into **fibrillation**—a chaotic state where energy is scattered randomly across all frequencies, creating noise rather than a beat.
 
 We can apply this same diagnostic to financial assets. By analyzing the **shape of the Fourier Power Spectrum** of each asset, we can classify every stock and ETF into one of two personality types:
