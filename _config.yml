@@ -198,7 +198,6 @@ exclude:
   - /docs
   - /node_modules
   - /screenshots
-  - /test
   - /vendor
 
 defaults:
