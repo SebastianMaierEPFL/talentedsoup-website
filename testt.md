@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 
+title: Stock Personality Test
 permalink: /testt/
 ---
 
@@ -69,7 +69,6 @@ permalink: /testt/
   padding:1.2rem;
   background:rgba(0,0,0,0.02);
 }
-.result-top{ display:grid; grid-template-columns:1fr; gap:0.35rem; margin-bottom:1rem; }
 .badge{
   display:inline-block;
   font-weight:800;
@@ -81,6 +80,21 @@ permalink: /testt/
   background:white;
 }
 .result-sub{ opacity:0.85; }
+
+.result-identity{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  margin-bottom:1rem;
+}
+
+#avatarImg{
+  width:96px; height:96px;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.15);
+  background:white;
+  object-fit:contain;
+}
 
 .desc-box{
   margin-top:0.65rem;
@@ -174,12 +188,16 @@ permalink: /testt/
        ========================= -->
   <div id="resultPanel" class="hidden">
 
-    <div class="result-top">
+    <!-- Avatar + identity -->
+    <div class="result-identity">
+      <img id="avatarImg" src="" alt="Personality avatar" />
       <div>
-        <span class="badge" id="typeBadge">—</span>
-        <span class="result-sub" id="symbolLine" style="margin-left:0.5rem;">—</span>
+        <div>
+          <span class="badge" id="typeBadge">—</span>
+          <span class="result-sub" id="symbolLine" style="margin-left:0.5rem;">—</span>
+        </div>
+        <div class="result-sub" id="typeNameLine" style="margin-top:0.35rem;">—</div>
       </div>
-      <div class="result-sub" id="typeNameLine">—</div>
     </div>
 
     <div class="desc-box">
@@ -229,13 +247,18 @@ const descriptions = {{ site.data.personality_descriptions | jsonify }};
 /**
  * Axes order / labels
  * These keys must match asset.axes.<KEY>.pct and asset.axes.<KEY>.letter
+ *
+ * NOTE:
+ * - You requested Organized ↔ Chaotic (reversed label compared to before)
+ * - Keep Reactive ↔ Stable as-is
+ * - Keep order as it was
  */
 const AXES = [
-  { key: "EI", label: "Introvert ↔ Extrovert", left: "I", right: "E" },
-  { key: "PF", label: "Fluid ↔ Persistent",     left: "P", right: "F" },
-  { key: "AR", label: "Restrained ↔ Assertive", left: "R", right: "A" },
-  { key: "OC", label: "Organized ↔ Chaotic",    left: "C", right: "O" },
-  { key: "SR", label: "Reactive ↔ Stable",      left: "R", right: "S" }
+  { key: "EI", label: "Introvert ↔ Extrovert",  left: "I", right: "E" },
+  { key: "PF", label: "Fluid ↔ Persistent",    left: "P", right: "F" },
+  { key: "AR", label: "Restrained ↔ Assertive",left: "R", right: "A" },
+  { key: "OC", label: "Organized ↔ Chaotic",   left: "O", right: "C" },
+  { key: "SR", label: "Reactive ↔ Stable",     left: "R", right: "S" }
 ];
 
 const elInput   = document.getElementById("symbolInput");
@@ -252,6 +275,7 @@ const elName    = document.getElementById("typeNameLine");
 const elShort   = document.getElementById("descShort");
 const elLong    = document.getElementById("descLong");
 const elSliders = document.getElementById("slidersGrid");
+const elAvatar  = document.getElementById("avatarImg");
 
 function showLoading(on){ elOverlay.classList.toggle("hidden", !on); }
 
@@ -284,6 +308,16 @@ function kindMatches(assetKind, filterKind){
   return String(assetKind || "").toLowerCase() === filterKind;
 }
 
+/**
+ * Build avatar URL from the 4-letter core type.
+ * Put your 16 images at: /assets/images/<TYPE4>.png
+ * Example: /assets/images/EPAO.png
+ */
+function avatarUrlForType4(type4){
+  const base = "{{ '/assets/images/' | relative_url }}";
+  return `${base}${type4}.png`;
+}
+
 function renderSliders(asset){
   elSliders.innerHTML = "";
 
@@ -292,7 +326,14 @@ function renderSliders(asset){
 
   for (const ax of AXES){
     const pct = clamp01to100(axes?.[ax.key]?.pct);
-    const letter = axes?.[ax.key]?.letter || "—";
+    let letter = axes?.[ax.key]?.letter || "—";
+
+    // If you still have old SR letters (e.g., T/A) and haven't converted yet,
+    // you can map them on the fly for display:
+    if (ax.key === "SR") {
+      if (letter === "T") letter = "R"; // Reactive
+      if (letter === "A") letter = "S"; // Stable (your old encoding)
+    }
 
     const row = document.createElement("div");
     row.className = "slider-row";
@@ -327,20 +368,31 @@ function renderResult(symbol, asset){
   // asset.personality = "EPACT" (5 letters)
   const kind = asset.type ? String(asset.type) : "—";
   const personality5 = asset.personality || "—";
-  const personality4 = (typeof personality5 === "string" && personality5.length >= 4)
+  const type4 = (typeof personality5 === "string" && personality5.length >= 4)
     ? personality5.slice(0,4)
     : personality5;
 
-  const desc = descriptions[personality4] || null;
+  // Description is keyed by the 4-letter type
+  const desc = descriptions[type4] || null;
 
+  // TEXT
   elType.textContent = personality5;
   elSymbol.textContent = `${symbol} · ${kind}`;
 
-  elName.textContent = desc ? `${personality4} — ${desc.name}` : `${personality4} — (description missing)`;
+  elName.textContent = desc ? `${type4} — ${desc.name}` : `${type4} — (description missing)`;
   elShort.textContent = desc?.short || "No description found for this type yet.";
   elLong.textContent  = desc?.long  || "";
 
+  // AVATAR (16 images)
+  elAvatar.src = avatarUrlForType4(type4);
+  elAvatar.onerror = () => {
+    // optional fallback (create /assets/images/default.png if you want)
+    elAvatar.src = "{{ '/assets/images/default.png' | relative_url }}";
+  };
+
+  // SLIDERS
   renderSliders(asset);
+
   elPanel.classList.remove("hidden");
 }
 
