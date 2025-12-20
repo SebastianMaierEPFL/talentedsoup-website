@@ -4,6 +4,33 @@ title: "Getting the Pulse of the Market <br>Organized (O) vs Chaotic (C)"
 permalink: /p_j/
 ---
 
+<style>
+  .next-page-container {
+    text-align: center;
+    margin: 3rem 0 1rem;
+  }
+
+  .next-page-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #9c5ec5ff;
+    color: #fbfbfbff;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .next-page-button:hover {
+    background: #774796ff;
+  }
+
+  .next-page-button,
+  .next-page-button:visited,
+  .next-page-button:hover,
+  .next-page-button:active {
+    color: #fbfbfbff !important; /* or any color you prefer */
+  }
+</style>
 
 Can Fourier analysis reveal whether sector returns pulse like a heart under different market stresses?
 
@@ -403,3 +430,9 @@ The **transition band** around $H \approx 0.94$ with small $C$ is populated by b
 
 Overall, both the histograms and the scatterplots tell a consistent story: the market’s default state is **high-entropy chaos**, and the clean, cycle-driven “heartbeats” of Type O assets live out in the tails – rare, but structurally distinct.
 
+<div class="next-page-container">
+  <a class="next-page-button"
+     href="{{ '/s_r/' | relative_url }}">
+    Next page →
+  </a>
+</div>

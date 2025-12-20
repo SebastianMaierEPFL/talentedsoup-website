@@ -3,6 +3,35 @@ layout: article
 title: Extraversion vs Introversion
 permalink: /e_i/
 ---
+
+<style>
+  .next-page-container {
+    text-align: center;
+    margin: 3rem 0 1rem;
+  }
+
+  .next-page-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #9c5ec5ff;
+    color: #fbfbfbff;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .next-page-button:hover {
+    background: #774796ff;
+  }
+
+  .next-page-button,
+  .next-page-button:visited,
+  .next-page-button:hover,
+  .next-page-button:active {
+    color: #fbfbfbff !important; /* or any color you prefer */
+  }
+</style>
+
 ## Extrovertness/Introvertness Index (EI): Definition and Asset Personality Classification
   Financial assets differ not only in their fundamentals, but also in how visibly they react to market information. This "reaction" behavior can be described by the social side of assets; extrovert and introvertness; just like human kind. Aseet's reactions, price mouvements are market dependent; just like humans being impacted by their social environment . 
   ![Emotional Index visualization](social10.png)
@@ -79,5 +108,9 @@ The resulting networks display non-uniform connectivity patterns, characterized 
 
 On the clustering developed based on more assets, it is shown that ETFs are more correlated than stocks as they might have more assets in common under their title .
 
-
-
+<div class="next-page-container">
+  <a class="next-page-button"
+     href="{{ '/s_n/' | relative_url }}">
+    Next page →
+  </a>
+</div>

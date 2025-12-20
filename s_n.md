@@ -4,13 +4,80 @@ title: Persistent vs Fluid
 permalink: /s_n/
 ---
 
+<style>
+  .next-page-container {
+    text-align: center;
+    margin: 3rem 0 1rem;
+  }
+
+  .next-page-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #9c5ec5ff;
+    color: #fbfbfbff;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .next-page-button:hover {
+    background: #774796ff;
+  }
+
+  .next-page-button,
+  .next-page-button:visited,
+  .next-page-button:hover,
+  .next-page-button:active {
+    color: #fbfbfbff !important;
+  }
+  /* Legend styles */
+  .regime-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin: 1rem 0 2rem;
+    font-size: 0.9rem;
+  }
+
+  regime-legend__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .regime-legend__swatch {
+    display: inline-block;
+    width: 30px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.2);
+  }
+
+  /* Adjust these colors to match your plots */
+  .regime-legend__swatch--bull {
+    background: #2ecc70c8;
+  }
+
+  .regime-legend__swatch--bear {
+    background: #e74d3cbb;
+  }
+
+  .regime-legend__swatch--correction {
+    background: #e67d22b6;
+  }
+
+  .regime-legend__swatch--recovery {
+    background: #f1c40fb3;
+  }
+</style>
+
 # Do Markets have Persistent "Moods"?
 
 <img src="{{ '/assets/images/persistent.png' | relative_url }}"
      alt="persistent image"
      style="float: right; max-width: 50%; height: auto; margin: 0 0 1em 1.5em;">
 
-When we say that markets are "calm", "panicking", or "euphoric", we are implicitly claiming that prices move through a small set of recurring, qualitatively distinct regimes. In this section, we make that idea precise and show how to test whether a given stock or ETF behaves in a **persistent** or **fluid** way with respect to these regimes.
+When we say that markets are "calm", "panicking", or "euphoric", we are implicitly claiming that prices move through a small set of recurring and qualitatively distinct regimes. In this section, we make that idea precise and show how to test whether a given stock or ETF behaves in a **persistent** or **fluid** way with respect to these regimes.
 
 Concretely, we work with four major ETFs:
 
@@ -29,7 +96,7 @@ Concretely, we work with four major ETFs:
 
 We ask two questions:
 
-1. Can we uncover a small number of hidden regimes that behave like “market moods” (bull, bear, correction, calm)?
+1. Can we uncover a small number of hidden regimes that behave like “market moods” (bull, bear, correction, recovery)?
 2. For each ETF, are these regimes persistent (long‑lived, stable, few switches) or fluid (short‑lived, frequently changing)?
 
 
@@ -46,8 +113,6 @@ For each ETF, we start from standard daily OHLCV data and compute:
 - Volatility Change (21 days) – change in rolling volatility vs. 21 days ago
 
 To make these features comparable over time, we apply a rolling z-score using a 252-day (approximatively 1-year) window, so each feature is locally standardized.
-
-(Maybe insert graph to show what the features look like)
 
 # Letting the Data Discover Regimes: Hidden Markov Models
 
@@ -83,6 +148,25 @@ To see that the inferred regimes are meaningful, we overlay the decoded states o
 <!-- ![GLD regimes](/assets/images/GLD_colors.png) -->
 ![GLD regimes]({{ '/assets/images/GLD_colors.png' | relative_url }})
 
+<div class="regime-legend">
+  <div class="regime-legend__item">
+    <span class="regime-legend__swatch regime-legend__swatch--bull"></span>
+    Bull
+  </div>
+  <div class="regime-legend__item">
+    <span class="regime-legend__swatch regime-legend__swatch--bear"></span>
+    Bear
+  </div>
+  <div class="regime-legend__item">
+    <span class="regime-legend__swatch regime-legend__swatch--correction"></span>
+    Correction
+  </div>
+  <div class="regime-legend__item">
+    <span class="regime-legend__swatch regime-legend__swatch--recovery"></span>
+    Recovery
+  </div>
+</div>
+
 We can see that a high-volatility, negative-return regime often aligns with crisis periods and sharp drawdowns. A low-volatility, positive-return tracks steady bull markets. For GLD, some regimes that are "defensive" (e.g. strong when equities are weak) tend to appear when SPY/QQQ are in stressed or correction-type states.
 
 This qualitative alignment is the first sanity check that HMM states are economically interpretable. 
@@ -92,7 +176,7 @@ This qualitative alignment is the first sanity check that HMM states are economi
 We test whether the regimes are not just cosmetic labels by comparing their return distributions. For each ETF, and for each pair of states ( i, j ), we perform Kolmogorov–Smirnov (KS) tests on daily log returns:
 
 - Null hypothesis ( H_0 ): returns in regime ( i ) and regime ( j ) come from the same distribution.
-- We typically observe small p‑values (e.g. ( p < 0.01 )) for most state pairs, especially those that visually look different (bull vs. bear, calm vs. crisis).
+- We typically observe small p‑values (e.g. ( p < 0.05 )) for most state pairs, especially those that visually look different (bull vs. bear, calm vs. crisis).
 
 <table>
   <tr>
@@ -253,3 +337,10 @@ We first invert the values of the number of switches per year and the mean CV, s
 Let's take a look at the collection of stocks and see their P type. From the plot above, we can see that most of the persistent stocks have a low number of switches per year and a high mean expected duration. Some fluid stocks also lie in the region of the persistent stocks. This could be due to a low minimum self-transition probability and CV duration mean, which could drag the final decision to being a fluid stock. 
 
 Finally, to get a decision between having a Persistent or Fluid stock, we take the distribution of the $\text{P Score}$ and take the top 75 percentile to being Fluid stocks and the rest are Persistent stocks. 
+
+<div class="next-page-container">
+  <a class="next-page-button"
+     href="{{ '/f_t/' | relative_url }}">
+    Next page →
+  </a>
+</div>

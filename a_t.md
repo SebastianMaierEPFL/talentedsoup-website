@@ -4,6 +4,34 @@ title: Stability vs Reactivity
 permalink: /s_r/
 ---
 
+<style>
+  .next-page-container {
+    text-align: center;
+    margin: 3rem 0 1rem;
+  }
+
+  .next-page-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #9c5ec5ff;
+    color: #fbfbfbff;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .next-page-button:hover {
+    background: #774796ff;
+  }
+
+  .next-page-button,
+  .next-page-button:visited,
+  .next-page-button:hover,
+  .next-page-button:active {
+    color: #fbfbfbff !important; /* or any color you prefer */
+  }
+</style>
+
 ## Motivation: Why Stability vs Reactivity?
 
 ![Frontpage](a_t_front.gif)
@@ -335,3 +363,10 @@ we obtain behaviourally meaningful classifications that go beyond traditional ri
 
 The result is not a prediction of returns,
 but a **map of how assets process shocks**.
+
+<div class="next-page-container">
+  <a class="next-page-button"
+     href="{{ '/about/' | relative_url }}">
+    Next page →
+  </a>
+</div>

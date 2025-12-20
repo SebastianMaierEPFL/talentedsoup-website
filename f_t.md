@@ -4,6 +4,34 @@ title: Assertiveness vs Restraint
 permalink: /f_t/
 ---
 
+<style>
+  .next-page-container {
+    text-align: center;
+    margin: 3rem 0 1rem;
+  }
+
+  .next-page-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #9c5ec5ff;
+    color: #fbfbfbff;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .next-page-button:hover {
+    background: #774796ff;
+  }
+
+  .next-page-button,
+  .next-page-button:visited,
+  .next-page-button:hover,
+  .next-page-button:active {
+    color: #fbfbfbff !important; /* or any color you prefer */
+  }
+</style>
+
 ## Intrinsic Confidence: Definition and Asset Personality Classification
 
 ![Confidence axis overview](confidence_overview.png)
@@ -148,3 +176,10 @@ This mirrors **human behavioral traits**:
 - binary letters compress a continuous spectrum.
 
 > **Every stock/ETF ends with a simple personality letter: A or R.**
+
+<div class="next-page-container">
+  <a class="next-page-button"
+     href="{{ '/p_j/' | relative_url }}">
+    Next page →
+  </a>
+</div>

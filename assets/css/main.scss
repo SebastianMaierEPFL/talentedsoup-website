@@ -72,3 +72,19 @@
 
     "custom"
 ;
+
+.header__logo {
+  height: 32px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.article__content p,
+.page__content p,
+main p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: none;        /* was: auto */
+  word-break: normal;
+  overflow-wrap: normal;
+}
