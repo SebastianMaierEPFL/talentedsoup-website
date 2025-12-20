@@ -61,7 +61,7 @@ Highly extroverted ETFs such as PLC, RTL, SPY exhibit pronounced volatility and 
        width="100%" alt="network visualization" />
 </noscript>
 
-* Figure 3: Friendship network illustration for selected stocks, constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected.*
+* Figure 3: Friendship network illustration for selected stocks*
 <div class="flourish-embed flourish-network" data-src="visualisation/26824327"></div>
 <script src="https://public.flourish.studio/resources/embed.js"></script>
 <noscript>
@@ -69,4 +69,8 @@ Highly extroverted ETFs such as PLC, RTL, SPY exhibit pronounced volatility and 
        width="100%" alt="network visualization" />
 </noscript>
 
-*Figure 8. Friendship network illustration for selected ETFs, constructed from log-returns, if the absolute Pearson correlation exceeds 0.5, the assets are considered connected.*
+*Figure 4. Friendship network illustration for selected ETFs*
+
+Figures 3 and 4 provide empirical support for the hypothesis that asset returns exhibit systematic clustering rather than random co-movement. Using log-returns computed from adjusted closing prices, we estimate pairwise Pearson correlations across assets and retain only statistically strong relationships, defined as correlations whose absolute value exceeds 0.5. This filtering isolates persistent co-movements and removes weak or noise-driven dependencies.
+The resulting networks display non-uniform connectivity patterns, characterized by densely connected subsets of assets and a limited number of cross-group links. Such structures are inconsistent with a random correlation model, in which strong correlations would be sparsely and evenly distributed. Instead, the observed concentration of links indicates that certain assets repeatedly move together, reflecting shared exposures, common information channels, or coordinated trading behavior.
+Taken together, the emergence of coherent connected components and localized clusters in Figures 3 and 4 constitutes evidence that return correlations are structured and economically meaningful, thereby supporting the hypothesis that asset returns exhibit systematic clustering.
