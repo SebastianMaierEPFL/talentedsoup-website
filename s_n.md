@@ -57,13 +57,18 @@ Intuitively:
 To see that the inferred regimes are meaningful, we overlay the decoded states onthe price series for each ETF.
 
 #### SPY:
-![SPY regimes](/assets/images/SPY_colors.png)
+<!-- ![SPY regimes](/assets/images/SPY_colors.png) -->
+![SPY regimes]({{ '/assets/images/SPY_colors.png' | relative_url }})
 #### QQQ:
-![QQQ regimes](/assets/images/QQQ_colors.png)
+<!-- ![QQQ regimes](/assets/images/QQQ_colors.png) -->
+![QQQ regimes]({{ '/assets/images/QQQ_colors.png' | relative_url }})
+
 #### XLY:
-![XLY regimes](/assets/images/XLY_colors.png)
+<!-- ![XLY regimes](/assets/images/XLY_colors.png) -->
+![XLY regimes]({{ '/assets/images/XLY_colors.png' | relative_url }})
 #### GLD:
-![GLD regimes](/assets/images/GLD_colors.png)
+<!-- ![GLD regimes](/assets/images/GLD_colors.png) -->
+![GLD regimes]({{ '/assets/images/GLD_colors.png' | relative_url }})
 
 We can see that a high-volatility, negative-return regime often aligns with crisis periods and sharp drawdowns. A low-volatility, positive-return tracks steady bull markets. For GLD, some regimes that are "defensive" (e.g. strong when equities are weak) tend to appear when SPY/QQQ are in stressed or correction-type states.
 
@@ -80,21 +85,21 @@ We test whether the regimes are not just cosmetic labels by comparing their retu
   <tr>
     <td align="center">
       <strong>SPY</strong><br>
-      <img src="/assets/images/pval_spy.png" alt="SPY p-values">
+      <img src="{{'/assets/images/pval_spy.png' | relative_url}}" alt="SPY p-values">
     </td>
     <td align="center">
       <strong>QQQ</strong><br>
-      <img src="/assets/images/pval_qqq.png" alt="QQQ p-values">
+      <img src="{{'/assets/images/pval_qqq.png' | relative_url}}" alt="QQQ p-values">
     </td>
   </tr>
   <tr>
     <td align="center">
       <strong>XLY</strong><br>
-      <img src="/assets/images/pval_xly.png" alt="XLY p-values">
+      <img src="{{'/assets/images/pval_xly.png' | relative_url}}" alt="XLY p-values">
     </td>
     <td align="center">
       <strong>GLD</strong><br>
-      <img src="/assets/images/pval_gld.png" alt="GLD p-values">
+      <img src="{{'/assets/images/pval_gld.png' | relative_url}}" alt="GLD p-values">
     </td>
   </tr>
 </table>
@@ -116,21 +121,21 @@ We can visualize this matrix for each ETF.
   <tr>
     <td align="center">
       <strong>SPY</strong><br>
-      <img src="/assets/images/transition_spy.png" alt="SPY transition">
+      <img src="{{'/assets/images/transition_spy.png' | relative_url}}" alt="SPY transition">
     </td>
     <td align="center">
       <strong>QQQ</strong><br>
-      <img src="/assets/images/transition_qqq.png" alt="QQQ transition">
+      <img src="{{'/assets/images/transition_qqq.png' | relative_url}}" alt="QQQ transition">
     </td>
   </tr>
   <tr>
     <td align="center">
       <strong>XLY</strong><br>
-      <img src="/assets/images/transition_xly.png" alt="XLY transition">
+      <img src="{{'/assets/images/transition_xly.png' | relative_url}}" alt="XLY transition">
     </td>
     <td align="center">
       <strong>GLD</strong><br>
-      <img src="/assets/images/transition_gld.png" alt="GLD transition">
+      <img src="{{'/assets/images/transition_gld.png' | relative_url}}" alt="GLD transition">
     </td>
   </tr>
 </table>
@@ -147,5 +152,91 @@ For each ETF and each state:
 
 1. Extract all contiguous runs in that state.
 2. Record their lengths in days.
-3. Summarize the distribution (e.g. mean, median, variability).
 
+<table>
+  <tr>
+    <td align="center">
+      <strong>SPY</strong><br>
+      <img src="{{'/assets/images/sojourn_spy.png' | relative_url}}" alt="SPY sojourn" style="max-width: 85%; height: auto;">
+    </td>
+    <td align="center">
+      <strong>QQQ</strong><br>
+      <img src="{{'/assets/images/sojourn_qqq.png' | relative_url}}" alt="QQQ sojourn" style="max-width: 85%; height: auto;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>XLY</strong><br>
+      <img src="{{'/assets/images/sojourn_xly.png' | relative_url}}" alt="XLY sojourn" style="max-width: 85%; height: auto;">
+    </td>
+    <td align="center">
+      <strong>GLD</strong><br>
+      <img src="{{'/assets/images/sojourn_gld.png' | relative_url}}" alt="GLD sojourn" style="max-width: 85%; height: auto;">
+    </td>
+  </tr>
+</table>
+
+We observe that across the ETFs, the sojourns in of each same state ressemble eachother. We can see that the distribution of the Recovery state has a more flat distribution, meaning that the number of days it takes to get out of this state has more variance than other states.
+
+# Cross-Asset Co-Movements of Regimes
+
+Finally, to show that these regimes make economic sense across assets, we can inspect how the regimes of SPY and GLD (for example) co-occur.
+
+<div class="flourish-embed flourish-heatmap" data-src="visualisation/26907567"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26907567/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
+
+
+From this cross table, we can observe that GLD acts as a safe haven when the SPY index is in a weak state, such as when the SPY is in a recovery state, it is probable that the GLD is in a Bull state. And when the SPY is in a strong state, then the GLD is in a Recovery state. This shows the interaction between a risk-on vs a risk-off indexes.
+
+# Persistency vs Fluidity Index
+
+To finally give an emotional attribute to each stock and ETF, we define a metric. The question becomes: "What should 'P' measure?"
+
+For each stock / ETF 'P' should capute:
+
+- High P (persistent):
+    - Long average time in a given state
+    - High self-transition probabilities
+    - Few regime switches per year
+- Low P (fluid):
+    - Short sojourns
+    - Low self-transition probabilities
+    - frequent switching between states
+
+For each stock and ETF's HMM, we compute the following features:
+- mean self-transition probability
+- minimum self-transition probability
+- mean expected duration (days)
+- number of regime switches per year
+- mean coefficient of variation (CV) of sojourn durations
+
+
+$$
+\mathrm{CV} = \frac{s}{\bar{d}}
+$$
+
+where
+$\bar{d}$ is the sample mean of the sojourn durations $d_1, \dots, d_n$,
+
+$s$ is the sample standard deviation of those durations:
+
+$$
+\bar{d} = \frac{1}{n}\sum_{i=1}^{n} d_i,
+\qquad
+s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(d_i - \bar{d}\right)^2}
+$$
+
+So, explicitly:
+
+$$
+\mathrm{CV}
+= \frac{\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(d_i - \bar{d}\right)^2}}
+{\bar{d}}
+$$
+
+We first invert the values of the number of switches per year and the mean CV, since more swicthes and more a stock being more erratic implies a lower P. We then standardize the features to ensure equal contributions between the features, and take the mean of each feature for every datapoint to give us a scalar value. The higher the P score is for a stock, the more persistent it is.
+
+<div class="flourish-embed flourish-scatter" data-src="visualisation/26916318"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26916318/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+
+Let's take a look at the collection of stocks and see their P type. From the plot above, we can see that most of the persistent stocks have a low number of switches per year and a high mean expected duration. Some fluid stocks also lie in the region of the persistent stocks. This could be due to a low minimum self-transition probability and CV duration mean, which could drag the final decision to being a fluid stock. 
+
+Finally, to get a decision between having a Persistent or Fluid stock, we take the distribution of the $\text{P Score}$ and take the top 75 percentile to being Fluid stocks and the rest are Persistent stocks. 
