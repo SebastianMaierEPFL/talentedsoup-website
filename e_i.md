@@ -9,6 +9,8 @@ permalink: /e_i/
   But, how to measure this social behavior like an asset or like a characteristic that we can define through a metric, personality trait of humans, what is the socialness measure, score, or the threshold that makes an asset introvert or extrovert ? 
   To capture the social dimension of assets, we build social index called "EI Index" (Extrovertness/Introvertness Index ) . This index is based on three measurable values of the assets throught adjusted price time series ; volatility, turnover provy and jump frequency . 
   Volatility is a measurement of how varied the returns of a given security or market index are over time, while turnover proxy is an operational measure of trading activity used to approximate how intensively an asset is traded and jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, symbolizing event-driven side per asset . Together, they reflect the intensity, discontinuity, and participation level of price responses observed in the market . Higher volatility is an indicator of large and frequent price movements, lower volatility indicates the asset's value does not fluctuate dramatically and tends to be steadier . High jump frequency exhibits sharp and irregular price mouvements , low jump frequency indicates large return realizations are rare, and asset prices over time is smooth . High turnover proxy indicates large amoutns of capital are exhanged, and the asset attracts active market participation, low turnover proxy is the indicator of the trading activity to be sparse and small in value . In short, the socialness measure triad is composed of intensity (Volatility), discontinuity (Jump Frequency) and participation (turnover proxy) aspects of the asset. 
+  Further more, it is interesting to question also the social relations between different assets, if they take decision together, being correlated or correlation values are just symbol of random distribution, what are the communities in the market ? By definition ETFs  pool a group of securities into a fund and can be traded like an individual stock on an exchange. Thus it is highly possible to observe correlation between ETFs from same markets, as they get influence by the same stock. For individual stocks, correlations can arise from sector affiliation, shared macroeconomic sensitivities and common investor flows. If such mechanisms dominate, the resulting correlation network should exhibit community structure, where assets with similar economic characteristics are more strongly connected to one another than to the rest of the market.
+
   ![Emotional Index visualization](social9.png)
   
   To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
@@ -25,6 +27,10 @@ Extroverted assets exhibit expressive behaviour in market shocks and in regime c
 H2 : Introversion
 ![Emotional Index visualization](social8.png)
 Introverted assets display below-average expressiveness, smoother price dynamics and muted reactions to new information. 
+
+H3 : Structured Co-movement
+![Emotional Index visualization](social11.png)
+Asset returns exhibit systematic clustering
 
 Here are some data observation for further social analysis of assets :
 
