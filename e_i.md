@@ -73,3 +73,11 @@ Highly extroverted ETFs such as PLC, RTL, SPY exhibit pronounced volatility and 
 
 Figure 3 and Figure 4 are constructed from log-returns computed using adjusted closing prices. For each pair of assets, the Pearson correlation of returns is computed; if the absolute correlation exceeds 0.5, the assets are considered connected, sharing a comouvement due to friendship related exhange
 The resulting networks display non-uniform connectivity patterns, characterized by densely connected subsets of assets and a limited number of cross-group links. Such structures are inconsistent with a random correlation model, in which strong correlations would be sparsely and evenly distributed. Instead, the observed concentration of links indicates that certain assets repeatedly move together, reflecting shared exposures, common information channels, or coordinated trading behavior, proving hypothesis 3. 
+
+<img width="794" height="791" alt="image" src="https://github.com/user-attachments/assets/470c9f7a-b3f7-466e-b941-7939a5faa452" />
+<img width="793" height="791" alt="image" src="https://github.com/user-attachments/assets/c733b5b5-87fc-4bc2-962b-1a3d28366ed0" />
+
+On the clustering developed based on more assets, it is shown that ETFs are more correlated than stocks as they might have more assets in common under their title .
+
+
+
