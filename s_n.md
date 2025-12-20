@@ -6,6 +6,10 @@ permalink: /s_n/
 
 # Do Markets have Persistent "Moods"?
 
+<img src="{{ '/assets/images/persistent.png' | relative_url }}"
+     alt="persistent image"
+     style="float: right; max-width: 50%; height: auto; margin: 0 0 1em 1.5em;">
+
 When we say that markets are "calm", "panicking", or "euphoric", we are implicitly claiming that prices move through a small set of recurring, qualitatively distinct regimes. In this section, we make that idea precise and show how to test whether a given stock or ETF behaves in a **persistent** or **fluid** way with respect to these regimes.
 
 Concretely, we work with four major ETFs:
@@ -15,10 +19,19 @@ Concretely, we work with four major ETFs:
 - XLY – Consumer Discretionary (cyclical “risk‑on” sector)
 - GLD – Gold (typical “risk‑off” asset)
 
+<div style="clear: both;"></div>
+
+<div style="text-align: center;">
+    <img src="{{ '/assets/images/fluid.png' | relative_url }}"
+        alt="fluid image"
+       style="max-width: 70%; height: auto;">
+</div>
+
 We ask two questions:
 
 1. Can we uncover a small number of hidden regimes that behave like “market moods” (bull, bear, correction, calm)?
 2. For each ETF, are these regimes persistent (long‑lived, stable, few switches) or fluid (short‑lived, frequently changing)?
+
 
 # From Prices to "Mood Signals"
 
