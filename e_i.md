@@ -3,7 +3,7 @@ layout: article
 title: Extraversion vs Introversion
 permalink: /e_i/
 ---
-## Emotional Index (EI): Definition and Asset Personality Classification
+## Extrovertness/Introvertness Index (EI): Definition and Asset Personality Classification
 
 ![Emotional Index visualization](social2.png)
 
@@ -22,11 +22,11 @@ Assets are classified according to the sign of their standardized EI score: for 
 **Hypotheses Study :**
 
 H1 : Extroversion
-
-Extroverted assets exhibit  expressive behaviour in market shocks and in regime changements, amplified behaviour during market shocks. 
+![Emotional Index visualization](social7.png)
+Extroverted assets exhibit expressive behaviour in market shocks and in regime changements, amplified behaviour during market shocks. 
 
 H2 : Introversion
-
+![Emotional Index visualization](social8.png)
 Introverted assets display below-average expressiveness, smoother price dynamics and muted reactions to new information. 
 
 Here are some data observation for further social analysis of assets :
