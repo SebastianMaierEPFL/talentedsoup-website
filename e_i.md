@@ -4,9 +4,6 @@ title: Extraversion vs Introversion
 permalink: /e_i/
 ---
 ## Extrovertness/Introvertness Index (EI): Definition and Asset Personality Classification
-
-![Emotional Index visualization](social2.png)
-
   Financial assets differ not only in their fundamentals, but also in how visibly they react to market information. This "reaction" behavior can be described by the social side of assets; extrovert and introvertness; just like human kind. Aseet's reactions, price mouvements are market dependent; just like humans being impacted by their social environment . 
   ![Emotional Index visualization](social10.png)
   But, how to measure this social behavior like an asset or like a characteristic that we can define through a metric, personality trait of humans, what is the socialness measure, score, or the threshold that makes an asset introvert or extrovert ? 
