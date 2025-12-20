@@ -16,9 +16,8 @@ permalink: /e_i/
   
   To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
   <img width="529" height="89" alt="image" src="https://github.com/user-attachments/assets/9c9be9ea-bdc3-4815-800d-0d2435d19f99" />
-
 ​
-Assets are classified according to the sign of their standardized EI score: for assets that have non-zero normalized EI scores, it is labeled as "Extroverted" else Introverted.
+Assets are classified according to the sign of their standardized EI score: for assets that have positive EI scores, it is labeled as "Extroverted" else Introverted.
 
 **Hypotheses Study :**
 
