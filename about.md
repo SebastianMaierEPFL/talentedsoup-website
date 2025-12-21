@@ -125,7 +125,7 @@ permalink: /about/
       />
       <div class="member-name">George-Stelian Petran</div>
       <div class="member-links">
-        <a href="https://linkedin.com/in/member4" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/george-stelian-petran-bba817273/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/GeorgePetran" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>
@@ -139,7 +139,7 @@ permalink: /about/
       />
       <div class="member-name">Magdalena Turcanu</div>
       <div class="member-links">
-        <a href="https://linkedin.com/in/member5" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/magdalena-turcanu-a15607232?" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/magdaturcanu1" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>

@@ -48,7 +48,7 @@ permalink: /e_i/
 
   .ei-img-center {
     display: block;
-    max-width: 60%;
+    max-width: 40%;  /* smaller than before (was 60%) */
     height: auto;
     margin: 1.5em auto;
     clear: both; /* avoids overlap with floated images */
@@ -57,16 +57,14 @@ permalink: /e_i/
   /* Mobile: stack images nicely */
   @media (max-width: 768px) {
     .ei-img-right,
-    .ei-img-left {
+    .ei-img-left,
+    .ei-img-center {
       float: none;
       display: block;
       max-width: 100%;
       margin: 1em auto;
     }
-
-    .ei-img-center {
-      max-width: 100%;
-    }
+  }
 </style>
 
 ## Extrovertness/Introvertness Index (EI): Definition and Asset Personality Classification
