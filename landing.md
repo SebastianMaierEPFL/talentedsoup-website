@@ -55,11 +55,13 @@ data:
   </p>
 
 </div> -->
-<div style="max-width: 720px; margin: 0 auto; text-align: center;">
-  <h1>Is the Market Alive — What Is the Stock Market’s Personality?</h1>
-  <h2>Into the Psychophysiology of NASDAQ</h2>
+<div style="max-width: 720px; margin: 0 auto; text-align: left;">
+  <h1 style="text-align: center;">
+    Is the Market Alive — What Is the Stock Market’s Personality?
+  </h1>
+  <h2 style="text-align: center;">Into the Psychophysiology of NASDAQ</h2>
 
-  <h2>Abstract</h2>
+  <h2 style="text-align: center;">Abstract</h2>
   <p>
     We treat the NASDAQ market as a living system: it reacts to shocks, shifts moods, forms social alliances, and exhibits rhythms that speed up, slow down, or collapse under stress.
   </p>
