@@ -1,14 +1,14 @@
 ---
 layout: landing
 title: Does the Stock Market have a Personality?
-excerpt: >
-  Giving the Stock Market Human Emotions
+# excerpt: >
+#   Giving the Stock Market Human Emotions
 permalink: /
 
 article_header:
   height: 60vh
   theme: default
-  background_color: "#2c6d8bff"
+  background_color: "#afafafff"
   background_image:
     gradient: "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))"
     src: /assets/images/commander.svg
