@@ -70,9 +70,10 @@ Our main goal is to build one unified behavioral diagnosis based on five differe
 
 Instead of stopping at “the market was volatile,” we classify assets (stocks & ETFs) using a 4-axis personality code: 
 
-$$
-[\text{I/E}]\,[\text{P/F}]\,[\text{A/R}]\,[\text{O/C}]
-$$
+<div style="max-width: 720px; margin: 0 auto; text-align: center;">
+  <p>[I/E] [P/F] [A/R] [O/C]</p>
+</div>
+
 * **I / E — Introverted / Extroverted**: how strongly an asset “couples” to the market or peers (market expressiveness / social coupling).
 * **P / F — Persistent / Fluid**: whether behavior stays stable in long regimes or switches often.
 * **A / R — Assertive / Restrained**: how decisively it moves directionally (strong trends vs cautious drift).
