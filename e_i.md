@@ -30,6 +30,43 @@ permalink: /e_i/
   .next-page-button:active {
     color: #fbfbfbff !important; /* or any color you prefer */
   }
+
+  /* Image layout helpers */
+  .ei-img-right {
+    float: right;
+    max-width: 35%;
+    height: auto;
+    margin: 0 0 1em 1.5em;
+  }
+
+  .ei-img-left {
+    float: left;
+    max-width: 35%;
+    height: auto;
+    margin: 0 1.5em 1em 0;
+  }
+
+  .ei-img-center {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 1.5em auto;
+    clear: both; /* avoids overlap with floated images */
+  }
+
+  /* Mobile: stack images nicely */
+  @media (max-width: 768px) {
+    .ei-img-right,
+    .ei-img-left {
+      float: none;
+      display: block;
+      max-width: 100%;
+      margin: 1em auto;
+    }
+
+    .ei-img-center {
+      max-width: 100%;
+    }
 </style>
 
 ## Extrovertness/Introvertness Index (EI): Definition and Asset Personality Classification
@@ -37,7 +74,7 @@ Financial assets differ not only in their fundamentals, but also in how visibly 
 <!-- ![Emotional Index visualization](social10.png) -->
 <img src="{{ 'social10.png' | relative_url }}"
      alt="Emotional Index visualization"
-     style="float: right; max-width: 75%; height: auto; margin: 0 0 1em 1.5em;">
+     class="ei-img-center">
 But, how to measure this social behavior like an asset or like a characteristic that we can define through a metric, personality trait of humans, what is the socialness measure, score, or the threshold that makes an asset introvert or extrovert ? 
 To capture the social dimension of assets, we build social index called "EI Index" (Extrovertness/Introvertness Index ) . This index is based on three measurable values of the assets throught adjusted price time series ; volatility, turnover provy and jump frequency . 
 Volatility is a measurement of how varied the returns of a given security or market index are over time, while turnover proxy is an operational measure of trading activity used to approximate how intensively an asset is traded and jump frequency measures the share of trading days on which absolute returns exceed a fixed multiple of the asset’s own return volatility, symbolizing event-driven side per asset . Together, they reflect the intensity, discontinuity, and participation level of price responses observed in the market . Higher volatility is an indicator of large and frequent price movements, lower volatility indicates the asset's value does not fluctuate dramatically and tends to be steadier . High jump frequency exhibits sharp and irregular price mouvements , low jump frequency indicates large return realizations are rare, and asset prices over time is smooth . High turnover proxy indicates large amoutns of capital are exhanged, and the asset attracts active market participation, low turnover proxy is the indicator of the trading activity to be sparse and small in value . In short, the socialness measure triad is composed of intensity (Volatility), discontinuity (Jump Frequency) and participation (turnover proxy) aspects of the asset. 
@@ -46,7 +83,7 @@ Further more, it is interesting to question also the social relations between di
 <!-- ![Emotional Index visualization](social9.png) -->
 <img src="{{ 'social9.png' | relative_url }}"
      alt="Emotional Index visualization"
-     style="float: left; max-width: 75%; height: auto; margin: 0 0 1em 1.5em;">
+     class="ei-img-center">
 
 To allow meaningful cross-sectional comparison, all three components are standardized using z-score normalization. The Emotional Index is then defined as a weighted combination of the standardized components:
 <img width="529" height="89" alt="image" src="https://github.com/user-attachments/assets/9c9be9ea-bdc3-4815-800d-0d2435d19f99" />
@@ -59,7 +96,7 @@ H1 : Extroversion
 <!-- ![Emotional Index visualization](social7.png) -->
 <img src="{{ 'social7.png' | relative_url }}"
      alt="Emotional Index visualization"
-     style="float: center; max-width: 75%; height: auto; margin: 0 0 1em 1.5em;">
+     class="ei-img-center">
 Extroverted assets exhibit expressive behaviour in market shocks and in regime changements, amplified behaviour during market shocks. 
 
 H2 : Introversion
