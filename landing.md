@@ -1,8 +1,8 @@
 ---
 layout: landing
-# title: Does the Stock Market have a Personality?
-# excerpt: >
-#   Giving the Stock Market Human Emotions
+title:  
+excerpt: >
+
 permalink: /
 
 article_header:
