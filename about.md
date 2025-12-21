@@ -77,13 +77,13 @@ permalink: /about/
     <!-- Member 1 -->
     <article class="member-card">
       <img
-        src="{{ '/assets/images/commander_face.svg' | relative_url }}"
+        src="{{ '/assets/images/logistician_face.svg' | relative_url }}"
         alt="Photo of Member 1"
         class="member-photo"
       />
       <div class="member-name">Shen Chen        </div>
       <div class="member-links">
-        <a href="https://linkedin.com/in/member1" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/shen-chen-a8aa33216/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/tonichencs" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>
@@ -97,7 +97,7 @@ permalink: /about/
       />
       <div class="member-name">Nur Ertug        </div>
       <div class="member-links">
-        <a href="https://linkedin.com/in/member2" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/nur-ertug-4358b4184/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/NurErtugn" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>
@@ -111,7 +111,7 @@ permalink: /about/
       />
       <div class="member-name">Sebastian Maier      </div>
       <div class="member-links">
-        <a href="https://linkedin.com/in/member3" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/sebastian-maier-70847a288/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/SebastianMaierEPFL" target="_blank" rel="noopener">GitHub</a>
       </div>
     </article>
